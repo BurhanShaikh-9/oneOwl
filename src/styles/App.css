@@ -79,7 +79,6 @@ a {
   padding-top: 15px;
   top: 64px;
   left: 0;
-  z-index: -1;
   bottom: 0;
   width: 240px;
   transition: all 0.3s;
@@ -326,10 +325,6 @@ header .headerInner .menuButton svg {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-.mainSection .mainSectionWrapper .cardMargin {
-  margin-left: 10px;
-  margin-right: 10px;
 }
 .mainSection .mainSectionWrapper .statsRowLast {
   height: 113px !important;

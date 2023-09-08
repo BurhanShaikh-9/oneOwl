@@ -8,6 +8,7 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import { ROUTES } from '../utils/routes';
 import { Dashboard } from './Website/pages/Dashboard/dashboard'
 import { Layout } from './Website/layout'
+import Communication from './Website/pages/Communication/communication';
 
 
 
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
+          <Route path={ROUTES.COMMUNICATION} element={<Communication />} />
         </Route>
       </Routes>
 
