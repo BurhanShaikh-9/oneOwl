@@ -219,7 +219,7 @@ export const Dashboard = () => {
             </div>
           </div>
           <div className="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 ">
-            <div className="card">
+            <div className="card donutChartCard">
               <div className="card-body">
                 <div className="chart">
                   <div className="chartHeading1">
