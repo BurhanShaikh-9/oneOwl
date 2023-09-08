@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import logoImg from '../../assets/images/logo/Logo.png'
+// import logoImg from '../../assets/images/logo/Logo.png'
 import { SidebarContext } from '../layout'
 import { NavLink, Link } from 'react-router-dom'
 import { RxCross2, RxDashboard } from 'react-icons/rx';
