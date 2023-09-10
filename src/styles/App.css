@@ -22,14 +22,25 @@ a {
   color: black;
 }
 
-@font-face {
-  font-family: "poppinRegular";
-  src: url("/src/assets/fonts/Poppins-Regular.ttf") format("truetype");
+::-webkit-scrollbar {
+  width: 7px;
 }
-@font-face {
-  font-family: "poppinSemiBold";
-  src: url("/src/assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .profileDropDown button:hover {
   background-color: #0B2360;
   color: white;
@@ -314,8 +325,70 @@ header .headerInner .menuButton svg {
 .mainSection {
   padding-top: 95px;
 }
+.mainSection .channelHeading {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  margin: 0;
+}
+.mainSection .channels {
+  list-style: none;
+  height: 290px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mainSection .channels .facebookChannel {
+  background-color: #3A589B;
+}
+.mainSection .channels .whatsappChannel {
+  background-color: #48C857;
+}
+.mainSection .channels .twitterChannel {
+  background-color: #1D9BF0;
+}
+.mainSection .channels li {
+  border-radius: 5px;
+  padding: 8px 20px;
+  color: white;
+}
+.mainSection .channels li svg {
+  font-size: 30px;
+  margin-right: 8px;
+}
 .mainSection .mobileSearch {
   display: none;
+}
+.mainSection .billingTotal {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mainSection .billingTotal .bottomBilling button {
+  background-color: #0B2360;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  padding: 5px 20px;
+}
+.mainSection .billingTotal .topBilling {
+  gap: 20px;
+  display: flex;
+}
+.mainSection .billingTotal .topBilling h5 {
+  font-size: 40px;
+  font-weight: bold;
+}
+.mainSection .billingTotal .topBilling .totalPara p {
+  margin: 0;
+  margin-top: 10px;
+  line-height: 10px;
+}
+.mainSection .billingTotal .topBilling .totalPara small {
+  font-size: 11px;
 }
 .mainSection .mainSectionInner {
   width: 100%;
@@ -325,6 +398,398 @@ header .headerInner .menuButton svg {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.mainSection .mainSectionWrapper .billingMain h6 {
+  margin-bottom: 15px;
+  color: #666;
+  font-size: 14px;
+}
+.mainSection .mainSectionWrapper .billingMain .billinBtnGroupOtr {
+  display: flex;
+}
+.mainSection .mainSectionWrapper .billingMain .billingMainInner {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+.mainSection .mainSectionWrapper .billingMain .billingMainSearch {
+  font-size: 12px;
+  border-radius: 50px;
+  border: none;
+  max-width: 390px;
+  padding: 8px 10px;
+  background-color: #EFEFEF;
+}
+.mainSection .mainSectionWrapper .billingMain .billinBtnGroup {
+  display: flex;
+  border-radius: 50px;
+  background-color: #EFEFEF;
+  margin-top: 20px;
+}
+.mainSection .mainSectionWrapper .billingMain .billBtnGr input[type=radio] {
+  display: none;
+  /* Hide the radio buttons */
+}
+.mainSection .mainSectionWrapper .billingMain .billBtnGr label {
+  padding: 7px 30px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.mainSection .mainSectionWrapper .billingMain .billBtnGr input[type=radio]:checked + label {
+  background-color: #0B2360;
+  color: white;
+  border-radius: 50px;
+}
+.mainSection .mainSectionWrapper .billingMain .checkBoxesBilling {
+  display: flex;
+  justify-content: flex-start;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  font-size: 12px;
+  flex-wrap: wrap;
+  max-width: 390px;
+}
+.mainSection .mainSectionWrapper .billingMain .checkBoxesBilling .checkboxBill {
+  display: flex;
+  gap: 2px;
+}
+.mainSection .mainSectionWrapper .BillingTable tbody tr td {
+  padding-left: 20px;
+  text-align: left !important;
+}
+.mainSection .mainSectionWrapper .BillingTable tbody tr td strong {
+  color: black;
+  font-size: 15px;
+}
+.mainSection .mainSectionWrapper .BillingTable tbody tr .billingBodyRow {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+.mainSection .mainSectionWrapper .BillingTable tbody tr .billingBodyRow p {
+  margin: 0;
+}
+.mainSection .mainSectionWrapper .BillingTable tbody tr td .billingIconTable {
+  background-color: #0B2360;
+  padding: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+.mainSection .mainSectionWrapper .BillingTable tbody tr td .billingIconTable svg {
+  height: 30px;
+  min-width: 30px;
+  color: white;
+  border-radius: 50%;
+}
+.mainSection .mainSectionWrapper .billingTableHeading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.mainSection .mainSectionWrapper .billingTableHeading .billingBtnGroup button:first-child {
+  border-radius: 50px 0 0 50px;
+  border-right: 0;
+}
+.mainSection .mainSectionWrapper .billingTableHeading .billingBtnGroup button:last-child {
+  border-radius: 0 50px 50px 0;
+}
+.mainSection .mainSectionWrapper .billingTableHeading .billingBtnGroup button {
+  padding: 5px 10px;
+  border: 1px solid grey;
+  background-color: transparent;
+}
+.mainSection .mainSectionWrapper .agentPreference {
+  height: 567px !important;
+}
+.mainSection .mainSectionWrapper .billingChart {
+  display: flex;
+  gap: 18px;
+  height: 72px;
+}
+.mainSection .mainSectionWrapper .billingChart img {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.mainSection .mainSectionWrapper .billingChart .billingChartInner {
+  line-height: 20px;
+}
+.mainSection .mainSectionWrapper .billingChart .billingChartInner p {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 35px;
+  font-weight: 700;
+}
+.mainSection .mainSectionWrapper .billingChart .billingChartInner span {
+  font-size: 16px;
+  color: #464255;
+  display: block;
+}
+.mainSection .mainSectionWrapper .billingChart .billingChartInner small {
+  font-size: 12px;
+  color: #A3A3A3;
+}
+.mainSection .mainSectionWrapper .preferenceTable table tbody tr td {
+  text-align: center;
+}
+.mainSection .mainSectionWrapper .preferenceTable table thead tr th:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.mainSection .mainSectionWrapper .preferenceTable table thead tr th:last-child {
+  border-radius: 0 5px 5px 0;
+}
+.mainSection .mainSectionWrapper .preferenceTable table thead tr th {
+  height: 50px;
+  padding-left: 20px;
+  vertical-align: middle;
+  background-color: #0B2360;
+  white-space: nowrap;
+  color: white;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+}
+.mainSection .mainSectionWrapper .preferenceHeading {
+  display: flex;
+  justify-content: space-between;
+}
+.mainSection .mainSectionWrapper .preferenceHeading .mainHeadingPreferenceTable {
+  color: #5A5A5F;
+  font-size: 15px;
+}
+.mainSection .mainSectionWrapper .preferenceHeading .preferenceRight {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.mainSection .mainSectionWrapper .preferenceHeading .preferenceRight .filterButton {
+  border: none;
+  box-shadow: none;
+  background-color: none;
+}
+.mainSection .mainSectionWrapper .preferenceHeading .preferenceRight button {
+  border-radius: 5px;
+  display: flex;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  gap: 5px;
+  font-size: 12px;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid rgb(82, 82, 82);
+  padding: 0 10px;
+  height: 20px;
+}
+.mainSection .mainSectionWrapper .allNotificationCard {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  height: 252px;
+  overflow-y: auto;
+}
+.mainSection .mainSectionWrapper .allNotificationCard .notify {
+  display: flex;
+  gap: 8px;
+}
+.mainSection .mainSectionWrapper .allNotificationCard .notify img {
+  width: 30px;
+  height: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.mainSection .mainSectionWrapper .allNotificationCard .notify svg {
+  background-color: #0B2360;
+  color: white;
+  height: 30px;
+  padding: 5px;
+  min-width: 30px;
+  border-radius: 10px;
+}
+.mainSection .mainSectionWrapper .allNotificationCard .notify .notifyInfo {
+  line-height: 12px;
+}
+.mainSection .mainSectionWrapper .allNotificationCard .notify .notifyInfo p {
+  font-size: 14px;
+  margin: 0;
+  line-height: 17px;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 153px;
+}
+.mainSection .mainSectionWrapper .allNotificationCard .notify .notifyInfo small {
+  color: var(--black-40, rgba(28, 28, 28, 0.4));
+  font-size: 12px;
+}
+.mainSection .mainSectionWrapper .agentList {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 0;
+  height: 250px;
+  overflow-y: auto;
+}
+.mainSection .mainSectionWrapper .agentList li {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.mainSection .mainSectionWrapper .agentList li img {
+  width: 32px;
+  height: 32px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.mainSection .mainSectionWrapper .agentList li p {
+  margin: 0;
+  padding: 0;
+  color: #0B2360;
+  font-size: 12px;
+}
+.mainSection .mainSectionWrapper .headingNotification {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mainSection .mainSectionWrapper .headingNotification .dropdown {
+  position: relative;
+}
+.mainSection .mainSectionWrapper .headingNotification .dropdown .btnDropDown {
+  background-color: transparent;
+  height: 20px;
+  width: 20px;
+  border-radius: 5px;
+  justify-content: center;
+  border: none;
+  display: flex;
+  align-items: center;
+}
+.mainSection .mainSectionWrapper .headingNotification .dropdown .btnDropDown:active {
+  background-color: rgba(170, 151, 176, 0.2588235294);
+}
+.mainSection .mainSectionWrapper .headingNotification .dropdown .dropdownMenu {
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+.mainSection .mainSectionWrapper .headingNotification .dropdown .dropdownMenu li {
+  padding: 5px 20px 5px 20px;
+}
+.mainSection .mainSectionWrapper .headingNotification .dropdown .dropdownMenu li:hover {
+  background-color: #0B2360;
+  color: white;
+}
+.mainSection .mainSectionWrapper .searchBar2 {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 22px;
+}
+.mainSection .mainSectionWrapper .searchBar2 svg {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  font-size: 24px;
+  transform: translate(-50%, -50%);
+}
+.mainSection .mainSectionWrapper .searchBar2 input {
+  padding-left: 35px;
+  height: 100%;
+  width: 100%;
+}
+.mainSection .mainSectionWrapper .preferenceMaintable {
+  height: 630px;
+  overflow-y: auto;
+}
+.mainSection .mainSectionWrapper .marginBottomRow {
+  margin-bottom: 25px;
+}
+.mainSection .mainSectionWrapper .communicationTable h6 {
+  color: #5A5A5F;
+  font-size: 18px;
+}
+.mainSection .mainSectionWrapper .communicationTable table tbody tr td {
+  color: #797979;
+  font-size: 11px;
+  text-align: center;
+}
+.mainSection .mainSectionWrapper .communicationTable table thead tr th:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.mainSection .mainSectionWrapper .communicationTable table thead tr th:last-child {
+  border-radius: 0 5px 5px 0;
+}
+.mainSection .mainSectionWrapper .communicationTable table thead tr th {
+  height: 50px;
+  padding-left: 20px;
+  vertical-align: middle;
+  background-color: #0B2360;
+  white-space: nowrap;
+  color: white;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+}
+.mainSection .mainSectionWrapper .CommunicationComponent {
+  height: 312px;
+  position: relative;
+}
+.mainSection .mainSectionWrapper .CommunicationComponent .communicationChat {
+  padding-left: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 48px;
+  background-color: #F8F8F8;
+}
+.mainSection .mainSectionWrapper .CommunicationComponent .communicationChat input {
+  background-color: #F8F8F8;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.mainSection .mainSectionWrapper .CommunicationComponent .communicationChat .sendChatButton {
+  background-color: #0B2360;
+  border: none;
+  color: white;
+  padding: 0px 15px 5px 15px;
+  border-radius: 5px;
+  font-size: 20px;
+  transform: translate(-13%, -50%);
+  top: 50%;
+  position: absolute;
+  right: 0;
+}
+.mainSection .mainSectionWrapper .CommunicationComponent .communicationHeader {
+  height: 50px;
+  background-color: #0B2360;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 0 11px;
+}
+.mainSection .mainSectionWrapper .CommunicationComponent .communicationHeader .communicationAbout img {
+  height: 32px;
+  width: 32px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-right: 6px;
+}
+.mainSection .mainSectionWrapper .CommunicationComponent .communicationHeader .communicationAbout span {
+  font-size: 12px;
+}
+.mainSection .mainSectionWrapper .CommunicationComponent .communicationHeader .communicationControls svg {
+  font-size: 19px;
+  margin-right: 24px;
 }
 .mainSection .mainSectionWrapper .statsRowLast {
   height: 113px !important;

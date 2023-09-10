@@ -22,43 +22,24 @@ a {
   color: black;
 }
 
-@mixin blueButton {
-  transition: all 0.2s ease-in;
-  color: white;
-  background-color: #32C6C3;
-  border: none;
-  border-radius: 50px;
-  font-size: 16px;
-  padding: 10px 30px;
-  cursor: pointer;
-  position: relative;
-  outline: none;
 
-  &:hover {
-    background-color: $base-color;
-  }
+::-webkit-scrollbar {
+  width: 7px;
 }
 
-@font-face {
-  font-family: "poppinRegular";
-  src: url("/src/assets/fonts/Poppins-Regular.ttf") format("truetype");
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
-@font-face {
-  font-family: "poppinSemiBold";
-  src: url("/src/assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
 }
 
-@mixin borderAllShadow {
-  border: 1px solid rgb(231, 231, 231);
-}
-
-@mixin borderBottomShadow {
-  border-bottom: 1px solid rgb(231, 231, 231);
-}
-
-@mixin borderTopShadow {
-  border-top: 1px solid rgb(231, 231, 231);
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 $base-color: #0B2360;
@@ -412,8 +393,89 @@ header {
 .mainSection {
   padding-top: 95px;
 
+  .channelHeading {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .channels {
+    list-style: none;
+    height: 290px;
+    margin: 0;
+    padding: 0;
+    // padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .facebookChannel {
+      background-color: #3A589B;
+    }
+
+    .whatsappChannel {
+      background-color: #48C857;
+    }
+
+    .twitterChannel {
+      background-color: #1D9BF0;
+    }
+
+    li {
+      border-radius: 5px;
+      padding: 8px 20px;
+
+      color: white;
+
+      svg {
+        font-size: 30px;
+        margin-right: 8px;
+      }
+    }
+  }
+
   .mobileSearch {
     display: none;
+  }
+
+  .billingTotal {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .bottomBilling {
+      button {
+        background-color: $base-color;
+        border: none;
+        color: white;
+        border-radius: 20px;
+        padding: 5px 20px;
+      }
+    }
+
+    .topBilling {
+      gap: 20px;
+      display: flex;
+
+      h5 {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .totalPara {
+        p {
+          margin: 0;
+          margin-top: 10px;
+          line-height: 10px;
+        }
+
+        small {
+          font-size: 11px;
+        }
+      }
+    }
   }
 
   .mainSectionInner {
@@ -426,21 +488,518 @@ header {
     align-items: center;
     flex-direction: column;
 
-    // .cardMargin {
-    //   margin-left: 10px;
-    //   margin-right: 10px;
+    .billingMain {
+      h6 {
+        margin-bottom: 15px;
+        color: #666;
+        font-size: 14px;
+      }
 
-    // }
+      .billinBtnGroupOtr {
+        display: flex;
+      }
 
-    // .apexcharts-toolbar {
-    //   top: -20px !important;
-    //   gap: 10px !important;
-    // }
+      .billingMainInner {
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+      }
+
+      .billingMainSearch {
+        font-size: 12px;
+        border-radius: 50px;
+        border: none;
+        max-width: 390px;
+        padding: 8px 10px;
+        background-color: #EFEFEF;
+      }
+
+      .billinBtnGroup {
+        display: flex;
+        border-radius: 50px;
+        background-color: #EFEFEF;
+        margin-top: 20px;
+
+      }
+
+      .billBtnGr input[type="radio"] {
+        display: none;
+        /* Hide the radio buttons */
+      }
+
+      .billBtnGr {
+
+        label {
+          padding: 7px 30px;
+          cursor: pointer;
+          font-size: 13px;
+        }
+      }
+
+      .billBtnGr input[type="radio"]:checked+label {
+        background-color: $base-color;
+        color: white;
+        border-radius: 50px;
+      }
 
 
-    // .apexcharts-toolbar>div {
-    //   transform: scale(1.1);
-    // }
+
+      .checkBoxesBilling {
+        display: flex;
+        justify-content: flex-start;
+        column-gap: 20px;
+        font-size: 12px;
+        flex-wrap: wrap;
+        max-width: 390px;
+
+
+        .checkboxBill {
+          display: flex;
+          gap: 2px;
+        }
+      }
+    }
+
+    .BillingTable {
+      tbody {
+        tr {
+          td {
+            padding-left: 20px;
+            text-align: left !important;
+
+            strong {
+              color: black;
+              font-size: 15px;
+            }
+          }
+
+          .billingBodyRow {
+            display: flex;
+            align-items: center;
+            text-align: left;
+
+            p {
+              margin: 0;
+            }
+          }
+
+          td {
+            .billingIconTable {
+              background-color: #0B2360;
+              padding: 7px;
+              border-radius: 50%;
+              display: inline-block;
+              margin-right: 10px;
+
+              svg {
+                height: 30px;
+                min-width: 30px;
+                color: white;
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .billingTableHeading {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .billingBtnGroup {
+        button:first-child {
+          border-radius: 50px 0 0 50px;
+          border-right: 0;
+        }
+
+        button:last-child {
+          border-radius: 0 50px 50px 0;
+        }
+
+        button {
+          padding: 5px 10px;
+          border: 1px solid grey;
+          background-color: transparent;
+        }
+      }
+    }
+
+    .agentPreference {
+      height: 567px !important;
+    }
+
+    .billingChart {
+      display: flex;
+      gap: 18px;
+      height: 72px;
+
+      img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+      }
+
+      .billingChartInner {
+        line-height: 20px;
+
+        p {
+          margin: 0;
+          margin-bottom: 10px;
+          font-size: 35px;
+          font-weight: 700;
+        }
+
+        span {
+          font-size: 16px;
+          color: #464255;
+          display: block;
+        }
+
+        small {
+          font-size: 12px;
+          color: #A3A3A3;
+        }
+      }
+    }
+
+    .preferenceTable {
+      table {
+        tbody {
+          tr {
+            td {
+              text-align: center;
+            }
+          }
+        }
+
+        thead {
+          tr {
+            th:first-child {
+              border-radius: 5px 0 0 5px;
+            }
+
+            th:last-child {
+              border-radius: 0 5px 5px 0;
+            }
+
+            th {
+              height: 50px;
+              padding-left: 20px;
+              vertical-align: middle;
+              background-color: $base-color;
+              white-space: nowrap;
+              color: white;
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+
+    .preferenceHeading {
+      display: flex;
+      justify-content: space-between;
+
+      .mainHeadingPreferenceTable {
+        color: #5A5A5F;
+        font-size: 15px;
+      }
+
+      .preferenceRight {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+
+        .filterButton {
+          border: none;
+          box-shadow: none;
+          background-color: none;
+        }
+
+        button {
+          border-radius: 5px;
+          display: flex;
+          box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.20);
+          gap: 5px;
+          font-size: 12px;
+          align-items: center;
+          background-color: transparent;
+          border: 1px solid rgb(82, 82, 82);
+          padding: 0 10px;
+          height: 20px;
+        }
+      }
+    }
+
+    .allNotificationCard {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      height: 252px;
+      overflow-y: auto;
+
+      .notify {
+        display: flex;
+        gap: 8px;
+
+        img {
+          width: 30px;
+          height: 30px;
+          object-fit: contain;
+        }
+
+        svg {
+          // font-size: 0px;
+          background-color: $base-color;
+          color: white;
+          height: 30px;
+          padding: 5px;
+          min-width: 30px;
+          border-radius: 10px;
+        }
+
+        .notifyInfo {
+          line-height: 12px;
+
+          p {
+            font-size: 14px;
+            margin: 0;
+            line-height: 17px;
+            padding: 0;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 153px;
+          }
+
+          small {
+            color: var(--black-40, rgba(28, 28, 28, 0.40));
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    .agentList {
+      list-style: none;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      padding: 0;
+      height: 250px;
+      overflow-y: auto;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+
+        img {
+          width: 32px;
+          height: 32px;
+          object-fit: contain;
+        }
+
+        p {
+          margin: 0;
+          padding: 0;
+          color: #0B2360;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .headingNotification {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .dropdown {
+        position: relative;
+
+        .btnDropDown {
+          background-color: transparent;
+          height: 20px;
+          width: 20px;
+          border-radius: 5px;
+          justify-content: center;
+          border: none;
+          display: flex;
+          align-items: center;
+
+          &:active {
+            background-color: #aa97b042;
+          }
+        }
+
+        .dropdownMenu {
+          position: absolute;
+          z-index: 1;
+          background-color: white;
+          padding: 0;
+          list-style: none;
+          margin: 0;
+
+          li {
+            padding: 5px 20px 5px 20px;
+          }
+
+          li:hover {
+            background-color: $base-color;
+            color: white;
+          }
+        }
+      }
+    }
+
+    .searchBar2 {
+      position: relative;
+      width: 100%;
+      height: 40px;
+      margin-bottom: 22px;
+
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        font-size: 24px;
+        transform: translate(-50%, -50%);
+      }
+
+      input {
+        padding-left: 35px;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .preferenceMaintable {
+      height: 630px;
+      overflow-y: auto;
+    }
+
+    .marginBottomRow {
+      margin-bottom: 25px;
+    }
+
+    .communicationTable {
+      h6 {
+        color: #5A5A5F;
+        font-size: 18px;
+      }
+
+      table {
+        tbody {
+          tr {
+
+            td {
+              color: #797979;
+              font-size: 11px;
+              text-align: center;
+            }
+          }
+        }
+
+
+        thead {
+          tr {
+
+
+            th:first-child {
+              border-radius: 5px 0 0 5px;
+            }
+
+            th:last-child {
+              border-radius: 0 5px 5px 0;
+            }
+
+            th {
+              height: 50px;
+              padding-left: 20px;
+              vertical-align: middle;
+              background-color: $base-color;
+              white-space: nowrap;
+              color: white;
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+
+    .CommunicationComponent {
+      height: 312px;
+      position: relative;
+
+      .communicationChat {
+        padding-left: 10px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 48px;
+        background-color: #F8F8F8;
+
+        input {
+          background-color: #F8F8F8;
+          width: 100%;
+          height: 100%;
+          border: none;
+        }
+
+        .sendChatButton {
+          background-color: $base-color;
+          border: none;
+          color: white;
+          padding: 0px 15px 5px 15px;
+          border-radius: 5px;
+          font-size: 20px;
+          transform: translate(-13%, -50%);
+          top: 50%;
+          position: absolute;
+          right: 0;
+        }
+      }
+
+      .communicationHeader {
+        height: 50px;
+        background-color: $base-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        padding: 0 11px;
+
+        .communicationAbout {
+
+          img {
+            height: 32px;
+            width: 32px;
+            object-fit: contain;
+            margin-right: 6px;
+          }
+
+          span {
+            font-size: 12px;
+          }
+        }
+
+        .communicationControls {
+          svg {
+            font-size: 19px;
+            margin-right: 24px;
+          }
+        }
+      }
+    }
 
     .statsRowLast {
       height: 113px !important;
@@ -514,10 +1073,6 @@ header {
     .purpleBar {
       accent-color: #5048e4;
       width: 100%;
-    }
-
-    .apexcharts-legend {
-      // border: none;
     }
 
     .chartHeading1 {

@@ -1,6 +1,6 @@
 import React from 'react'
-import { CiSearch } from 'react-icons/ci';
-import { RxCross1 } from 'react-icons/rx';
+import SearchBar from './searchBar'
+
 
 const BodyComponent = ({ children }) => {
     return (
@@ -9,18 +9,8 @@ const BodyComponent = ({ children }) => {
                 <div className="mainSectionWrapper">
 
                     <div className="mainSectionInner">
-
-                        <div className='mobileSearch'>
-                            <div className="searchBarHeader">
-                                <CiSearch className='searchIcon' />
-                                <input type="text" name="" placeholder='Seach' id="" />
-                                <RxCross1 className='crossIcon' />
-                            </div>
-                        </div>
-
-
+                        <SearchBar />
                         {children}
-
                     </div>
                 </div>
 

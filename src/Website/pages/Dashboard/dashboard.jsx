@@ -7,6 +7,7 @@ import { LuUsers } from 'react-icons/lu'
 import { BiBarChartSquare } from 'react-icons/bi'
 import { FaDollarSign } from 'react-icons/fa'
 import BodyComponent from '../../components/bodyComponent';
+import StatsBar from '../../components/stats';
 
 export const Dashboard = () => {
 
@@ -133,66 +134,7 @@ export const Dashboard = () => {
     <React.Fragment>
       <BodyComponent>
         <div className="row g-3">
-
-
-
-          <div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 ">
-            <div className="card cardMargin">
-              <div className="card-body">
-                <div className="chart">
-                  <div className="chartHeading">
-                    <p>Incoming Sessions</p>
-                  </div>
-                  <div className="box box1">
-                    <p>234600</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 ">
-            <div className="card cardMargin">
-              <div className="card-body">
-                <div className="chart">
-                  <div className="chartHeading">
-                    <p>Total Converstations</p>
-                  </div>
-                  <div className="box box1">
-                    <p>16738</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 ">
-            <div className="card cardMargin">
-              <div className="card-body">
-                <div className="chart">
-                  <div className="chartHeading">
-                    <p>Total Transaction</p>
-                  </div>
-                  <div className="box box1">
-                    <p>286320</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3 ">
-            <div className="card cardMargin">
-              <div className="card-body">
-                <div className="chart">
-                  <div className="chartHeading">
-                    <p>Average Waiting Time</p>
-                  </div>
-                  <div className="box box1">
-                    <p>286320</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+          <StatsBar />
           <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
             <div className="card cardMargin">
               <div className="card-body">

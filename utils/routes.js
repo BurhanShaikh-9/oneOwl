@@ -1,4 +1,7 @@
 export const ROUTES = {
     DASHBOARD: "/",
-    COMMUNICATION: "communication"
+    COMMUNICATION: "communication",
+    PREFERENCE: "preference",
+    BILLING: "billing",
+
 }

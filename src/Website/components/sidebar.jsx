@@ -53,13 +53,13 @@ export const Sidebar = () => {
                         </li>
                         <li className="nav-item">
 
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to='/hey'>
+                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.PREFERENCE}>
                                 <LiaEdit className='sideIcon' /><span>Preference</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
 
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to='/hey'>
+                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.BILLING}>
                                 <LiaListAltSolid className='sideIcon' /><span>Billing</span>
                             </NavLink>
                         </li>
