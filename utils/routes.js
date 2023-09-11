@@ -4,5 +4,6 @@ export const ROUTES = {
     PREFERENCE: "preference",
     BILLING: "billing",
     NOTIFICATION: "notification",
+    SETTINGS: "setting",
 
 }

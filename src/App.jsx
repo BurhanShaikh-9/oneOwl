@@ -12,6 +12,7 @@ import Communication from './Website/pages/Communication/communication';
 import Prefernce from './Website/pages/preference/preference';
 import Billing from './Website/pages/Billing/billing';
 import { Notification } from './Website/pages/Notification/notification';
+import { Settings } from './Website/pages/Settings/settings';
 
 
 
@@ -26,6 +27,7 @@ function App() {
           <Route path={ROUTES.PREFERENCE} element={<Prefernce />} />
           <Route path={ROUTES.BILLING} element={<Billing />} />
           <Route path={ROUTES.NOTIFICATION} element={<Notification />} />
+          <Route path={ROUTES.SETTINGS} element={<Settings />} />
         </Route>
       </Routes>
     </React.Fragment>

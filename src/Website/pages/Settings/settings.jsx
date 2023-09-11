@@ -1,0 +1,75 @@
+import React from 'react'
+import BodyComponent from '../../components/bodyComponent'
+
+export const Settings = () => {
+    return (
+        <React.Fragment>
+            <BodyComponent>
+                <div className="notificationComponent">
+                    <div className="headingMainCon">
+                        <h3>Settings</h3>
+                    </div>
+
+
+
+                    <div className="mainListComp settingsListComp">
+                        <div className="mainHeadingWrapper">
+                            <div className="mainListHeading">
+                                <h6>
+                                    Desktop Push Notification
+                                </h6>
+                            </div>
+                            <div className="mainListPara">
+                                Receive push notification on mentions, comments, alerts, edit changes, supply and target meet
+                            </div>
+                        </div>
+                        <div className="mainHeadingWrapper">
+                            <label class="switch">
+                                <input type="checkbox"/>
+                                    <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div className="mainListComp settingsListComp">
+                        <div className="mainHeadingWrapper">
+                            <div className="mainListHeading">
+                                <h6>
+                                    Email Notification
+                                </h6>
+                            </div>
+                            <div className="mainListPara">
+                            Receive push notification on mentions, comments, alerts, edit changes, supply and target meet
+                            </div>
+                        </div>
+                        <div className="mainHeadingWrapper">
+                            <label class="switch">
+                                <input type="checkbox"/>
+                                    <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div className="mainListComp settingsListComp">
+                        <div className="mainHeadingWrapper">
+                            <div className="mainListHeading">
+                                <h6>
+                                Sound Notification
+                                </h6>
+                            </div>
+                            <div className="mainListPara">
+                            Enable sound notification on mentions, comments, alerts, edit changes, supply and target meet
+                            </div>
+                        </div>
+                        <div className="mainHeadingWrapper">
+                            <label class="switch">
+                                <input type="checkbox"/>
+                                    <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+            </BodyComponent>
+        </React.Fragment>
+    )
+}

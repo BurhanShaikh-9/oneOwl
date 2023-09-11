@@ -32,14 +32,11 @@ export const Sidebar = () => {
     }
 
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
     useEffect(() => {
         const handleResize = () => {
             setScreenWidth(window.innerWidth);
         };
-
         window.addEventListener('resize', handleResize);
-
         return () => {
             window.removeEventListener('resize', handleResize);
         };
@@ -102,7 +99,7 @@ export const Sidebar = () => {
                         </li>
                         <li className="nav-item">
 
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to='/hey'>
+                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.SETTINGS} onClick={closeMobileButton}>
                                 <IoSettingsOutline className='sideIcon' /><span>Settings</span>
                             </NavLink>
                         </li>

@@ -346,7 +346,8 @@ header .headerInner .menuButton svg {
   background-color: #0B2360;
   color: white;
 }
-.mainSection .pagination .previous a, .mainSection .pagination .next a {
+.mainSection .pagination .previous a,
+.mainSection .pagination .next a {
   color: #5A5A5F;
 }
 .mainSection .channels {
@@ -380,6 +381,7 @@ header .headerInner .menuButton svg {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 .mainSection .headingMainCon h3 {
   color: #0B2360;
@@ -396,7 +398,70 @@ header .headerInner .menuButton svg {
   border: 1px solid #0B2360;
   border-radius: 5px;
 }
+.mainSection .settingsListComp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+.mainSection .mainListComp .mainHeadingWrapper {
+  /* Hide default HTML checkbox */
+  /* The slider */
+  /* Rounded sliders */
+}
+.mainSection .mainListComp .mainHeadingWrapper .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 29px;
+}
+.mainSection .mainListComp .mainHeadingWrapper .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.mainSection .mainListComp .mainHeadingWrapper .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 3px solid #ccc;
+  transition: 0.4s;
+}
+.mainSection .mainListComp .mainHeadingWrapper .slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 13px;
+  bottom: -8.5px;
+  transform: translate(-50%, -50%);
+  background-color: #ccc;
+  transition: 0.4s;
+}
+.mainSection .mainListComp .mainHeadingWrapper input:checked + .slider {
+  background-color: #0B2360;
+  border: 3px solid transparent;
+}
+.mainSection .mainListComp .mainHeadingWrapper input:focus + .slider {
+  box-shadow: 0 0 1px #0B2360;
+}
+.mainSection .mainListComp .mainHeadingWrapper input:checked + .slider:before {
+  background-color: white;
+  transform: translate(18px, -10px);
+}
+.mainSection .mainListComp .mainHeadingWrapper .slider.round {
+  border-radius: 34px;
+}
+.mainSection .mainListComp .mainHeadingWrapper .slider.round:before {
+  border-radius: 50%;
+}
 .mainSection .mainListHeading {
+  flex-wrap: wrap;
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
   color: #0B2360;
