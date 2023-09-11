@@ -331,6 +331,24 @@ header .headerInner .menuButton svg {
   font-weight: 500;
   margin: 0;
 }
+.mainSection .pagination {
+  gap: 20px;
+  justify-content: flex-end;
+}
+.mainSection .pagination li {
+  width: 30px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainSection .pagination .active {
+  background-color: #0B2360;
+  color: white;
+}
+.mainSection .pagination .previous a, .mainSection .pagination .next a {
+  color: #5A5A5F;
+}
 .mainSection .channels {
   list-style: none;
   height: 290px;
@@ -357,6 +375,63 @@ header .headerInner .menuButton svg {
 .mainSection .channels li svg {
   font-size: 30px;
   margin-right: 8px;
+}
+.mainSection .headingMainCon {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.mainSection .headingMainCon h3 {
+  color: #0B2360;
+  font-size: 44px;
+  margin: 0;
+  padding: 0;
+}
+.mainSection .headingMainCon button {
+  font-size: 18px;
+  display: inline-block;
+  height: 40px;
+  color: #0B2360;
+  padding: 6px 16px;
+  border: 1px solid #0B2360;
+  border-radius: 5px;
+}
+.mainSection .mainListHeading {
+  display: flex;
+  justify-content: space-between;
+  color: #0B2360;
+}
+.mainSection .mainListHeading h6 {
+  margin: 0;
+  padding: 0;
+}
+.mainSection .mainListHeading svg {
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
+.mainSection .listingButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.mainSection .listingButtons .clear {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 18px;
+  color: #0B2360;
+  padding: 6px 16px;
+  border: 1px solid #0B2360;
+  border-radius: 5px;
+}
+.mainSection .listingButtons .View {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 18px;
+  color: white;
+  padding: 6px 16px;
+  background-color: #0B2360;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 .mainSection .mobileSearch {
   display: none;

@@ -3,12 +3,12 @@ import React, { useContext, useEffect, useState } from 'react'
 import { SidebarContext } from '../layout'
 import { NavLink, Link } from 'react-router-dom'
 import { RxCross2, RxDashboard } from 'react-icons/rx';
-import {PiArrowSquareDown, PiTruckLight} from 'react-icons/pi'
-import {LiaEdit, LiaListAltSolid} from 'react-icons/lia'
-import {BsQuestionCircle} from 'react-icons/bs'
-import {GoHome} from 'react-icons/go'
-import {LuLogOut} from 'react-icons/lu'
-import {IoNotificationsOutline , IoSettingsOutline} from 'react-icons/io5'
+import { PiArrowSquareDown, PiTruckLight } from 'react-icons/pi'
+import { LiaEdit, LiaListAltSolid } from 'react-icons/lia'
+import { BsQuestionCircle } from 'react-icons/bs'
+import { GoHome } from 'react-icons/go'
+import { LuLogOut } from 'react-icons/lu'
+import { IoNotificationsOutline, IoSettingsOutline } from 'react-icons/io5'
 import { HiOutlineUserGroup } from 'react-icons/hi'
 import { HiOutlineClipboardDocument } from 'react-icons/hi2'
 import { LiaUserSlashSolid } from 'react-icons/lia'
@@ -31,7 +31,26 @@ export const Sidebar = () => {
         setSideBar(!sideBar)
     }
 
-    console.log(sideBar, 'sidebar');
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setScreenWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    const closeMobileButton = () => {
+        if (screenWidth < 1200) {
+            setSideBar(!sideBar)
+        }
+    }
+
     return (
         <>
             <aside id="sidebar" className={sideBar ? 'sidebarwidth' : 'sidebar'}>
@@ -41,25 +60,25 @@ export const Sidebar = () => {
                     </div>
                     <ul className="sidebar-nav" id="sidebar-nav">
                         <li className="nav-item">
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.DASHBOARD}>
+                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.DASHBOARD} onClick={closeMobileButton}>
                                 <GoHome className='sideIcon' /><span>Dashboard</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
 
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.COMMUNICATION}>
+                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.COMMUNICATION} onClick={closeMobileButton}>
                                 <PiArrowSquareDown className='sideIcon' /><span>Communication</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
 
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.PREFERENCE}>
+                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.PREFERENCE} onClick={closeMobileButton}>
                                 <LiaEdit className='sideIcon' /><span>Preference</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
 
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.BILLING}>
+                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.BILLING} onClick={closeMobileButton}>
                                 <LiaListAltSolid className='sideIcon' /><span>Billing</span>
                             </NavLink>
                         </li>
@@ -77,7 +96,7 @@ export const Sidebar = () => {
                         </li>
                         <li className="nav-item">
 
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to='/hey'>
+                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.NOTIFICATION} onClick={closeMobileButton}>
                                 <IoNotificationsOutline className='sideIcon' /><span>Notification</span>
                             </NavLink>
                         </li>

@@ -130,6 +130,9 @@
 }
 
 @media only screen and (max-width: 576px) {
+    .billingBtnGroup{
+        margin-bottom: 10px;
+    }
     .mainSection .mainSectionWrapper .cardForm {
         width: 95%;
     }

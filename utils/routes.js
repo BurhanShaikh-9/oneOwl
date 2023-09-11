@@ -3,5 +3,6 @@ export const ROUTES = {
     COMMUNICATION: "communication",
     PREFERENCE: "preference",
     BILLING: "billing",
+    NOTIFICATION: "notification",
 
 }
