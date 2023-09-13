@@ -5,5 +5,6 @@ export const ROUTES = {
     BILLING: "billing",
     NOTIFICATION: "notification",
     SETTINGS: "setting",
+    PROFILE: "profile",
 
 }

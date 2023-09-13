@@ -87,7 +87,7 @@ export const Sidebar = () => {
                         </li>
                         <li className="nav-item">
 
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to='/hey'>
+                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.PROFILE} onClick={closeMobileButton}>
                                 <AiOutlineUser className='sideIcon' /><span>Profile</span>
                             </NavLink>
                         </li>

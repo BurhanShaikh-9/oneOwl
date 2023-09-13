@@ -393,6 +393,85 @@ header {
 .mainSection {
   padding-top: 95px;
 
+  .formField {
+    label {
+      display: block;
+      font-size: 20px;
+      font-weight: 600;
+
+    }
+
+    input, select {
+      border-radius: 5px;
+      border: 2px solid #858585;
+      height: 44px;
+      padding: 10px;
+      width: 100%;
+    }
+  }
+
+  // .profileOutline{
+  //   border-right: 1px solid grey;
+  //   height: 100%;
+  //   width: 2px;
+  //   position: absolute;
+  // }
+  .profileCustomer {
+    color: $base-color;
+    font-size: 40px;
+  }
+
+  .formHeading5 {
+    font-size: 30px;
+  }
+
+  .profileImg {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+
+    input {
+      display: none;
+    }
+  }
+
+  .profileImg:hover::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* You can adjust the background color and opacity as needed */
+    z-index: 1;
+    /* Place the overlay above the image */
+    display: block;
+  }
+
+  .profileImg img {
+    width: 154px;
+    border-radius: 50%;
+    height: 154px;
+    object-fit: contain;
+  }
+
+  .profileImg .camera-icon {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    /* Place the camera icon above the overlay */
+    display: none;
+  }
+
+  .profileImg:hover .camera-icon {
+    display: block;
+  }
+
   .channelHeading {
     font-size: 18px;
     font-style: normal;
@@ -484,16 +563,18 @@ header {
     }
   }
 
-  .settingsListComp{
+  .settingsListComp {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
     flex-wrap: wrap;
   }
+
   .mainListComp {
 
     .mainHeadingWrapper {
+
       .switch {
         position: relative;
         display: inline-block;
@@ -546,9 +627,9 @@ header {
 
       input:checked+.slider:before {
         background-color: white;
-        -webkit-transform: translate(18px , -10px);
-        -ms-transform: translate(18px , -10px);
-        transform: translate(18px , -10px);
+        -webkit-transform: translate(18px, -10px);
+        -ms-transform: translate(18px, -10px);
+        transform: translate(18px, -10px);
 
       }
 

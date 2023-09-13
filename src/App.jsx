@@ -13,6 +13,7 @@ import Prefernce from './Website/pages/preference/preference';
 import Billing from './Website/pages/Billing/billing';
 import { Notification } from './Website/pages/Notification/notification';
 import { Settings } from './Website/pages/Settings/settings';
+import { Profile } from './Website/pages/profile/profile';
 
 
 
@@ -28,6 +29,7 @@ function App() {
           <Route path={ROUTES.BILLING} element={<Billing />} />
           <Route path={ROUTES.NOTIFICATION} element={<Notification />} />
           <Route path={ROUTES.SETTINGS} element={<Settings />} />
+          <Route path={ROUTES.PROFILE} element={<Profile />} />
         </Route>
       </Routes>
     </React.Fragment>
