@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react'
 import BodyComponent from '../../components/bodyComponent'
 import ProfileImg from '../../../assets/images/guy.png'
 import { BsFillCameraFill } from 'react-icons/bs'
+import { AiFillPlusCircle, AiFillTwitterCircle, AiFillLinkedin } from 'react-icons/ai'
+import { SiFacebook } from 'react-icons/si'
 
 
 export const Profile = () => {
@@ -23,7 +25,7 @@ export const Profile = () => {
         <React.Fragment>
             <BodyComponent>
 
-                <div className="row">
+                <div className="row g-5">
                     <div className="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-7">
 
                         <div className="row">
@@ -99,8 +101,43 @@ export const Profile = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5">
-                        hey
+                    <div className="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 ">
+                        <h5 className='formHeading5 addFieldMargin'>Contact Info</h5>
+                        <div className="addFields addFieldMargin">
+                            <p className='fieldHead'>Email</p>
+                            <p className='fieldVal'>xyz@email.com</p>
+                            <div className="addfieldButton">
+                                <AiFillPlusCircle />
+                                <span>
+                                    Add Email
+                                </span>
+                            </div>
+                        </div>
+                        <div className="addFields addFieldMargin">
+                            <p className='fieldHead'>Phone</p>
+                            <p className='fieldVal'>123456789</p>
+                            <div className="addfieldButton">
+                                <AiFillPlusCircle />
+                                <span>
+                                    Add Phone Number
+                                </span>
+                            </div>
+                        </div>
+                        <div className="addFields addFieldMargin">
+                            <p className='fieldHead'>Social Links</p>
+                            <p className='fieldVal fieldValNo'><SiFacebook style={{color:'#1877F2'}}/> www.facebook.com</p>
+                            <p className='fieldVal fieldValNo'><AiFillTwitterCircle style={{color:'#26a7de '}}/> www.facebook.com</p>
+                            <p className='fieldVal'><AiFillLinkedin style={{color:'#1877F2'}}/> www.facebook.com</p>
+                            <div className="addfieldButton">
+                                <AiFillPlusCircle />
+                                <span>
+                                    Add Social Link
+                                </span>
+                            </div>
+                        </div>
+
+
+
                     </div>
                 </div>
 

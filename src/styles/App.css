@@ -330,12 +330,43 @@ header .headerInner .menuButton svg {
   font-size: 20px;
   font-weight: 600;
 }
-.mainSection .formField input, .mainSection .formField select {
+.mainSection .formField input,
+.mainSection .formField select {
   border-radius: 5px;
   border: 2px solid #858585;
   height: 44px;
   padding: 10px;
   width: 100%;
+}
+.mainSection .addFieldMargin {
+  margin-bottom: 40px;
+}
+.mainSection .fieldValNo {
+  margin-bottom: 0 !important;
+}
+.mainSection .addFields .fieldHead {
+  color: #5A5A5F;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  margin-bottom: 0;
+}
+.mainSection .addFields .fieldVal {
+  color: #5A5A5F;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 10px;
+  line-height: 28px;
+}
+.mainSection .addFields .addfieldButton {
+  font-size: 20px;
+  line-height: 17px;
+}
+.mainSection .addFields .addfieldButton svg {
+  margin-bottom: 2px;
+  margin-right: 10px;
 }
 .mainSection .profileCustomer {
   color: #0B2360;
