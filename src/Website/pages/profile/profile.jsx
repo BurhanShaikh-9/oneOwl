@@ -25,6 +25,8 @@ export const Profile = () => {
         <React.Fragment>
             <BodyComponent>
 
+<div className="container">
+
                 <div className="row g-5">
                     <div className="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-7">
 
@@ -99,6 +101,11 @@ export const Profile = () => {
                                     <input type="password" placeholder='03xxxxxxxx' />
                                 </div>
                             </div>
+                            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                                <div className="formField">
+                                 <button>Save Changes</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 ">
@@ -141,6 +148,7 @@ export const Profile = () => {
                     </div>
                 </div>
 
+</div>
             </BodyComponent>
         </React.Fragment>
     )
