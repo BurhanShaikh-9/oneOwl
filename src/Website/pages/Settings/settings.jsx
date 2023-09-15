@@ -25,8 +25,8 @@ export const Settings = () => {
                         </div>
                         <div className="mainHeadingWrapper">
                             <label className="switch">
-                                <input type="checkbox"/>
-                                    <span className="slider round"></span>
+                                <input type="checkbox" />
+                                <span className="slider round"></span>
                             </label>
                         </div>
                     </div>
@@ -38,13 +38,13 @@ export const Settings = () => {
                                 </h6>
                             </div>
                             <div className="mainListPara">
-                            Receive push notification on mentions, comments, alerts, edit changes, supply and target meet
+                                Receive push notification on mentions, comments, alerts, edit changes, supply and target meet
                             </div>
                         </div>
                         <div className="mainHeadingWrapper">
                             <label className="switch">
-                                <input type="checkbox"/>
-                                    <span className="slider round"></span>
+                                <input type="checkbox" />
+                                <span className="slider round"></span>
                             </label>
                         </div>
                     </div>
@@ -52,17 +52,35 @@ export const Settings = () => {
                         <div className="mainHeadingWrapper">
                             <div className="mainListHeading">
                                 <h6>
-                                Sound Notification
+                                Dark Theme
                                 </h6>
                             </div>
                             <div className="mainListPara">
-                            Enable sound notification on mentions, comments, alerts, edit changes, supply and target meet
+                            use the system settings to enable dark theme
                             </div>
                         </div>
                         <div className="mainHeadingWrapper">
                             <label className="switch">
-                                <input type="checkbox"/>
-                                    <span className="slider round"></span>
+                                <input type="checkbox" />
+                                <span className="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div className="mainListComp settingsListComp">
+                        <div className="mainHeadingWrapper">
+                            <div className="mainListHeading">
+                                <h6>
+                                    Sound Notification
+                                </h6>
+                            </div>
+                            <div className="mainListPara">
+                                Enable sound notification on mentions, comments, alerts, edit changes, supply and target meet
+                            </div>
+                        </div>
+                        <div className="mainHeadingWrapper">
+                            <label className="switch">
+                                <input type="checkbox" />
+                                <span className="slider round"></span>
                             </label>
                         </div>
                     </div>

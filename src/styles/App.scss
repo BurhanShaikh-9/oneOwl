@@ -164,11 +164,13 @@ $base-color: #0B2360;
   border: 1px solid $base-color;
   border-radius: 5px;
   transition: all .10 ease-in;
+
   &:active {
     scale: .98;
     opacity: .9;
   }
 }
+
 @mixin themeViewButton {
   font-size: 14px;
   display: inline-block;
@@ -179,12 +181,14 @@ $base-color: #0B2360;
   border: 1px solid white;
   border-radius: 5px;
   transition: all .10 ease-in;
+
   &:active {
     scale: .98;
     opacity: .9;
   }
 }
-.whiteButton{
+
+.whiteButton {
   &:active {
     background-color: $base-color !important;
     color: white;
@@ -442,6 +446,45 @@ header {
   }
 }
 
+.modalLogout {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 99999;
+  
+  .modalLogoutMain {
+    position: relative;
+    padding: 40px 30px 30px 30px;
+
+    .modalLogoutButton {
+      position: absolute;
+      top: 6px;
+      right: 10px;
+      border: 0;
+      background-color: transparent;
+    }
+    .logoutButtons{
+      display: flex;
+      justify-content: space-evenly;
+      button{
+        border: none;
+        background-color: transparent;
+      }
+      .yesButton{
+        @include themeViewButton;
+      }
+      .noButton{
+        @include themeClearButton;
+        border: 1px solid $base-color;
+      }
+      
+    }
+  }
+}
+
 .mainSection {
   padding-top: 95px;
 
@@ -475,20 +518,73 @@ header {
           }
         }
       }
-      .faqHeaderRight{
-          display: flex;
-          justify-content: flex-end;
-          gap: 20px;
-      
-          .clear {
-           @include themeClearButton()
+
+      .faqHeaderRight {
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+
+        .clear {
+          @include themeClearButton()
+        }
+
+        .view {
+          @include themeViewButton()
+        }
+
+      }
+    }
+
+    .faqAnswer {
+      .question {
+        margin: 20px 0;
+      }
+
+      .answerBox {
+        position: relative;
+        margin: 0 0 25px 0;
+        padding-left: 10px;
+        // position: absolute;
+        // bottom: 0;
+        width: 100%;
+        height: 48px;
+        background-color: #F8F8F8;
+
+        input {
+          background-color: #F8F8F8;
+          width: 100%;
+          height: 100%;
+          padding-left: 10px;
+          outline: none;
+          border: none;
+        }
+
+        .sendChatButton {
+          background-color: $base-color;
+          border: none;
+          color: white;
+          padding: 0px 15px 5px 15px;
+          border-radius: 5px;
+          font-size: 20px;
+          transform: translate(-13%, -50%);
+          top: 50%;
+          position: absolute;
+          right: 0;
+        }
+
+      }
+    }
+
+    .accordion {
+      margin: 12px 0 33px 0;
+
+      .accordion-item {
+        .accordion-header {
+          .accordion-button {
+            box-shadow: none;
+            background-color: transparent;
           }
-      
-          .view {
-           @include themeViewButton()
-      
-          }
-        
+        }
       }
     }
   }
@@ -819,12 +915,11 @@ header {
     gap: 20px;
 
     .clear {
-     @include themeClearButton()
+      @include themeClearButton()
     }
 
     .View {
-     @include themeViewButton()
-
+      @include themeViewButton()
     }
   }
 

@@ -7,9 +7,14 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
 export const Notification = () => {
 
 
+
     const [currentPage, setCurrentPage] = useState(0); // Current page state
     const perPage = 4; // Number of items per page
-    const data = Array.from({ length: 30 }, (_, index) => `Item ${index + 1}`); // Sample data array
+    // const data = Array.from({ length: 30 }, (_, index) => `Item ${index + 1}`); 
+    const [data, setData] = useState(Array.from({ length: 30 }, (_, index) => `Item ${index + 1}`)); // Sample data array
+    const clearAllData = () => {
+        setData([]); // Set data to an empty array
+    };
 
     // Function to handle page change
     const handlePageChange = (selectedPage) => {
@@ -32,7 +37,7 @@ export const Notification = () => {
                 <div className="notificationComponent">
                     <div className="headingMainCon">
                         <h3>Notification</h3>
-                        <button className='clear'>Clear All</button>
+                        <button className='clear' onClick={clearAllData}>Clear All</button>
                     </div>
                     {
                         displayedItems.map((item, keyId) => (
@@ -63,17 +68,21 @@ export const Notification = () => {
                     }
 
                 </div>
-                <ReactPaginate
-                    previousLabel={<MdKeyboardArrowLeft />}
-                    nextLabel={<MdKeyboardArrowRight />}
-                    breakLabel={'...'}
-                    pageCount={Math.ceil(data.length / perPage)}
-                    marginPagesDisplayed={1}
-                    pageRangeDisplayed={3}
-                    onPageChange={handlePageChange}
-                    containerClassName={'pagination'}
-                    activeClassName={'active'}
-                />
+
+                {
+                    !data &&
+                    <ReactPaginate
+                        previousLabel={<MdKeyboardArrowLeft />}
+                        nextLabel={<MdKeyboardArrowRight />}
+                        breakLabel={'...'}
+                        pageCount={Math.ceil(data.length / perPage)}
+                        marginPagesDisplayed={1}
+                        pageRangeDisplayed={3}
+                        onPageChange={handlePageChange}
+                        containerClassName={'pagination'}
+                        activeClassName={'active'}
+                    />
+                }
             </BodyComponent>
         </React.Fragment>
     )

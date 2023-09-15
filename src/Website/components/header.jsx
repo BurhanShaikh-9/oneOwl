@@ -47,6 +47,7 @@ export const Header = (props) => {
           <div className="navRight">
             <div className="dropdown profileDropDown">
               <button
+                onClick={()=>navigate(ROUTES.PROFILE)}
                 className="btn btn-secondary dropdown-toggle"
                 type="button"
                 data-bs-toggle="dropdown"
@@ -55,20 +56,6 @@ export const Header = (props) => {
                 <img src={ProfileImg} alt="" />
                 <div className="notificationShow"></div>
               </button>
-              {/* <ul className="dropdown-menu">
-                <li>
-                  <button className="dropdown-item" onClick={()=>{navigate(ROUTES.PROFILE)}}>
-                    <i className="bi bi-person" />
-                    Profile
-                  </button>
-                </li>
-                <li >
-                  <button className="dropdown-item" href="#">
-                    <i className="bi bi-box-arrow-in-left" />
-                    Logout
-                  </button>
-                </li>
-              </ul> */}
             </div>
 
             <div className="aboutDoctor">

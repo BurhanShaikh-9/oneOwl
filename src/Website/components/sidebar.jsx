@@ -12,7 +12,7 @@ import { IoNotificationsOutline, IoSettingsOutline } from 'react-icons/io5'
 import { HiOutlineUserGroup } from 'react-icons/hi'
 import { HiOutlineClipboardDocument } from 'react-icons/hi2'
 import { LiaUserSlashSolid } from 'react-icons/lia'
-import { AiOutlineFolderAdd, AiOutlineUser } from 'react-icons/ai'
+import { AiOutlineClose, AiOutlineFolderAdd, AiOutlineUser } from 'react-icons/ai'
 import { GiHospitalCross } from 'react-icons/gi'
 import { RiHospitalLine } from 'react-icons/ri'
 import { CgFileDocument } from 'react-icons/cg'
@@ -47,6 +47,17 @@ export const Sidebar = () => {
             setSideBar(!sideBar)
         }
     }
+    const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false); // State to control the visibility of the logout modal
+    5
+
+    const openLogoutModal = () => {
+        setIsLogoutModalOpen(true);
+    };
+
+    // Function to close the logout modal
+    const closeLogoutModal = () => {
+        setIsLogoutModalOpen(false);
+    };
 
     return (
         <>
@@ -111,14 +122,30 @@ export const Sidebar = () => {
                         </li>
                         <li className="nav-item">
 
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to='/hey'>
-                                <LuLogOut className='sideIcon' /><span>Logout</span>
-                            </NavLink>
+                            <button className="nav-link  collapsed" activeclassname="active" onClick={openLogoutModal} style={{ backgroundColor: 'transparent', cursor: 'pointer', width: '100%' }}>
+                                <LuLogOut className='sideIcon' style={{ color: '#aa97b0' }} /><span style={{ color: '#aa97b0' }}>Logout</span>
+                            </button>
                         </li>
 
                     </ul>
                 </div>
             </aside>
+            {isLogoutModalOpen && (
+                <dialog id='modalLogout' className='modalLogout' open>
+                    <div className="modalLogoutMain">
+
+                        <button className='modalLogoutButton' onClick={closeLogoutModal}>
+                            <AiOutlineClose />
+                        </button>
+                        <p>Are you sure you want to logout?</p>
+                        <div className="logoutButtons">
+                            <button className='yesButton' onClick={closeLogoutModal}>Yes</button>
+                            <button className='NoButton' onClick={closeLogoutModal}>No</button>
+                        </div>
+                    </div>
+
+                </dialog>
+            )}
         </>
     )
 }

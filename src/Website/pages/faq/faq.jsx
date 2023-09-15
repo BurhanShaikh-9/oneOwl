@@ -4,6 +4,7 @@ import { AiOutlineWarning } from 'react-icons/ai'
 import profileImg from '../../../assets/images/guy.png'
 import ReactPaginate from 'react-paginate';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
+import { PiPaperPlaneTiltBold } from 'react-icons/pi'
 
 export const Faq = () => {
 
@@ -24,12 +25,18 @@ export const Faq = () => {
     // Slice the data array to display only the items for the current page
     const displayedItems = data.slice(startIndex, endIndex);
 
+    const [isEditArray, setIsEditArray] = useState(new Array(data.length).fill(false));
+    const toggleIsEdit = (index) => {
+        const newIsEditArray = [...isEditArray];
+        newIsEditArray[index] = !newIsEditArray[index];
+        setIsEditArray(newIsEditArray);
+    };
 
 
 
     return (
         <React.Fragment>
-            {/* <BodyComponent>
+            <BodyComponent>
                 <div className="notificationComponent">
                     <div className="headingMainCon">
                         <h3>FAQ (Frequently Asked Questions)</h3>
@@ -49,21 +56,39 @@ export const Faq = () => {
                                     </div>
                                     <div className="faqHeaderRight">
                                         <button className='clear'>Clear</button>
-                                        <button className='view'>View</button>
+                                        <button className='view' onClick={() => toggleIsEdit(keyId)}>View</button>
                                     </div>
                                 </div>
-                                <div className="accordion accordion-flush" id={`accordionFlushExample-${keyId}`}>
-                                    <div className="accordion-item">
-                                        <h2 className="accordion-header">
-                                            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                                Accordion Item #1
-                                            </button>
-                                        </h2>
-                                        <div id="flush-collapseOne" className="accordion-collapse collapse" data-bs-parent={`#accordionFlushExample-${keyId}`}>
-                                            <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the first item's accordion body.</div>
+
+                                {!isEditArray[keyId] &&
+                                    <div className="accordion accordion-flush" id={`accordionFlushExample-${keyId}`}>
+                                        <div className="accordion-item">
+                                            <h2 className="accordion-header">
+                                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#flush-collapseOne${keyId}`} aria-expanded="false" aria-controls={`flush-collapseOne${keyId}`}>
+                                                    What One Owl is ?
+                                                </button>
+                                            </h2>
+                                            <div id={`flush-collapseOne${keyId}`} className="accordion-collapse collapse" data-bs-parent={`#accordionFlushExample-${keyId}`}>
+                                                <div className="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sed quod quidem vitae tenetur illum placeat eligendi doloribus neque aspernatur.</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                }
+                                {isEditArray[keyId] &&
+                                    <div className="faqAnswer">
+                                        <div className="question">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus provident ex nesciunt magni delectus iure error voluptatum tempora incidunt quod, tempore, harum modi ipsam, iusto sunt! Natus mollitia velit illo.</div>
+
+
+                                        <div className="answerBox">
+                                            <input type="text" placeholder='Type Answer Here' />
+                                            <button className='sendChatButton'>
+                                                <PiPaperPlaneTiltBold />
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                }
+
 
                             </div>
                         ))
@@ -82,7 +107,7 @@ export const Faq = () => {
                     activeClassName={'active'}
                 />
 
-            </BodyComponent> */}
+            </BodyComponent>
         </React.Fragment>
     )
 }

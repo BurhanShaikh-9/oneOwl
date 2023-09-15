@@ -329,6 +329,65 @@ header .headerInner .menuButton svg {
   font-size: 30px;
 }
 
+.modalLogout {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 99999;
+}
+.modalLogout .modalLogoutMain {
+  position: relative;
+  padding: 40px 30px 30px 30px;
+}
+.modalLogout .modalLogoutMain .modalLogoutButton {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  border: 0;
+  background-color: transparent;
+}
+.modalLogout .modalLogoutMain .logoutButtons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.modalLogout .modalLogoutMain .logoutButtons button {
+  border: none;
+  background-color: transparent;
+}
+.modalLogout .modalLogoutMain .logoutButtons .yesButton {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 18px;
+  color: white;
+  padding: 6px 16px;
+  background-color: #0B2360;
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: all 0.1 ease-in;
+}
+.modalLogout .modalLogoutMain .logoutButtons .yesButton:active {
+  scale: 0.98;
+  opacity: 0.9;
+}
+.modalLogout .modalLogoutMain .logoutButtons .noButton {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 18px;
+  color: #0B2360;
+  padding: 6px 16px;
+  border: 1px solid #0B2360;
+  border-radius: 5px;
+  transition: all 0.1 ease-in;
+  border: 1px solid #0B2360;
+}
+.modalLogout .modalLogoutMain .logoutButtons .noButton:active {
+  scale: 0.98;
+  opacity: 0.9;
+}
+
 .mainSection {
   padding-top: 95px;
 }
@@ -389,6 +448,44 @@ header .headerInner .menuButton svg {
 .mainSection .faqItem .faqHeader .faqHeaderRight .view:active {
   scale: 0.98;
   opacity: 0.9;
+}
+.mainSection .faqItem .faqAnswer .question {
+  margin: 20px 0;
+}
+.mainSection .faqItem .faqAnswer .answerBox {
+  position: relative;
+  margin: 0 0 25px 0;
+  padding-left: 10px;
+  width: 100%;
+  height: 48px;
+  background-color: #F8F8F8;
+}
+.mainSection .faqItem .faqAnswer .answerBox input {
+  background-color: #F8F8F8;
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  outline: none;
+  border: none;
+}
+.mainSection .faqItem .faqAnswer .answerBox .sendChatButton {
+  background-color: #0B2360;
+  border: none;
+  color: white;
+  padding: 0px 15px 5px 15px;
+  border-radius: 5px;
+  font-size: 20px;
+  transform: translate(-13%, -50%);
+  top: 50%;
+  position: absolute;
+  right: 0;
+}
+.mainSection .faqItem .accordion {
+  margin: 12px 0 33px 0;
+}
+.mainSection .faqItem .accordion .accordion-item .accordion-header .accordion-button {
+  box-shadow: none;
+  background-color: transparent;
 }
 .mainSection .formField label {
   display: block;
