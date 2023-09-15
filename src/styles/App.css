@@ -124,6 +124,13 @@ a {
   border: none;
 }
 
+.whiteButton:active {
+  background-color: #0B2360 !important;
+  color: white;
+  scale: 0.98;
+  opacity: 0.9;
+}
+
 .menuButton {
   display: none;
 }
@@ -325,6 +332,64 @@ header .headerInner .menuButton svg {
 .mainSection {
   padding-top: 95px;
 }
+.mainSection .faqItem .faqHeader {
+  justify-content: space-between;
+  display: flex;
+}
+.mainSection .faqItem .faqHeader .faqHeaderLeft {
+  display: flex;
+  gap: 10px;
+}
+.mainSection .faqItem .faqHeader .faqHeaderLeft img {
+  width: 44px;
+  height: 44px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.mainSection .faqItem .faqHeader .faqHeaderLeft .headerInnerLeft .customerName {
+  font-size: 20px;
+  color: black;
+}
+.mainSection .faqItem .faqHeader .faqHeaderLeft .headerInnerLeft p {
+  margin-bottom: 0;
+  color: #5A5A5F;
+  font-size: 15px;
+  line-height: 20px;
+}
+.mainSection .faqItem .faqHeader .faqHeaderRight {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+.mainSection .faqItem .faqHeader .faqHeaderRight .clear {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 18px;
+  color: #0B2360;
+  padding: 6px 16px;
+  border: 1px solid #0B2360;
+  border-radius: 5px;
+  transition: all 0.1 ease-in;
+}
+.mainSection .faqItem .faqHeader .faqHeaderRight .clear:active {
+  scale: 0.98;
+  opacity: 0.9;
+}
+.mainSection .faqItem .faqHeader .faqHeaderRight .view {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 18px;
+  color: white;
+  padding: 6px 16px;
+  background-color: #0B2360;
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: all 0.1 ease-in;
+}
+.mainSection .faqItem .faqHeader .faqHeaderRight .view:active {
+  scale: 0.98;
+  opacity: 0.9;
+}
 .mainSection .formField label {
   display: block;
   font-size: 20px;
@@ -339,12 +404,20 @@ header .headerInner .menuButton svg {
   width: 100%;
 }
 .mainSection .formField button {
+  background-color: #0B2360;
+  border: none;
+  color: white;
+  transition: all 0.1 ease-in;
+  border-radius: 20px;
+  padding: 5px 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: #0B2360;
-  color: white;
-  border: none;
+  border-radius: 0;
   padding: 5px 10px;
+}
+.mainSection .formField button:active {
+  scale: 0.98;
+  opacity: 0.9;
 }
 .mainSection .addFieldMargin {
   margin-bottom: 40px;
@@ -587,6 +660,11 @@ header .headerInner .menuButton svg {
   padding: 6px 16px;
   border: 1px solid #0B2360;
   border-radius: 5px;
+  transition: all 0.1 ease-in;
+}
+.mainSection .listingButtons .clear:active {
+  scale: 0.98;
+  opacity: 0.9;
 }
 .mainSection .listingButtons .View {
   font-size: 14px;
@@ -597,6 +675,11 @@ header .headerInner .menuButton svg {
   background-color: #0B2360;
   border: 1px solid white;
   border-radius: 5px;
+  transition: all 0.1 ease-in;
+}
+.mainSection .listingButtons .View:active {
+  scale: 0.98;
+  opacity: 0.9;
 }
 .mainSection .mobileSearch {
   display: none;
@@ -611,8 +694,13 @@ header .headerInner .menuButton svg {
   background-color: #0B2360;
   border: none;
   color: white;
+  transition: all 0.1 ease-in;
   border-radius: 20px;
   padding: 5px 20px;
+}
+.mainSection .billingTotal .bottomBilling button:active {
+  scale: 0.98;
+  opacity: 0.9;
 }
 .mainSection .billingTotal .topBilling {
   gap: 20px;

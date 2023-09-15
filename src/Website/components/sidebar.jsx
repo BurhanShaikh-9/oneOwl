@@ -79,12 +79,12 @@ export const Sidebar = () => {
                                 <LiaListAltSolid className='sideIcon' /><span>Billing</span>
                             </NavLink>
                         </li>
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
 
                             <NavLink className="nav-link  collapsed" activeclassname="active" to='/hey'>
                                 <PiTruckLight className='sideIcon' /><span>Data Privacy</span>
                             </NavLink>
-                        </li>
+                        </li> */}
                         <li className="nav-item">
 
                             <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.PROFILE} onClick={closeMobileButton}>
@@ -105,7 +105,7 @@ export const Sidebar = () => {
                         </li>
                         <li className="nav-item">
 
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to='/hey' >
+                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.FAQ} >
                                 <BsQuestionCircle className='sideIcon' /><span>FAQ</span>
                             </NavLink>
                         </li>

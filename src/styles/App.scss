@@ -141,6 +141,58 @@ $base-color: #0B2360;
   }
 }
 
+@mixin themeBlueButton {
+  background-color: $base-color;
+  border: none;
+  color: white;
+  transition: all .10 ease-in;
+  border-radius: 20px;
+  padding: 5px 20px;
+
+  &:active {
+    scale: .98;
+    opacity: .9;
+  }
+}
+
+@mixin themeClearButton {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 18px;
+  color: $base-color;
+  padding: 6px 16px;
+  border: 1px solid $base-color;
+  border-radius: 5px;
+  transition: all .10 ease-in;
+  &:active {
+    scale: .98;
+    opacity: .9;
+  }
+}
+@mixin themeViewButton {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 18px;
+  color: white;
+  padding: 6px 16px;
+  background-color: $base-color;
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: all .10 ease-in;
+  &:active {
+    scale: .98;
+    opacity: .9;
+  }
+}
+.whiteButton{
+  &:active {
+    background-color: $base-color !important;
+    color: white;
+    scale: .98;
+    opacity: .9;
+  }
+}
+
 .menuButton {
   display: none;
 
@@ -393,6 +445,54 @@ header {
 .mainSection {
   padding-top: 95px;
 
+  .faqItem {
+    .faqHeader {
+      justify-content: space-between;
+      display: flex;
+
+      .faqHeaderLeft {
+        display: flex;
+        gap: 10px;
+
+        img {
+          width: 44px;
+          height: 44px;
+          object-fit: contain;
+        }
+
+        .headerInnerLeft {
+          .customerName {
+            font-size: 20px;
+            color: black;
+          }
+
+          p {
+            margin-bottom: 0;
+            color: #5A5A5F;
+
+            font-size: 15px;
+            line-height: 20px;
+          }
+        }
+      }
+      .faqHeaderRight{
+          display: flex;
+          justify-content: flex-end;
+          gap: 20px;
+      
+          .clear {
+           @include themeClearButton()
+          }
+      
+          .view {
+           @include themeViewButton()
+      
+          }
+        
+      }
+    }
+  }
+
   .formField {
     label {
       display: block;
@@ -409,23 +509,28 @@ header {
       padding: 10px;
       width: 100%;
     }
-    button{
+
+    button {
+      @include themeBlueButton();
       margin-top: 20px;
       margin-bottom: 20px;
-      background-color: $base-color;
-      color: white;
-      border: none;
+      // background-color: $base-color;
+      // color: white;
+      // border: none;
+      border-radius: 0;
       padding: 5px 10px;
     }
   }
- 
 
-  .addFieldMargin{
+
+  .addFieldMargin {
     margin-bottom: 40px;
   }
-  .fieldValNo{
+
+  .fieldValNo {
     margin-bottom: 0 !important;
   }
+
   .addFields {
     .fieldHead {
       color: #5A5A5F;
@@ -444,10 +549,12 @@ header {
       margin-bottom: 10px;
       line-height: 28px;
     }
-    .addfieldButton{
+
+    .addfieldButton {
       font-size: 20px;
       line-height: 17px;
-      svg{
+
+      svg {
         margin-bottom: 2px;
         margin-right: 10px;
       }
@@ -712,24 +819,11 @@ header {
     gap: 20px;
 
     .clear {
-      font-size: 14px;
-      display: inline-block;
-      line-height: 18px;
-      color: $base-color;
-      padding: 6px 16px;
-      border: 1px solid $base-color;
-      border-radius: 5px;
+     @include themeClearButton()
     }
 
     .View {
-      font-size: 14px;
-      display: inline-block;
-      line-height: 18px;
-      color: white;
-      padding: 6px 16px;
-      background-color: $base-color;
-      border: 1px solid white;
-      border-radius: 5px;
+     @include themeViewButton()
 
     }
   }
@@ -737,6 +831,8 @@ header {
   .mobileSearch {
     display: none;
   }
+
+
 
   .billingTotal {
     height: 100%;
@@ -746,12 +842,9 @@ header {
 
     .bottomBilling {
       button {
-        background-color: $base-color;
-        border: none;
-        color: white;
-        border-radius: 20px;
-        padding: 5px 20px;
+        @include themeBlueButton();
       }
+
     }
 
     .topBilling {

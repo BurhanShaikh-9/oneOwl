@@ -72,8 +72,8 @@ const Billing = () => {
                                         Summary of Total Placed Orders
                                     </p>
                                     <div className="billingBtnGroup">
-                                        <button>Today</button>
-                                        <button>Yesterday</button>
+                                        <button className='whiteButton'>Today</button>
+                                        <button className='whiteButton'>Yesterday</button>
                                     </div>
                                 </div>
                                 <div className="communicationTable BillingTable">
@@ -250,7 +250,7 @@ const Billing = () => {
                             <div className="card-body">
                                 <div className="billingMain">
                                     <h6>Place Your Order</h6>
-                                    <div className="row">
+                                    <div className="row g-4">
 
                                     <div className="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
                                         <h6>

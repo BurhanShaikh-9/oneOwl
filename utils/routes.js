@@ -6,5 +6,6 @@ export const ROUTES = {
     NOTIFICATION: "notification",
     SETTINGS: "setting",
     PROFILE: "profile",
+    FAQ: "faq",
 
 }

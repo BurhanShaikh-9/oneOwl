@@ -3,8 +3,8 @@
     //     top: -20px !important;
     //     gap: 0 !important;
     //   }
-  
-  
+
+
     //   .apexcharts-toolbar>div {
     //     transform: scale(.7) !important;
     //   }
@@ -66,33 +66,41 @@
     .mainListComp {
 
         .mainHeadingWrapper {
-          .switch {
-            margin-top: 10px;
-          }}}
-    .mainSection .mainSectionWrapper .cardMargin{
+            .switch {
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .mainSection .mainSectionWrapper .cardMargin {
         margin: 0
     }
-    .mainSection .mainSectionWrapper .statsRow .statsColumn .columnIcon{
+
+    .mainSection .mainSectionWrapper .statsRow .statsColumn .columnIcon {
         font-size: 16px;
     }
-    .mainSection .mainSectionWrapper .statsRow .statsColumn span{
+
+    .mainSection .mainSectionWrapper .statsRow .statsColumn span {
         font-size: 8px;
     }
-    .mainSection .mainSectionWrapper .statsRow .statsColumn h6{
+
+    .mainSection .mainSectionWrapper .statsRow .statsColumn h6 {
         font-size: 24px;
     }
-    .mainSection .mainSectionWrapper .statsRow{
+
+    .mainSection .mainSectionWrapper .statsRow {
         height: 77px;
     }
 }
 
 @media only screen and (min-width: 768px) {
     .container {
-        max-width: 890px ;
+        max-width: 890px;
     }
 }
+
 @media only screen and (max-width: 768px) {
-    .footer2{
+    .footer2 {
         display: block;
     }
 
@@ -136,19 +144,25 @@
 }
 
 @media only screen and (max-width: 576px) {
-    .billingBtnGroup{
+    header .headerInner {
+        padding: 1px 18px;
+    }
+
+    .billingBtnGroup {
         margin-bottom: 10px;
     }
+
     .mainSection .mainSectionWrapper .cardForm {
         width: 95%;
     }
+
     .donutChartCard .apexcharts-canvas {
         position: relative;
         left: 50%;
         user-select: none;
         transform: translate(-50%, 0);
     }
-    
+
 
     .ql-toolbar.ql-snow .ql-formats {
         margin-right: 0;

@@ -14,6 +14,7 @@ import Billing from './Website/pages/Billing/billing';
 import { Notification } from './Website/pages/Notification/notification';
 import { Settings } from './Website/pages/Settings/settings';
 import { Profile } from './Website/pages/profile/profile';
+import { Faq } from './Website/pages/faq/faq';
 
 
 
@@ -25,6 +26,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
           <Route path={ROUTES.COMMUNICATION} element={<Communication />} />
+          <Route path={ROUTES.FAQ} element={<Faq />} />
           <Route path={ROUTES.PREFERENCE} element={<Prefernce />} />
           <Route path={ROUTES.BILLING} element={<Billing />} />
           <Route path={ROUTES.NOTIFICATION} element={<Notification />} />

@@ -100,6 +100,9 @@
   }
 }
 @media only screen and (max-width: 576px) {
+  header .headerInner {
+    padding: 1px 18px;
+  }
   .billingBtnGroup {
     margin-bottom: 10px;
   }
