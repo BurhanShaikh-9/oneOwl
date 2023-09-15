@@ -6,15 +6,16 @@ import {BsQuestionCircle} from 'react-icons/bs'
 import {GoHome} from 'react-icons/go'
 import {LuLogOut} from 'react-icons/lu'
 import {IoNotificationsOutline , IoSettingsOutline} from 'react-icons/io5'
+import { ROUTES } from '../../../utils/routes'
 
 export const Footer = () => {
     return (
         <footer className='footer2'>
                 <div className="footer">
-                        <Link >
+                        <Link to={ROUTES.PROFILE}>
                             <AiOutlineUser/>
                         </Link>
-                        <Link >
+                        <Link to={ROUTES.SETTINGS}>
                             <IoSettingsOutline/>
                         </Link>
                         <Link >
@@ -23,7 +24,7 @@ export const Footer = () => {
                         <Link >
                             <LuLogOut/>
                         </Link>
-                        <Link >
+                        <Link to={ROUTES.NOTIFICATION}>
                             <IoNotificationsOutline/>
                         </Link>
                 </div>
