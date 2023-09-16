@@ -935,6 +935,17 @@ header {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    .rightSidePrivacyCoLbutton{
+      background-color: $base-color;
+      width: 100%;
+      color: white;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 38px;
+      vertical-align: middle;
+    }
   }
 
   .billingTotal {

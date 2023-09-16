@@ -221,6 +221,8 @@ export const Privacy = () => {
                                     </div>
                                 </div>
                             </div>
+
+                            <div className="rightSidePrivacyCoLbutton">Show Complete List</div>
                         </div>
 
                     </div>

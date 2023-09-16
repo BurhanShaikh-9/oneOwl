@@ -786,6 +786,17 @@ header .headerInner .menuButton svg {
   flex-direction: column;
   gap: 10px;
 }
+.mainSection .rightSidePrivacyCol .rightSidePrivacyCoLbutton {
+  background-color: #0B2360;
+  width: 100%;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 38px;
+  vertical-align: middle;
+}
 .mainSection .billingTotal {
   height: 100%;
   display: flex;
