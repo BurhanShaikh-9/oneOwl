@@ -454,7 +454,7 @@ header {
   border: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   z-index: 99999;
-  
+
   .modalLogoutMain {
     position: relative;
     padding: 40px 30px 30px 30px;
@@ -466,21 +466,25 @@ header {
       border: 0;
       background-color: transparent;
     }
-    .logoutButtons{
+
+    .logoutButtons {
       display: flex;
       justify-content: space-evenly;
-      button{
+
+      button {
         border: none;
         background-color: transparent;
       }
-      .yesButton{
+
+      .yesButton {
         @include themeViewButton;
       }
-      .noButton{
+
+      .noButton {
         @include themeClearButton;
         border: 1px solid $base-color;
       }
-      
+
     }
   }
 }
@@ -927,7 +931,11 @@ header {
     display: none;
   }
 
-
+  .rightSidePrivacyCol {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
   .billingTotal {
     height: 100%;
@@ -1222,6 +1230,130 @@ header {
       }
     }
 
+    .agentNamePrivacy {
+      display: flex;
+      justify-content: space-between;
+
+      label {
+        font-size: 22px;
+      }
+
+      span {
+        color: $base-color;
+        text-align: right;
+        font-size: 40px;
+      }
+    }
+
+    .usersPrivacyOuter {
+      display: flex;
+      justify-content: space-between;
+
+      .usersPrivacy {
+        display: flex;
+        gap: 10px;
+
+        img {
+          height: 30px;
+          width: 30px;
+        }
+
+        .svgPrivacy {
+          color: white;
+          background-color: $base-color;
+          height: 30px;
+          width: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+        }
+      }
+
+      .showMoreButton {
+        background-color: transparent;
+        color: $base-color;
+        border: none;
+      }
+    }
+
+    .agentNamePara {
+      font-size: 14px;
+      color: rgb(82, 82, 82);
+      margin-bottom: 10px;
+    }
+
+    .privacySummary {
+      h6 {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      .summaryContainer {
+        padding-right: 50px;
+        margin-bottom: 30px;
+
+        .yellowOpacity {
+          background-color: #ffb3003b;
+        }
+
+        .lightOpacity {
+          background-color: #4239f238;
+        }
+
+        .blueOpacity {
+          background-color: #02a0fc3a;
+        }
+
+        .redOpacity {
+          background-color: #ff3b2934;
+        }
+
+        .labelContainer {
+          display: flex;
+          justify-content: space-between;
+
+        }
+
+        .yellow {
+          color: #FFB200;
+        }
+
+        .blue {
+          color: #02A0FC;
+        }
+
+        .light {
+          color: #4339F2;
+        }
+
+        .red {
+          color: #FF3A29;
+        }
+
+        .progress {
+          height: 8px;
+          margin-top: 5px;
+
+          .yellowLoader {
+            background-color: #FFB200;
+          }
+
+          .blueLoader {
+            background-color: #02A0FC;
+          }
+
+          .lightLoader {
+            background-color: #4339F2;
+          }
+
+          .redLoader {
+            background-color: #FF3A29;
+          }
+        }
+      }
+    }
+
     .allNotificationCard {
       margin-top: 10px;
       display: flex;
@@ -1374,6 +1506,88 @@ header {
 
     .marginBottomRow {
       margin-bottom: 25px;
+    }
+
+    .privacyTable {
+      .privacyAgentCol {
+        display: flex;
+        gap: 10px;
+
+        align-items: center;
+
+        img {
+          width: 32px;
+          height: 32px;
+        }
+
+        p {
+          margin-bottom: 0;
+          color: #5A5A5F;
+          font-size: 18px;
+        }
+      }
+
+      .privacyStatusCol {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        gap: 10px;
+
+        .activity {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #11D600;
+        }
+
+        p {
+          margin-bottom: 0;
+          color: #5A5A5F;
+          font-size: 18px;
+        }
+
+      }
+
+      .iconsChannel {
+        button {
+          background-color: transparent;
+          border: none;
+        }
+
+        svg {
+          margin-right: 5px;
+          font-size: 20px;
+          color: #5A5A5F;
+
+
+        }
+      }
+
+      .editColumn {
+
+        color: #0B2360;
+        background-color: transparent;
+        border: none;
+
+        svg {
+          font-size: 20px;
+        }
+
+      }
+
+      .privacyPagination {
+        .pagination {
+          gap: 5px;
+
+          li:first-child {
+            width: auto;
+          }
+
+          li:last-child {
+            width: auto;
+          }
+        }
+      }
     }
 
     .communicationTable {

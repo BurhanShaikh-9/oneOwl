@@ -7,5 +7,6 @@ export const ROUTES = {
     SETTINGS: "setting",
     PROFILE: "profile",
     FAQ: "faq",
+    PRIVACY: "privacy",
 
 }

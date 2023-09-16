@@ -781,6 +781,11 @@ header .headerInner .menuButton svg {
 .mainSection .mobileSearch {
   display: none;
 }
+.mainSection .rightSidePrivacyCol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .mainSection .billingTotal {
   height: 100%;
   display: flex;
@@ -1006,6 +1011,102 @@ header .headerInner .menuButton svg {
   padding: 0 10px;
   height: 20px;
 }
+.mainSection .mainSectionWrapper .agentNamePrivacy {
+  display: flex;
+  justify-content: space-between;
+}
+.mainSection .mainSectionWrapper .agentNamePrivacy label {
+  font-size: 22px;
+}
+.mainSection .mainSectionWrapper .agentNamePrivacy span {
+  color: #0B2360;
+  text-align: right;
+  font-size: 40px;
+}
+.mainSection .mainSectionWrapper .usersPrivacyOuter {
+  display: flex;
+  justify-content: space-between;
+}
+.mainSection .mainSectionWrapper .usersPrivacyOuter .usersPrivacy {
+  display: flex;
+  gap: 10px;
+}
+.mainSection .mainSectionWrapper .usersPrivacyOuter .usersPrivacy img {
+  height: 30px;
+  width: 30px;
+}
+.mainSection .mainSectionWrapper .usersPrivacyOuter .usersPrivacy .svgPrivacy {
+  color: white;
+  background-color: #0B2360;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.mainSection .mainSectionWrapper .usersPrivacyOuter .showMoreButton {
+  background-color: transparent;
+  color: #0B2360;
+  border: none;
+}
+.mainSection .mainSectionWrapper .agentNamePara {
+  font-size: 14px;
+  color: rgb(82, 82, 82);
+  margin-bottom: 10px;
+}
+.mainSection .mainSectionWrapper .privacySummary h6 {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.mainSection .mainSectionWrapper .privacySummary .summaryContainer {
+  padding-right: 50px;
+  margin-bottom: 30px;
+}
+.mainSection .mainSectionWrapper .privacySummary .summaryContainer .yellowOpacity {
+  background-color: rgba(255, 179, 0, 0.231372549);
+}
+.mainSection .mainSectionWrapper .privacySummary .summaryContainer .lightOpacity {
+  background-color: rgba(66, 57, 242, 0.2196078431);
+}
+.mainSection .mainSectionWrapper .privacySummary .summaryContainer .blueOpacity {
+  background-color: rgba(2, 160, 252, 0.2274509804);
+}
+.mainSection .mainSectionWrapper .privacySummary .summaryContainer .redOpacity {
+  background-color: rgba(255, 59, 41, 0.2039215686);
+}
+.mainSection .mainSectionWrapper .privacySummary .summaryContainer .labelContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.mainSection .mainSectionWrapper .privacySummary .summaryContainer .yellow {
+  color: #FFB200;
+}
+.mainSection .mainSectionWrapper .privacySummary .summaryContainer .blue {
+  color: #02A0FC;
+}
+.mainSection .mainSectionWrapper .privacySummary .summaryContainer .light {
+  color: #4339F2;
+}
+.mainSection .mainSectionWrapper .privacySummary .summaryContainer .red {
+  color: #FF3A29;
+}
+.mainSection .mainSectionWrapper .privacySummary .summaryContainer .progress {
+  height: 8px;
+  margin-top: 5px;
+}
+.mainSection .mainSectionWrapper .privacySummary .summaryContainer .progress .yellowLoader {
+  background-color: #FFB200;
+}
+.mainSection .mainSectionWrapper .privacySummary .summaryContainer .progress .blueLoader {
+  background-color: #02A0FC;
+}
+.mainSection .mainSectionWrapper .privacySummary .summaryContainer .progress .lightLoader {
+  background-color: #4339F2;
+}
+.mainSection .mainSectionWrapper .privacySummary .summaryContainer .progress .redLoader {
+  background-color: #FF3A29;
+}
 .mainSection .mainSectionWrapper .allNotificationCard {
   margin-top: 10px;
   display: flex;
@@ -1136,6 +1237,63 @@ header .headerInner .menuButton svg {
 }
 .mainSection .mainSectionWrapper .marginBottomRow {
   margin-bottom: 25px;
+}
+.mainSection .mainSectionWrapper .privacyTable .privacyAgentCol {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.mainSection .mainSectionWrapper .privacyTable .privacyAgentCol img {
+  width: 32px;
+  height: 32px;
+}
+.mainSection .mainSectionWrapper .privacyTable .privacyAgentCol p {
+  margin-bottom: 0;
+  color: #5A5A5F;
+  font-size: 18px;
+}
+.mainSection .mainSectionWrapper .privacyTable .privacyStatusCol {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 10px;
+}
+.mainSection .mainSectionWrapper .privacyTable .privacyStatusCol .activity {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #11D600;
+}
+.mainSection .mainSectionWrapper .privacyTable .privacyStatusCol p {
+  margin-bottom: 0;
+  color: #5A5A5F;
+  font-size: 18px;
+}
+.mainSection .mainSectionWrapper .privacyTable .iconsChannel button {
+  background-color: transparent;
+  border: none;
+}
+.mainSection .mainSectionWrapper .privacyTable .iconsChannel svg {
+  margin-right: 5px;
+  font-size: 20px;
+  color: #5A5A5F;
+}
+.mainSection .mainSectionWrapper .privacyTable .editColumn {
+  color: #0B2360;
+  background-color: transparent;
+  border: none;
+}
+.mainSection .mainSectionWrapper .privacyTable .editColumn svg {
+  font-size: 20px;
+}
+.mainSection .mainSectionWrapper .privacyTable .privacyPagination .pagination {
+  gap: 5px;
+}
+.mainSection .mainSectionWrapper .privacyTable .privacyPagination .pagination li:first-child {
+  width: auto;
+}
+.mainSection .mainSectionWrapper .privacyTable .privacyPagination .pagination li:last-child {
+  width: auto;
 }
 .mainSection .mainSectionWrapper .communicationTable h6 {
   color: #5A5A5F;

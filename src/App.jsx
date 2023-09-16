@@ -15,6 +15,7 @@ import { Notification } from './Website/pages/Notification/notification';
 import { Settings } from './Website/pages/Settings/settings';
 import { Profile } from './Website/pages/profile/profile';
 import { Faq } from './Website/pages/faq/faq';
+import { Privacy } from './Website/pages/Privacy/privacy';
 
 
 
@@ -32,6 +33,7 @@ function App() {
           <Route path={ROUTES.NOTIFICATION} element={<Notification />} />
           <Route path={ROUTES.SETTINGS} element={<Settings />} />
           <Route path={ROUTES.PROFILE} element={<Profile />} />
+          <Route path={ROUTES.PRIVACY} element={<Privacy />} />
         </Route>
       </Routes>
     </React.Fragment>
