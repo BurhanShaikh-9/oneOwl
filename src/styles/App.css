@@ -97,11 +97,39 @@ a {
   background-color: #fff;
 }
 
+.desktopSearch {
+  width: 100%;
+  max-width: 544px;
+  position: relative;
+}
+
 .searchBarHeader {
   border: 1px solid grey;
   width: 100%;
   max-width: 544px;
   position: relative;
+}
+.searchBarHeader .suggestions {
+  position: absolute;
+  list-style: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  background-color: white;
+  width: 100%;
+  max-height: 230px;
+  overflow-y: auto;
+  z-index: 50;
+  padding-left: 0;
+}
+.searchBarHeader .suggestions li {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  cursor: pointer;
+}
+.searchBarHeader .suggestions li:hover {
+  background-color: #0B2360;
+  color: white;
 }
 .searchBarHeader .searchIcon {
   position: absolute;
@@ -113,6 +141,8 @@ a {
 .searchBarHeader .crossIcon {
   position: absolute;
   top: 50%;
+  background-color: transparent;
+  border: none;
   font-size: 20px;
   right: 20px;
   transform: translate(-50%, -50%);
@@ -538,9 +568,20 @@ header .headerInner .menuButton svg {
   margin-bottom: 10px;
   line-height: 28px;
 }
+.mainSection .addFields .fieldAnchor {
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+.mainSection .addFields .AddInput button {
+  border: 1px solid grey;
+  background-color: transparent;
+}
 .mainSection .addFields .addfieldButton {
   font-size: 20px;
   line-height: 17px;
+  cursor: pointer;
+  border: none;
 }
 .mainSection .addFields .addfieldButton svg {
   margin-bottom: 2px;
@@ -628,6 +669,12 @@ header .headerInner .menuButton svg {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+.mainSection .channels a {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  display: block;
 }
 .mainSection .channels .facebookChannel {
   background-color: #3A589B;
@@ -788,14 +835,18 @@ header .headerInner .menuButton svg {
 }
 .mainSection .rightSidePrivacyCol .rightSidePrivacyCoLbutton {
   background-color: #0B2360;
-  width: 100%;
+  border: none;
   color: white;
+  transition: all 0.1 ease-in;
+  border-radius: 20px;
+  padding: 5px 20px;
+  border-radius: 0;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 38px;
-  vertical-align: middle;
+  cursor: pointer;
+}
+.mainSection .rightSidePrivacyCol .rightSidePrivacyCoLbutton:active {
+  scale: 0.98;
+  opacity: 0.9;
 }
 .mainSection .billingTotal {
   height: 100%;

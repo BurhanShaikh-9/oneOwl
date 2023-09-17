@@ -35,7 +35,7 @@ export const Dashboard = () => {
         strokeWidth: 1,
       },
       {
-        name: 'Tomorrow',
+        name: 'Yesterday',
         data: [0, 3, 8, 2, 1, 7],
       },
       {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import BodyComponent from '../../components/bodyComponent'
 import StatsBar from '../../components/stats'
 import { BsTelephoneFill } from 'react-icons/bs'
@@ -11,6 +11,22 @@ import { AiFillTwitterCircle } from 'react-icons/ai'
 
 
 const Communication = () => {
+    const [agentList, setAgentList] = useState([
+        { agentImage: ProfileImg, agentName: 'agent1' },
+        { agentImage: ProfileImg, agentName: 'agent2' },
+        { agentImage: ProfileImg, agentName: 'agent3' },
+        { agentImage: ProfileImg, agentName: 'agent4' },
+        { agentImage: ProfileImg, agentName: 'agent5' },
+        { agentImage: ProfileImg, agentName: 'agent6' },
+        { agentImage: ProfileImg, agentName: 'agent7' },
+    ])
+
+    const [searchTerm, setSearchTerm] = useState('');
+
+    // Function to filter agents based on search term
+    const filteredAgents = agentList.filter((agent) =>
+        agent.agentName.toLowerCase().includes(searchTerm.toLowerCase())
+    );
     return (
         <React.Fragment>
             <BodyComponent>
@@ -21,41 +37,17 @@ const Communication = () => {
                             <div className="card-body">
                                 <div className='searchBar2'>
                                     <CiSearch className='searchIcon' />
-                                    <input type="text" name="" placeholder='Seach Contacts' id="" />
+                                    <input type="text" name="" placeholder='Seach Contacts' id="" value={searchTerm}
+                                        onChange={(e) => setSearchTerm(e.target.value)} />
                                 </div>
                                 <ul className='agentList'>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
+                                    {filteredAgents.map((item, keyId) => (
+                                        <li key={keyId}>
+                                            <img src={item.agentImage} alt="" />
+                                            <p>{item.agentName}</p>
+                                        </li>
+                                    ))}
+
                                 </ul>
                             </div>
                         </div>
@@ -96,9 +88,9 @@ const Communication = () => {
                                 </h6>
                             </div>
                             <ul className='channels'>
-                                <li className='facebookChannel'><FaFacebook /> <span>Facebook</span></li>
-                                <li className='whatsappChannel'> <FaWhatsapp /> <span>Whatsapp</span> </li>
-                                <li className='twitterChannel'> <AiFillTwitterCircle /> <span>Twitter</span> </li>
+                                <li className='facebookChannel'><a href="https://www.facebook.com/ " target="_blank"><FaFacebook /> <span>Facebook</span></a></li>
+                                <li className='whatsappChannel'><a href="https://www.whatsapp.com/" target="_blank"> <FaWhatsapp /> <span>Whatsapp</span></a> </li>
+                                <li className='twitterChannel'><a href="https://www.twitter.com/" target="_blank"> <AiFillTwitterCircle /> <span>Twitter</span> </a> </li>
                             </ul>
                         </div>
                     </div>

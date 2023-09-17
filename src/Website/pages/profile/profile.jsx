@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import BodyComponent from '../../components/bodyComponent'
 import ProfileImg from '../../../assets/images/guy.png'
 import { BsFillCameraFill } from 'react-icons/bs'
+import { BiLinkAlt } from 'react-icons/bi'
 import { AiFillPlusCircle, AiFillTwitterCircle, AiFillLinkedin } from 'react-icons/ai'
 import { SiFacebook } from 'react-icons/si'
 
@@ -20,31 +21,54 @@ export const Profile = () => {
             // You can perform further actions with the selected file here
         }
     };
-    const [formSubmitted, setFormSubmitted ] = useState(false)
+    const [formSubmitted, setFormSubmitted] = useState(false)
     const [userData, setUserData] = useState({
-        email:'',
-        phone:''
+        email: '',
+        phone: ''
     });
 
 
     const [userEmail, setUserEmail] = useState('')
     const [userPhone, setUserPhone] = useState('')
 
-    const getInput = (e) =>{
-        setUserData({...userData, [e.target.name]: e.target.value})
+    const getInput = (e) => {
+        setUserData({ ...userData, [e.target.name]: e.target.value })
     }
 
 
-    const onFormSubmit = (e) =>{
+    const onFormSubmit = (e) => {
         e.preventDefault()
         setFormSubmitted(true)
-        if( userData.email){
+        if (userData.email) {
             setUserEmail(userData.email)
         }
-        if( userData.phone){
+        if (userData.phone) {
             setUserPhone(userData.phone)
         }
     }
+
+
+
+    
+
+    const [addPhone, setAddPhone] = useState(false)
+    const [addEmail, setAddEmail] = useState(false)
+    const [addSocial, setAddSocial] = useState(false)
+
+    const [removeEmail, setremoveEmail] = useState(true)
+    const [removePhone, setremovePhone] = useState(true)
+    const [removeSocial, setremoveSocial] = useState(true)
+
+    const [addPhoneVal, setAddPhoneVal] = useState('')
+    const [addEmailVal, setAddEmailVal] = useState('')
+    const [addSocialVal, setAddSocialVal] = useState('')
+
+    const [addedEmail, setAddedEmail] = useState(false)
+    const [addedPhone, setAddedPhone] = useState(false)
+    const [addedSocial, setAddedSocial] = useState(false)
+
+
+
     return (
         <React.Fragment>
             <BodyComponent>
@@ -136,35 +160,82 @@ export const Profile = () => {
                             <h5 className='formHeading5 addFieldMargin'>Contact Info</h5>
                             <div className="addFields addFieldMargin">
                                 <p className='fieldHead'>Email</p>
-                                <p className='fieldVal'> {userEmail ? userEmail : `xyz@email.com` }</p>
-                                <div className="addfieldButton">
-                                    <AiFillPlusCircle />
-                                    <span>
-                                        Add Email
-                                    </span>
-                                </div>
+                                <p className='fieldVal'> {userEmail ? userEmail : `xyz@email.com`}</p>
+                                {
+                                    addedEmail &&
+                                    <p className='fieldVal'> {addEmailVal} </p>
+                                }
+
+                                {removeEmail && <>
+
+                                    {addEmail ?
+                                        <div className="AddInput">
+                                            <input type="email" value={addEmailVal} onChange={(e) => setAddEmailVal(e.target.value)} />
+                                            <button onClick={() => { setAddedEmail(true), setremoveEmail(false) }}>Add</button>
+                                        </div>
+                                        :
+                                        <button className="addfieldButton" onClick={() => setAddEmail(true)}>
+                                            <AiFillPlusCircle />
+                                            <span>
+                                                Add Email
+                                            </span>
+                                        </button>
+                                    }
+                                </>}
+
                             </div>
                             <div className="addFields addFieldMargin">
                                 <p className='fieldHead'>Phone</p>
-                                <p className='fieldVal'> {userPhone ? userPhone : `123456789` } </p>
-                                <div className="addfieldButton">
-                                    <AiFillPlusCircle />
-                                    <span>
-                                        Add Phone Number
-                                    </span>
-                                </div>
+                                <p className='fieldVal'> {userPhone ? userPhone : `123456789`} </p>
+                                {
+                                    addedPhone &&
+                                    <p className='fieldVal'> {addPhoneVal} </p>
+                                }
+                                {removePhone && <>
+
+                                    {addPhone ?
+                                        <div className="AddInput">
+                                            <input type="number" value={addPhoneVal} onChange={(e) => setAddPhoneVal(e.target.value)} />
+                                            <button onClick={() => { setAddedPhone(true), setremovePhone(false) }}>Add</button>
+                                        </div>
+
+                                        :
+                                        <button className="addfieldButton" onClick={() => setAddPhone(true)}>
+                                            <AiFillPlusCircle />
+                                            <span>
+                                                Add Phone Number
+                                            </span>
+                                        </button>
+                                    }
+                                </>
+                                }
                             </div>
                             <div className="addFields addFieldMargin">
                                 <p className='fieldHead'>Social Links</p>
-                                <p className='fieldVal fieldValNo'><SiFacebook style={{ color: '#1877F2' }} /> www.facebook.com</p>
-                                <p className='fieldVal fieldValNo'><AiFillTwitterCircle style={{ color: '#26a7de ' }} /> www.facebook.com</p>
-                                <p className='fieldVal'><AiFillLinkedin style={{ color: '#1877F2' }} /> www.facebook.com</p>
-                                <div className="addfieldButton">
-                                    <AiFillPlusCircle />
-                                    <span>
-                                        Add Social Link
-                                    </span>
-                                </div>
+                                {
+                                    addedSocial &&
+                                    < a className='fieldVal fieldAnchor fieldValNo' href={`${addSocialVal}`} target="_blank"><BiLinkAlt />{addSocialVal} </a>
+                                }
+                                <a className='fieldVal fieldAnchor fieldValNo' href='https://www.facebook.com/' target="_blank"><SiFacebook style={{ color: '#1877F2' }} /> www.facebook.com</a>
+                                <a className='fieldVal fieldAnchor fieldValNo' href='https://www.twitter.com/' target="_blank"><AiFillTwitterCircle style={{ color: '#26a7de ' }} /> www.twitter.com</a>
+                                <a className='fieldVal fieldAnchor' href='https://www.linkedin.com/' target="_blank"><AiFillLinkedin style={{ color: '#1877F2' }} />  www.LinkedIn.com</a>
+
+                                {removeSocial && <>
+                                    {addSocial ?
+                                        <div className="AddInput">
+                                            <input type="text" value={addSocialVal} onChange={(e) => setAddSocialVal(e.target.value)} />
+                                            <button onClick={() => { setAddedSocial(true), setremoveSocial(false) }}>Add</button>
+                                        </div>
+                                        :
+                                        <button className="addfieldButton" onClick={() => setAddSocial(true)}>
+                                            <AiFillPlusCircle />
+                                            <span>
+                                                Add Social Link
+                                            </span>
+                                        </button>
+                                    }
+                                </>}
+
                             </div>
 
 
@@ -174,6 +245,6 @@ export const Profile = () => {
 
                 </div>
             </BodyComponent>
-        </React.Fragment>
+        </React.Fragment >
     )
 }

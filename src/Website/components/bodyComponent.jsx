@@ -9,7 +9,10 @@ const BodyComponent = ({ children }) => {
                 <div className="mainSectionWrapper">
 
                     <div className="mainSectionInner">
-                        <SearchBar />
+                        
+                        <div className='mobileSearch'>
+                            <SearchBar />
+                        </div>
                         {children}
                     </div>
                 </div>

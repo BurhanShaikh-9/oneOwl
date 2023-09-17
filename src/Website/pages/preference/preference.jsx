@@ -12,6 +12,35 @@ import ProfileImg from '../../../assets/images/guy.png'
 
 const Prefernce = () => {
     const [isDropDown, setIsDropDown] = useState(false);
+
+    const [agentList, setAgentList] = useState([
+        { agentImage: ProfileImg, agentName: 'agent1' },
+        { agentImage: ProfileImg, agentName: 'agent2' },
+        { agentImage: ProfileImg, agentName: 'agent3' },
+        { agentImage: ProfileImg, agentName: 'agent4' },
+        { agentImage: ProfileImg, agentName: 'agent5' },
+        { agentImage: ProfileImg, agentName: 'agent6' },
+        { agentImage: ProfileImg, agentName: 'agent7' },
+        { agentImage: ProfileImg, agentName: 'agent8' },
+        { agentImage: ProfileImg, agentName: 'agent9' },
+        { agentImage: ProfileImg, agentName: 'agent10' },
+        { agentImage: ProfileImg, agentName: 'agent11' },
+        { agentImage: ProfileImg, agentName: 'agent12' },
+        { agentImage: ProfileImg, agentName: 'agent13' },
+        { agentImage: ProfileImg, agentName: 'agent14' },
+        { agentImage: ProfileImg, agentName: 'agent15' },
+        { agentImage: ProfileImg, agentName: 'agent16' },
+        { agentImage: ProfileImg, agentName: 'agent17' },
+        { agentImage: ProfileImg, agentName: 'agent18' },
+    ])
+
+    const [searchTerm, setSearchTerm] = useState('');
+
+    // Function to filter agents based on search term
+    const filteredAgents = agentList.filter((agent) =>
+        agent.agentName.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return (
         <React.Fragment>
 
@@ -33,9 +62,9 @@ const Prefernce = () => {
                                                 {
                                                     isDropDown &&
                                                     <ul className="dropdownMenu">
-                                                        <li><a className="dropdown-item active" href="#">Facebook</a></li>
-                                                        <li><a className="dropdown-item" href="#">Twitter</a></li>
-                                                        <li><a className="dropdown-item" href="#">Whatsapp</a></li>
+                                                        <li><a className="dropdown-item active" href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                                                        <li><a className="dropdown-item" href="https://twitter.com/" target="_blank">Twitter</a></li>
+                                                        <li><a className="dropdown-item" href="https://www.whatsapp.com/" target="_blank">Whatsapp</a></li>
                                                         <li><a className="dropdown-item" href="#">Live Chats</a></li>
                                                     </ul>
                                                 }
@@ -282,129 +311,16 @@ const Prefernce = () => {
                                 </div>
                                 <div className='searchBar2'>
                                     <CiSearch className='searchIcon' />
-                                    <input type="text" name="" placeholder='Seach Contacts' id="" />
+                                    <input type="text" name="" placeholder='Seach Contacts' id="" value={searchTerm}
+                                        onChange={(e) => setSearchTerm(e.target.value)} />
                                 </div>
                                 <ul className='agentList agentPreference'>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
+                                {filteredAgents.map((item, keyId) => (
+                                        <li key={keyId}>
+                                        <img src={item.agentImage} alt="" />
+                                        <p>{item.agentName}</p>
                                     </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
-                                    <li>
-                                        <img src={ProfileImg} alt="" />
-                                        <p>Agent Name</p>
-                                    </li>
+                                ))}
                                 </ul>
                             </div>
                         </div>

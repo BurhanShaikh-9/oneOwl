@@ -11,7 +11,22 @@ export const Faq = () => {
 
     const [currentPage, setCurrentPage] = useState(0); // Current page state
     const perPage = 4; // Number of items per page
-    const data = Array.from({ length: 30 }, (_, index) => `Item ${index + 1}`); // Sample data array
+    // const data = Array.from({ length: 30 }, (_, index) => `Item ${index + 1}`); 
+    const [data, setData] = useState([
+        {question: 'what is oneOwl?', answer: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, error.'},
+        {question: 'how we work?', answer: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, error.'},
+        {question: 'how we provide service?', answer: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, error.'},
+        {question: 'where we are located?', answer: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, error.'},
+        {question: 'how we insure security?', answer: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, error.'},
+        {question: 'what our aimbition?', answer: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, error.'},
+        {question: 'are we available 24 hours?', answer: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, error.'},
+    ])
+
+    const clearItem = (index) => {
+        const newData = [...data];
+        newData.splice(index, 1);
+        setData(newData);
+    };
 
     // Function to handle page change
     const handlePageChange = (selectedPage) => {
@@ -55,7 +70,7 @@ export const Faq = () => {
                                         </div>
                                     </div>
                                     <div className="faqHeaderRight">
-                                        <button className='clear'>Clear</button>
+                                        <button className='clear' onClick={()=> clearItem(keyId)}>Clear</button>
                                         <button className='view' onClick={() => toggleIsEdit(keyId)}>View</button>
                                     </div>
                                 </div>
@@ -65,11 +80,11 @@ export const Faq = () => {
                                         <div className="accordion-item">
                                             <h2 className="accordion-header">
                                                 <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#flush-collapseOne${keyId}`} aria-expanded="false" aria-controls={`flush-collapseOne${keyId}`}>
-                                                    What One Owl is ?
+                                                    {item.question}
                                                 </button>
                                             </h2>
                                             <div id={`flush-collapseOne${keyId}`} className="accordion-collapse collapse" data-bs-parent={`#accordionFlushExample-${keyId}`}>
-                                                <div className="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sed quod quidem vitae tenetur illum placeat eligendi doloribus neque aspernatur.</div>
+                                                <div className="accordion-body">{item.answer}</div>
                                             </div>
                                         </div>
                                     </div>

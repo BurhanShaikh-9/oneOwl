@@ -11,6 +11,7 @@ import { RxCross1 } from 'react-icons/rx';
 import { CgMenuLeft } from 'react-icons/cg';
 import { ROUTES } from '../../../utils/routes';
 import logoImg from '../../assets/images/logo/logo.png'
+import SearchBar from './searchBar';
 // import AuthService from '../../----services/auth.service';
 
 
@@ -38,11 +39,16 @@ export const Header = (props) => {
             <img src={logoImg} alt="" />
           </div>
 
-          <div className="searchBarHeader desktopSearch">
+          {/* <div className="searchBarHeader desktopSearch">
             <CiSearch className='searchIcon'/>
             <input type="text" name="" placeholder='Seach' id="" />
             <RxCross1 className='crossIcon'/>
-          </div>
+          </div> */}
+
+<div className='desktopSearch'>
+
+          <SearchBar/>
+</div>
 
           <div className="navRight">
             <div className="dropdown profileDropDown">
