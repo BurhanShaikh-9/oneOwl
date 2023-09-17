@@ -942,6 +942,7 @@ header .headerInner .menuButton svg {
   max-width: 390px;
 }
 .mainSection .mainSectionWrapper .billingMain .checkBoxesBilling .checkboxBill {
+  accent-color: #0B2360;
   display: flex;
   gap: 2px;
 }
