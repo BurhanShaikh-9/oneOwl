@@ -167,9 +167,9 @@ export const Privacy = () => {
                                             <img src={profileImg} alt="" />
                                             <img src={profileImg} alt="" />
                                             <img src={profileImg} alt="" />
-                                            <div className="svgPrivacy">
+                                            {/* <div className="svgPrivacy">
                                                 <AiOutlinePlus />
-                                            </div>
+                                            </div> */}
                                         </div>
                                         <button className='showMoreButton'>Show more</button>
                                     </div>
@@ -190,9 +190,9 @@ export const Privacy = () => {
                                             <img src={profileImg} alt="" />
                                             <img src={profileImg} alt="" />
                                             <img src={profileImg} alt="" />
-                                            <div className="svgPrivacy">
+                                            {/* <div className="svgPrivacy">
                                                 <AiOutlinePlus />
-                                            </div>
+                                            </div> */}
                                         </div>
                                         <button className='showMoreButton'>Show more</button>
                                     </div>
@@ -213,9 +213,9 @@ export const Privacy = () => {
                                             <img src={profileImg} alt="" />
                                             <img src={profileImg} alt="" />
                                             <img src={profileImg} alt="" />
-                                            <div className="svgPrivacy">
+                                            {/* <div className="svgPrivacy">
                                                 <AiOutlinePlus />
-                                            </div>
+                                            </div> */}
                                         </div>
                                         <button className='showMoreButton'>Show more</button>
                                     </div>
