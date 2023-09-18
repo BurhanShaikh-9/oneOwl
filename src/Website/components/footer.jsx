@@ -1,33 +1,41 @@
 import React from 'react'
-import {AiOutlineUser} from 'react-icons/ai'
+import { AiOutlineUser } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
-import {LiaEdit, LiaListAltSolid} from 'react-icons/lia'
-import {BsQuestionCircle} from 'react-icons/bs'
-import {GoHome} from 'react-icons/go'
-import {LuLogOut} from 'react-icons/lu'
-import {IoNotificationsOutline , IoSettingsOutline} from 'react-icons/io5'
+import { LiaEdit, LiaListAltSolid } from 'react-icons/lia'
+import { BsQuestionCircle } from 'react-icons/bs'
+import { GoHome } from 'react-icons/go'
+import { LuLogOut } from 'react-icons/lu'
+import { IoNotificationsOutline, IoSettingsOutline } from 'react-icons/io5'
 import { ROUTES } from '../../../utils/routes'
+import { LogoutDialog } from './LogoutDialog'
+import { useState } from 'react'
 
 export const Footer = () => {
+    
+    const [logoutModalOpen, setLogoutModalOpen] = useState(false);
     return (
-        <footer className='footer2'>
+        <React.Fragment>
+
+            <footer className='footer2'>
                 <div className="footer">
-                        <Link to={ROUTES.PROFILE}>
-                            <AiOutlineUser/>
-                        </Link>
-                        <Link to={ROUTES.SETTINGS}>
-                            <IoSettingsOutline/>
-                        </Link>
-                        <Link >
-                            <BsQuestionCircle/>
-                        </Link>
-                        <Link >
-                            <LuLogOut/>
-                        </Link>
-                        <Link to={ROUTES.NOTIFICATION}>
-                            <IoNotificationsOutline/>
-                        </Link>
+                    <Link to={ROUTES.PROFILE}>
+                        <AiOutlineUser />
+                    </Link>
+                    <Link to={ROUTES.SETTINGS}>
+                        <IoSettingsOutline />
+                    </Link>
+                    <Link to={ROUTES.FAQ}>
+                        <BsQuestionCircle />
+                    </Link>
+                    <Link >
+                        <LuLogOut onClick={()=>setLogoutModalOpen(true)}/>
+                    </Link>
+                    <Link to={ROUTES.NOTIFICATION}>
+                        <IoNotificationsOutline />
+                    </Link>
                 </div>
-        </footer>
+            </footer>
+            <LogoutDialog  isOpen={logoutModalOpen} />
+        </React.Fragment>
     )
 }

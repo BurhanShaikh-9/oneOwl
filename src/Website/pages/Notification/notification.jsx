@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import BodyComponent from '../../components/bodyComponent'
-import { AiOutlineWarning } from 'react-icons/ai'
+import { AiOutlineClose, AiOutlineWarning } from 'react-icons/ai'
 import ReactPaginate from 'react-paginate';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
 
@@ -8,11 +8,26 @@ export const Notification = () => {
 
 
 
-    const [currentPage, setCurrentPage] = useState(0); // Current page state
-    const perPage = 4; // Number of items per page
-    // const data = Array.from({ length: 30 }, (_, index) => `Item ${index + 1}`); 
-    // const [data, setData] = useState(Array.from({ length: 30 }, (_, index) => `Item ${index + 1}`));
 
+    function getCurrentTime() {
+        const now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+
+        if (minutes < 10) {
+            minutes = `0${minutes}`;
+        }
+        const formattedTime = `${hours}:${minutes} ${ampm}`;
+        return formattedTime;
+    }
+    const currentTime = getCurrentTime();
+
+    const [currentPage, setCurrentPage] = useState(0);
+    const perPage = 4;
 
     const [data, setData] = useState([
         {
@@ -76,6 +91,19 @@ export const Notification = () => {
     };
 
 
+
+    const [selectedItemHeader, setSelectedItemHeader] = useState("");
+    const [selectedItemBody, setSelectedItemBody] = useState("");
+    const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
+    const openModal = () => {
+        setIsLogoutModalOpen(true);
+    };
+
+
+    const closeModal = () => {
+        setIsLogoutModalOpen(false);
+    };
+
     return (
         <React.Fragment>
             <BodyComponent>
@@ -94,7 +122,7 @@ export const Notification = () => {
                                         <AiOutlineWarning />
                                         {item.notificationHeader}
                                     </h6>
-                                    <span>hh:mm AM/PM</span>
+                                    <span>{currentTime}</span>
                                 </div>
                                 <div className="mainListPara">
                                     {item.notificationBody}
@@ -104,7 +132,11 @@ export const Notification = () => {
                                     <button className="clear" onClick={() => clearItem(keyId)}>
                                         Clear
                                     </button>
-                                    <button className="View">
+                                    <button className="View" onClick={() => {
+                                        setSelectedItemHeader(item.notificationHeader);
+                                        setSelectedItemBody(item.notificationBody);
+                                        openModal();
+                                    }}>
                                         View
                                     </button>
                                 </div>
@@ -130,6 +162,19 @@ export const Notification = () => {
                     />
                 }
             </BodyComponent>
+
+            {isLogoutModalOpen && (
+                <dialog id='modalNotification' className='modalLogout' open>
+                    <div className="modalLogoutMain">
+
+                        <button className='modalLogoutButton' onClick={closeModal}>
+                            <AiOutlineClose />
+                        </button>
+                        <p className='headerNotify'>  <AiOutlineWarning /> {selectedItemHeader}</p>
+                        <p>{selectedItemBody}</p>
+                    </div>
+                </dialog>
+            )}
         </React.Fragment>
     )
 }

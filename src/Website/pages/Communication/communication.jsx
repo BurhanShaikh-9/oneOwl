@@ -27,6 +27,12 @@ const Communication = () => {
     const filteredAgents = agentList.filter((agent) =>
         agent.agentName.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+    const [selectedAgent, setSelectedAgent] = useState('');
+
+
+
+
     return (
         <React.Fragment>
             <BodyComponent>
@@ -43,8 +49,10 @@ const Communication = () => {
                                 <ul className='agentList'>
                                     {filteredAgents.map((item, keyId) => (
                                         <li key={keyId}>
-                                            <img src={item.agentImage} alt="" />
-                                            <p>{item.agentName}</p>
+                                             <button onClick={() => setSelectedAgent(item.agentName)}>
+                                                <img src={item.agentImage} alt="" />
+                                                <p>{item.agentName}</p>
+                                            </button>
                                         </li>
                                     ))}
 
@@ -59,7 +67,7 @@ const Communication = () => {
                                     <div className='communicationHeader'>
                                         <div className="communicationAbout">
                                             <img src={ProfileImg} alt="" />
-                                            <span>Agent Name</span>
+                                            <span>{selectedAgent || 'Agent Name'}</span>
                                         </div>
                                         <div className="communicationControls">
                                             <BsTelephoneFill />

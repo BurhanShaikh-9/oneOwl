@@ -12,18 +12,22 @@ import { CgMenuLeft } from 'react-icons/cg';
 import { ROUTES } from '../../../utils/routes';
 import logoImg from '../../assets/images/logo/logo.png'
 import SearchBar from './searchBar';
+import { UserNameContext } from '../../services/contextFile';
 // import AuthService from '../../----services/auth.service';
 
 
 export const Header = (props) => {
+  
   const navigate = useNavigate();
 
   const { sideBar, setSideBar } = useContext(SidebarContext)
+
+  const userNameTrash = useContext(UserNameContext);
   // const {userLogout } = AuthService();
 
   useEffect(() => {
-    console.log(sideBar, 'sidebarHeader');
-  }, [sideBar])
+    console.log(userNameTrash, 'sidebarHeader');
+  }, [userNameTrash])
 
 
 
@@ -35,9 +39,9 @@ export const Header = (props) => {
             <CgMenuLeft />
           </button>
 
-          <div className="logoImage">
+          <Link className="logoImage" to={ROUTES.DASHBOARD}>
             <img src={logoImg} alt="" />
-          </div>
+          </Link>
 
           {/* <div className="searchBarHeader desktopSearch">
             <CiSearch className='searchIcon'/>
@@ -65,7 +69,7 @@ export const Header = (props) => {
             </div>
 
             <div className="aboutDoctor">
-              <p className="doctorName">Admin Name</p>
+              <p className="doctorName">{userNameTrash[0] ? userNameTrash[0] : 'Admin'} {userNameTrash[1] ? userNameTrash[1] : 'Name'}</p>
             </div>
           </div>
         </div>

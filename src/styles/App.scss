@@ -486,6 +486,10 @@ header {
   border: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   z-index: 99999;
+  .headerNotify{
+    color: $base-color;
+    font-weight: 600;
+  }
 
   .modalLogoutMain {
     position: relative;
@@ -625,6 +629,7 @@ header {
     }
   }
 
+
   .formField {
     label {
       display: block;
@@ -651,6 +656,20 @@ header {
       // border: none;
       border-radius: 0;
       padding: 5px 10px;
+    }
+  }
+  .formFieldSelect{margin-top: 25px;}
+
+  .formFieldRelative{
+    position: relative;
+    .inputFieldAbsolute{
+      position: absolute;
+      bottom: -2.5px;
+      left: 27px;
+      transform: translate(-50%, -50%);
+    }
+    .fieldAbsoluteInput{
+      padding-left: 45px;
     }
   }
 
@@ -1481,15 +1500,26 @@ header {
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 5px;
       padding: 0;
       height: 250px;
       overflow-y: auto;
 
       li {
-        display: flex;
-        align-items: center;
-        gap: 13px;
+        button{
+          display: flex;
+          align-items: center;
+          gap: 13px;
+          padding: 5px 0 5px 5px;
+          width: 100%;
+          cursor: pointer;
+          background-color: transparent;
+          border: none;
+          &:hover{
+            background-color:rgb(238, 238, 238);
+          }
+
+        }
 
         img {
           width: 32px;
@@ -1723,6 +1753,7 @@ header {
         input {
           background-color: #F8F8F8;
           width: 100%;
+          padding-right: 70px;
           height: 100%;
           border: none;
         }

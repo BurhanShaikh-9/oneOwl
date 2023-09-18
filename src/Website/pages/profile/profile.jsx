@@ -5,11 +5,12 @@ import { BsFillCameraFill } from 'react-icons/bs'
 import { BiLinkAlt } from 'react-icons/bi'
 import { AiFillPlusCircle, AiFillTwitterCircle, AiFillLinkedin } from 'react-icons/ai'
 import { SiFacebook } from 'react-icons/si'
+import { useEffect } from 'react'
 
 
-export const Profile = () => {
+export const Profile = ({ getUserNameVal, getUserLastVal }) => {
     const [isHovered, setIsHovered] = useState(false);
-
+    const [useProfileImg, setUserProfileImg] = useState('')
     const fileInputRef = useRef(null);
     const handleImageClick = () => {
         fileInputRef.current.click();
@@ -17,8 +18,11 @@ export const Profile = () => {
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
         if (selectedFile) {
-            alert(`Selected file: ${selectedFile.name}`);
-            // You can perform further actions with the selected file here
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                setUserProfileImg(event.target.result);
+            };
+            reader.readAsDataURL(selectedFile);
         }
     };
     const [formSubmitted, setFormSubmitted] = useState(false)
@@ -45,11 +49,21 @@ export const Profile = () => {
         if (userData.phone) {
             setUserPhone(userData.phone)
         }
+
+
+
+        if(UserNameState){
+            getUserNameVal(UserNameState)
+        }
+        if(UserLastState){
+            getUserLastVal(UserLastState)
+        }
     }
 
 
 
-    
+   
+
 
     const [addPhone, setAddPhone] = useState(false)
     const [addEmail, setAddEmail] = useState(false)
@@ -66,6 +80,22 @@ export const Profile = () => {
     const [addedEmail, setAddedEmail] = useState(false)
     const [addedPhone, setAddedPhone] = useState(false)
     const [addedSocial, setAddedSocial] = useState(false)
+
+    const [userNum, setUserNum] = useState('')
+
+
+    const [UserNameState, setUserNameState] = useState('');
+    const [UserLastState, setUserLastState] = useState('');
+
+    // useEffect(() => {
+    //     getUserNameVal(UserNameState)
+    // }, [UserNameState])
+   
+    // useEffect(() => {
+    //     getUserLastVal(UserLastState)
+    // }, [UserLastState])
+
+
 
 
 
@@ -86,7 +116,7 @@ export const Profile = () => {
                                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 " align="center">
                                     <div className="profileImg" onClick={handleImageClick}>
                                         <BsFillCameraFill className="camera-icon" />
-                                        <img src={ProfileImg} alt="" />
+                                        <img src={useProfileImg || ProfileImg} alt="" />
                                         <input type="file" ref={fileInputRef} onChange={handleFileChange} />
                                     </div>
                                 </div>
@@ -96,13 +126,13 @@ export const Profile = () => {
                                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
                                     <div className="formField">
                                         <label htmlFor="">First Name</label>
-                                        <input type="text" placeholder='First Name' />
+                                        <input type="text" placeholder='First Name' onChange={(e)=>{setUserNameState(e.target.value)}} />
                                     </div>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
                                     <div className="formField">
                                         <label htmlFor="">Last Name</label>
-                                        <input type="text" placeholder='Last Name' />
+                                        <input type="text" placeholder='Last Name' onChange={(e)=>{setUserLastState(e.target.value)}} />
                                     </div>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
@@ -118,35 +148,41 @@ export const Profile = () => {
                                     </div>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
-                                    <div className="formField">
+                                    <div className="formField formFieldRelative">
                                         <label htmlFor="">Contact Number</label>
-                                        <input type="number" placeholder='03xxxxxxxx' name='phone' onChange={getInput} />
+                                        {
+                                            userNum &&
+                                            <div className="inputFieldAbsolute">
+                                                (+1)
+                                            </div>
+                                        }
+                                        <input className={userNum && 'fieldAbsoluteInput'} type="number" placeholder='(+1) xxxxxxxx' name='phone' onChange={(e) => setUserNum(e.target.value)} />
+                                    </div>
+                                </div>
+                                <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                                    <div className="formField">
+                                        <label htmlFor="">Pasword</label>
+                                        <input type="password" placeholder='****' />
                                     </div>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
-                                    <div className="formField">
-                                        <label htmlFor="">City</label>
+                                    <div className="formField formFieldSelect">
+                                        {/* <label htmlFor="">City</label> */}
                                         <select name="" id="">
-                                            <option value="">Select</option>
+                                            <option value="">Select your City</option>
                                             <option value="">Seattle</option>
                                             <option value="">Olympia</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
-                                    <div className="formField">
-                                        <label htmlFor="">State</label>
+                                    <div className="formField formFieldSelect">
+                                        {/* <label htmlFor="">State</label> */}
                                         <select name="" id="">
-                                            <option value="">Select</option>
+                                            <option value="">Select your State</option>
                                             <option value="">New York</option>
                                             <option value="">Washington</option>
                                         </select>
-                                    </div>
-                                </div>
-                                <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
-                                    <div className="formField">
-                                        <label htmlFor="">Pasword</label>
-                                        <input type="password" placeholder='03xxxxxxxx' />
                                     </div>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
