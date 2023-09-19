@@ -72,8 +72,16 @@ const Billing = () => {
                                         Summary of Total Placed Orders
                                     </p>
                                     <div className="billingBtnGroup">
-                                        <button className='whiteButton'>Today</button>
-                                        <button className='whiteButton'>Yesterday</button>
+                                        <div className="billBtnGr">
+                                            <input type="radio" id="monthlySubscribe" name="subscriptionPlan" />
+                                            <label htmlFor="monthlySubscribe">Today</label>
+                                        </div>
+                                        <div className="billBtnGr">
+                                            <input type="radio" id="ServiceSubscribe" name="subscriptionPlan" />
+                                            <label htmlFor="ServiceSubscribe">Yesterday</label>
+                                        </div>
+                                        {/* <button className='whiteButton'>Today</button>
+                                        <button className='whiteButton'>Yesterday</button> */}
                                     </div>
                                 </div>
                                 <div className="communicationTable BillingTable">
@@ -252,69 +260,69 @@ const Billing = () => {
                                     <h6>Place Your Order</h6>
                                     <div className="row g-4">
 
-                                    <div className="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
-                                        <h6>
-                                            Select your Agent you want to talk with
-                                        </h6>
-                                        <div className="billingMainInner">
+                                        <div className="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
+                                            <h6>
+                                                Select your Agent you want to talk with
+                                            </h6>
+                                            <div className="billingMainInner">
 
-                                            <input className='billingMainSearch' type="text" placeholder='Search' name="" id="" />
-                                            <div className="checkBoxesBilling">
-                                                <div className="checkboxBill">
-                                                    <input type="checkbox" />
-                                                    <label htmlFor="">Live Chat</label>
+                                                <input className='billingMainSearch' type="text" placeholder='Search' name="" id="" />
+                                                <div className="checkBoxesBilling">
+                                                    <div className="checkboxBill">
+                                                        <input type="checkbox" />
+                                                        <label htmlFor="">Live Chat</label>
+                                                    </div>
+                                                    <div className="checkboxBill">
+                                                        <input type="checkbox" />
+                                                        <label htmlFor="">Video Call</label>
+                                                    </div>
+                                                    <div className="checkboxBill">
+                                                        <input type="checkbox" />
+                                                        <label htmlFor="">Voice Call</label>
+                                                    </div>
+                                                    <div className="checkboxBill">
+                                                        <input type="checkbox" />
+                                                        <label htmlFor="">Facebook</label>
+                                                    </div>
+                                                    <div className="checkboxBill">
+                                                        <input type="checkbox" />
+                                                        <label htmlFor="">Whatsapp</label>
+                                                    </div>
+                                                    <div className="checkboxBill">
+                                                        <input type="checkbox" />
+                                                        <label htmlFor="">Twitter</label>
+                                                    </div>
                                                 </div>
-                                                <div className="checkboxBill">
-                                                    <input type="checkbox" />
-                                                    <label htmlFor="">Video Call</label>
-                                                </div>
-                                                <div className="checkboxBill">
-                                                    <input type="checkbox" />
-                                                    <label htmlFor="">Voice Call</label>
-                                                </div>
-                                                <div className="checkboxBill">
-                                                    <input type="checkbox" />
-                                                    <label htmlFor="">Facebook</label>
-                                                </div>
-                                                <div className="checkboxBill">
-                                                    <input type="checkbox" />
-                                                    <label htmlFor="">Whatsapp</label>
-                                                </div>
-                                                <div className="checkboxBill">
-                                                    <input type="checkbox" />
-                                                    <label htmlFor="">Twitter</label>
+                                            </div>
+                                            <div className="billinBtnGroupOtr">
+                                                <div className="billinBtnGroup">
+                                                    <div className="billBtnGr">
+                                                        <input type="radio" id="monthlySubscribe" name="subscriptionPlan" />
+                                                        <label htmlFor="monthlySubscribe">Monthly</label>
+                                                    </div>
+                                                    <div className="billBtnGr">
+                                                        <input type="radio" id="ServiceSubscribe" name="subscriptionPlan" />
+                                                        <label htmlFor="ServiceSubscribe">Per Service</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="billinBtnGroupOtr">
-                                            <div className="billinBtnGroup">
-                                                <div className="billBtnGr">
-                                                    <input type="radio" id="monthlySubscribe" name="subscriptionPlan" />
-                                                    <label htmlFor="monthlySubscribe">Monthly</label>
+                                        <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
+                                            <div className="billingTotal">
+                                                <div className="topBilling">
+                                                    <div className="totalPara">
+                                                        <p>Total Transaction</p>
+                                                        <small>For Monthly</small>
+                                                    </div>
+                                                    <h5>$45</h5>
                                                 </div>
-                                                <div className="billBtnGr">
-                                                    <input type="radio" id="ServiceSubscribe" name="subscriptionPlan" />
-                                                    <label htmlFor="ServiceSubscribe">Per Service</label>
+                                                <div className="bottomBilling">
+                                                    <button>
+                                                        Place Your Order
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
-                                        <div className="billingTotal">
-                                            <div className="topBilling">
-                                                <div className="totalPara">
-                                                    <p>Total Transaction</p>
-                                                    <small>For Monthly</small>
-                                                </div>
-                                                <h5>$45</h5>
-                                            </div>
-                                            <div className="bottomBilling">
-                                                <button>
-                                                    Place Your Order
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
                                     </div>
 
                                 </div>

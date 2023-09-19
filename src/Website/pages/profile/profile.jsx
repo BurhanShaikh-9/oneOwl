@@ -52,34 +52,74 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
 
 
 
-        if(UserNameState){
+        if (UserNameState) {
             getUserNameVal(UserNameState)
         }
-        if(UserLastState){
+        if (UserLastState) {
             getUserLastVal(UserLastState)
         }
     }
 
 
 
-   
+
+    const [addEmailVal, setAddEmailVal] = useState({
+        email1: '',
+        email2: '',
+        email3: '',
+        email4: ''
+    })
+    const [removeEmail, setremoveEmail] = useState(0)
+    const [addEmail1, setAddEmail1] = useState(false)
+    const [addedEmail1, setAddedEmail1] = useState(false)
+    const [addEmail2, setAddEmail2] = useState(false)
+    const [addedEmail2, setAddedEmail2] = useState(false)
+    const [addEmail3, setAddEmail3] = useState(false)
+    const [addedEmail3, setAddedEmail3] = useState(false)
+    const [addEmail4, setAddEmail4] = useState(false)
+    const [addedEmail4, setAddedEmail4] = useState(false)
+    const getEmailVal = (e) => {
+        setAddEmailVal({ ...addEmailVal, [e.target.name]: e.target.value })
+    }
 
 
-    const [addPhone, setAddPhone] = useState(false)
-    const [addEmail, setAddEmail] = useState(false)
-    const [addSocial, setAddSocial] = useState(false)
+    const [addPhoneVal, setAddPhoneVal] = useState({
+        phone1:'',
+        phone2:'',
+        phone3:'',
+        phone4:'',
+    })
+    const [removePhone, setremovePhone] = useState(0)
+    const [addPhone1, setAddPhone1] = useState(false)
+    const [addedPhone1, setAddedPhone1] = useState(false)
+    const [addPhone2, setAddPhone2] = useState(false)
+    const [addedPhone2, setAddedPhone2] = useState(false)
+    const [addPhone3, setAddPhone3] = useState(false)
+    const [addedPhone3, setAddedPhone3] = useState(false)
+    const [addPhone4, setAddPhone4] = useState(false)
+    const [addedPhone4, setAddedPhone4] = useState(false)
+    const getPhoneVal = (e) => {
+        setAddPhoneVal({ ...addPhoneVal, [e.target.name]: e.target.value })
+    }
 
-    const [removeEmail, setremoveEmail] = useState(true)
-    const [removePhone, setremovePhone] = useState(true)
-    const [removeSocial, setremoveSocial] = useState(true)
-
-    const [addPhoneVal, setAddPhoneVal] = useState('')
-    const [addEmailVal, setAddEmailVal] = useState('')
-    const [addSocialVal, setAddSocialVal] = useState('')
-
-    const [addedEmail, setAddedEmail] = useState(false)
-    const [addedPhone, setAddedPhone] = useState(false)
-    const [addedSocial, setAddedSocial] = useState(false)
+    const [addSocialVal, setAddSocialVal] = useState({
+        social1:'',
+        social2:'',
+        social3:'',
+        social4:'',
+    })
+    const [removeSocial, setremoveSocial] = useState(0)
+    const [addSocial1, setAddSocial1] = useState(false)
+    const [addedSocial1, setAddedSocial1] = useState(false)
+    const [addSocial2, setAddSocial2] = useState(false)
+    const [addedSocial2, setAddedSocial2] = useState(false)
+    const [addSocial3, setAddSocial3] = useState(false)
+    const [addedSocial3, setAddedSocial3] = useState(false)
+    const [addSocial4, setAddSocial4] = useState(false)
+    const [addedSocial4, setAddedSocial4] = useState(false)
+    const getSocialVal = (e) => {
+        setAddSocialVal({ ...addSocialVal, [e.target.name]: e.target.value })
+    }
 
     const [userNum, setUserNum] = useState('')
 
@@ -87,13 +127,8 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
     const [UserNameState, setUserNameState] = useState('');
     const [UserLastState, setUserLastState] = useState('');
 
-    // useEffect(() => {
-    //     getUserNameVal(UserNameState)
-    // }, [UserNameState])
-   
-    // useEffect(() => {
-    //     getUserLastVal(UserLastState)
-    // }, [UserLastState])
+
+
 
 
 
@@ -126,13 +161,13 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
                                     <div className="formField">
                                         <label htmlFor="">First Name</label>
-                                        <input type="text" placeholder='First Name' onChange={(e)=>{setUserNameState(e.target.value)}} />
+                                        <input type="text" placeholder='First Name' onChange={(e) => { setUserNameState(e.target.value) }} />
                                     </div>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
                                     <div className="formField">
                                         <label htmlFor="">Last Name</label>
-                                        <input type="text" placeholder='Last Name' onChange={(e)=>{setUserLastState(e.target.value)}} />
+                                        <input type="text" placeholder='Last Name' onChange={(e) => { setUserLastState(e.target.value) }} />
                                     </div>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
@@ -159,12 +194,12 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                         <input className={userNum && 'fieldAbsoluteInput'} type="number" placeholder='(+1) xxxxxxxx' name='phone' onChange={(e) => setUserNum(e.target.value)} />
                                     </div>
                                 </div>
-                                <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                                {/* <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
                                     <div className="formField">
                                         <label htmlFor="">Pasword</label>
                                         <input type="password" placeholder='****' />
                                     </div>
-                                </div>
+                                </div> */}
                                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
                                     <div className="formField formFieldSelect">
                                         {/* <label htmlFor="">City</label> */}
@@ -198,19 +233,79 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                 <p className='fieldHead'>Email</p>
                                 <p className='fieldVal'> {userEmail ? userEmail : `xyz@email.com`}</p>
                                 {
-                                    addedEmail &&
-                                    <p className='fieldVal'> {addEmailVal} </p>
+                                    addedEmail1 &&
+                                    <p className='fieldVal'> {addEmailVal.email1} </p>
+                                }
+                                {
+                                    addedEmail2 &&
+                                    <p className='fieldVal'> {addEmailVal.email2} </p>
+                                }
+                                {
+                                    addedEmail3 &&
+                                    <p className='fieldVal'> {addEmailVal.email3} </p>
+                                }
+                                {
+                                    addedEmail4 &&
+                                    <p className='fieldVal'> {addEmailVal.email4} </p>
                                 }
 
-                                {removeEmail && <>
+                                {removeEmail == 0 && <>
 
-                                    {addEmail ?
+                                    {addEmail1 ?
                                         <div className="AddInput">
-                                            <input type="email" value={addEmailVal} onChange={(e) => setAddEmailVal(e.target.value)} />
-                                            <button onClick={() => { setAddedEmail(true), setremoveEmail(false) }}>Add</button>
+                                            <input type="email" name='email1' value={addEmailVal.email1} onChange={getEmailVal} />
+                                            <button onClick={() => { setAddedEmail1(true), setremoveEmail(1) }}>Add</button>
                                         </div>
                                         :
-                                        <button className="addfieldButton" onClick={() => setAddEmail(true)}>
+                                        <button className="addfieldButton" onClick={() => setAddEmail1(true)}>
+                                            <AiFillPlusCircle />
+                                            <span>
+                                                Add Email
+                                            </span>
+                                        </button>
+                                    }
+                                </>}
+                                {removeEmail == 1 && <>
+
+                                    {addEmail2 ?
+                                        <div className="AddInput">
+                                            <input type="email" name='email2' value={addEmailVal.email2} onChange={getEmailVal} />
+                                            <button onClick={() => { setAddedEmail2(true), setremoveEmail(2) }}>Add</button>
+                                        </div>
+                                        :
+                                        <button className="addfieldButton" onClick={() => setAddEmail2(true)}>
+                                            <AiFillPlusCircle />
+                                            <span>
+                                                Add Email
+                                            </span>
+                                        </button>
+                                    }
+                                </>}
+                                {removeEmail == 2 && <>
+
+                                    {addEmail3 ?
+                                        <div className="AddInput">
+                                            <input type="email" name='email3' value={addEmailVal.email3} onChange={getEmailVal} />
+                                            <button onClick={() => { setAddedEmail3(true), setremoveEmail(3) }}>Add</button>
+                                        </div>
+                                        :
+                                        <button className="addfieldButton" onClick={() => setAddEmail3(true)}>
+                                            <AiFillPlusCircle />
+                                            <span>
+                                                Add Email
+                                            </span>
+                                        </button>
+                                    }
+                                </>}
+                                {removeEmail == 3 && <>
+
+                                    {addEmail4 ?
+                                        <div className="AddInput">
+                                            <input type="email" name='email4' value={addEmailVal.email4} onChange={getEmailVal} />
+                                            <button onClick={() => { setAddedEmail4(true), setremoveEmail(4) }}>Add</button>
+                                        </div>
+                                        :
+                                        <button className="addfieldButton" onClick={() => setAddEmail4(true)}>
                                             <AiFillPlusCircle />
                                             <span>
                                                 Add Email
@@ -224,19 +319,85 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                 <p className='fieldHead'>Phone</p>
                                 <p className='fieldVal'> {userPhone ? userPhone : `123456789`} </p>
                                 {
-                                    addedPhone &&
-                                    <p className='fieldVal'> {addPhoneVal} </p>
+                                    addedPhone1 &&
+                                    <p className='fieldVal'> {addPhoneVal.phone1} </p>
                                 }
-                                {removePhone && <>
+                                {
+                                    addedPhone2 &&
+                                    <p className='fieldVal'> {addPhoneVal.phone2} </p>
+                                }
+                                {
+                                    addedPhone3 &&
+                                    <p className='fieldVal'> {addPhoneVal.phone3} </p>
+                                }
+                                {
+                                    addedPhone4 &&
+                                    <p className='fieldVal'> {addPhoneVal.phone4} </p>
+                                }
+                                {removePhone == 0 && <>
 
-                                    {addPhone ?
+                                    {addPhone1 ?
                                         <div className="AddInput">
-                                            <input type="number" value={addPhoneVal} onChange={(e) => setAddPhoneVal(e.target.value)} />
-                                            <button onClick={() => { setAddedPhone(true), setremovePhone(false) }}>Add</button>
+                                            <input type="number" name='phone1' value={addPhoneVal.phone1} onChange={getPhoneVal} />
+                                            <button onClick={() => { setAddedPhone1(true), setremovePhone(1) }}>Add</button>
                                         </div>
 
                                         :
-                                        <button className="addfieldButton" onClick={() => setAddPhone(true)}>
+                                        <button className="addfieldButton" onClick={() => setAddPhone1(true)}>
+                                            <AiFillPlusCircle />
+                                            <span>
+                                                Add Phone Number
+                                            </span>
+                                        </button>
+                                    }
+                                </>
+                                }
+                                {removePhone == 1 && <>
+
+                                    {addPhone2 ?
+                                        <div className="AddInput">
+                                            <input type="number" name='phone2' value={addPhoneVal.phone2} onChange={getPhoneVal} />
+                                            <button onClick={() => { setAddedPhone2(true), setremovePhone(2) }}>Add</button>
+                                        </div>
+
+                                        :
+                                        <button className="addfieldButton" onClick={() => setAddPhone2(true)}>
+                                            <AiFillPlusCircle />
+                                            <span>
+                                                Add Phone Number
+                                            </span>
+                                        </button>
+                                    }
+                                </>
+                                }
+                                {removePhone == 2 && <>
+
+                                    {addPhone3 ?
+                                        <div className="AddInput">
+                                            <input type="number" name='phone3' value={addPhoneVal.phone3} onChange={getPhoneVal} />
+                                            <button onClick={() => { setAddedPhone3(true), setremovePhone(3) }}>Add</button>
+                                        </div>
+
+                                        :
+                                        <button className="addfieldButton" onClick={() => setAddPhone3(true)}>
+                                            <AiFillPlusCircle />
+                                            <span>
+                                                Add Phone Number
+                                            </span>
+                                        </button>
+                                    }
+                                </>
+                                }
+                                {removePhone == 3 && <>
+
+                                    {addPhone4 ?
+                                        <div className="AddInput">
+                                            <input type="number" name='phone4' value={addPhoneVal.phone4} onChange={getPhoneVal} />
+                                            <button onClick={() => { setAddedPhone4(true), setremovePhone(4) }}>Add</button>
+                                        </div>
+
+                                        :
+                                        <button className="addfieldButton" onClick={() => setAddPhone4(true)}>
                                             <AiFillPlusCircle />
                                             <span>
                                                 Add Phone Number
@@ -249,21 +410,78 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                             <div className="addFields addFieldMargin">
                                 <p className='fieldHead'>Social Links</p>
                                 {
-                                    addedSocial &&
-                                    < a className='fieldVal fieldAnchor fieldValNo' href={`${addSocialVal}`} target="_blank"><BiLinkAlt />{addSocialVal} </a>
+                                    addedSocial1 &&
+                                    < a className='fieldVal fieldAnchor fieldValNo' href={`${addSocialVal.social1}`} target="_blank"><BiLinkAlt />{addSocialVal.social1} </a>
+                                }
+                                {
+                                    addedSocial2 &&
+                                    < a className='fieldVal fieldAnchor fieldValNo' href={`${addSocialVal.social2}`} target="_blank"><BiLinkAlt />{addSocialVal.social2} </a>
+                                }
+                                {
+                                    addedSocial3 &&
+                                    < a className='fieldVal fieldAnchor fieldValNo' href={`${addSocialVal.social3}`} target="_blank"><BiLinkAlt />{addSocialVal.social3} </a>
+                                }
+                                {
+                                    addedSocial4 &&
+                                    < a className='fieldVal fieldAnchor fieldValNo' href={`${addSocialVal.social4}`} target="_blank"><BiLinkAlt />{addSocialVal.social4} </a>
                                 }
                                 <a className='fieldVal fieldAnchor fieldValNo' href='https://www.facebook.com/' target="_blank"><SiFacebook style={{ color: '#1877F2' }} /> www.facebook.com</a>
                                 <a className='fieldVal fieldAnchor fieldValNo' href='https://www.twitter.com/' target="_blank"><AiFillTwitterCircle style={{ color: '#26a7de ' }} /> www.twitter.com</a>
                                 <a className='fieldVal fieldAnchor' href='https://www.linkedin.com/' target="_blank"><AiFillLinkedin style={{ color: '#1877F2' }} />  www.LinkedIn.com</a>
 
-                                {removeSocial && <>
-                                    {addSocial ?
+                                {removeSocial == 0 && <>
+                                    {addSocial1 ?
                                         <div className="AddInput">
-                                            <input type="text" value={addSocialVal} onChange={(e) => setAddSocialVal(e.target.value)} />
-                                            <button onClick={() => { setAddedSocial(true), setremoveSocial(false) }}>Add</button>
+                                            <input type="text" name='social1' value={addSocialVal.social1} onChange={getSocialVal} />
+                                            <button onClick={() => { setAddedSocial1(true), setremoveSocial(1) }}>Add</button>
                                         </div>
                                         :
-                                        <button className="addfieldButton" onClick={() => setAddSocial(true)}>
+                                        <button className="addfieldButton" onClick={() => setAddSocial1(true)}>
+                                            <AiFillPlusCircle />
+                                            <span>
+                                                Add Social Link
+                                            </span>
+                                        </button>
+                                    }
+                                </>}
+                                {removeSocial == 1 && <>
+                                    {addSocial2 ?
+                                        <div className="AddInput">
+                                            <input type="text" name='social2' value={addSocialVal.social2} onChange={getSocialVal} />
+                                            <button onClick={() => { setAddedSocial2(true), setremoveSocial(2) }}>Add</button>
+                                        </div>
+                                        :
+                                        <button className="addfieldButton" onClick={() => setAddSocial2(true)}>
+                                            <AiFillPlusCircle />
+                                            <span>
+                                                Add Social Link
+                                            </span>
+                                        </button>
+                                    }
+                                </>}
+                                {removeSocial == 2 && <>
+                                    {addSocial3 ?
+                                        <div className="AddInput">
+                                            <input type="text" name='social3' value={addSocialVal.social3} onChange={getSocialVal} />
+                                            <button onClick={() => { setAddedSocial3(true), setremoveSocial(3) }}>Add</button>
+                                        </div>
+                                        :
+                                        <button className="addfieldButton" onClick={() => setAddSocial3(true)}>
+                                            <AiFillPlusCircle />
+                                            <span>
+                                                Add Social Link
+                                            </span>
+                                        </button>
+                                    }
+                                </>}
+                                {removeSocial == 3 && <>
+                                    {addSocial4 ?
+                                        <div className="AddInput">
+                                            <input type="text" name='social4' value={addSocialVal.social4} onChange={getSocialVal} />
+                                            <button onClick={() => { setAddedSocial4(true), setremoveSocial(4) }}>Add</button>
+                                        </div>
+                                        :
+                                        <button className="addfieldButton" onClick={() => setAddSocial4(true)}>
                                             <AiFillPlusCircle />
                                             <span>
                                                 Add Social Link
