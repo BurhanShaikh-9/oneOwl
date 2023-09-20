@@ -22,6 +22,7 @@ import { FiSettings } from 'react-icons/fi'
 import { Dropdown, DropdownButton } from 'react-bootstrap';
 import { ROUTES } from '../../../utils/routes';
 import { LogoutDialog } from './LogoutDialog';
+import { ThemeContext } from '../../services/contextFile';
 
 export const Sidebar = () => {
 
@@ -51,71 +52,71 @@ export const Sidebar = () => {
 
     const [logoutModalOpen, setLogoutModalOpen] = useState(false);
 
-
+    const darkMode = useContext(ThemeContext)
     return (
         <>
-            <aside id="sidebar" className={sideBar ? 'sidebarwidth' : 'sidebar'}>
+            <aside id="sidebar" className={`${darkMode && 'sideBarDark'}  ${sideBar ? 'sidebarwidth' : 'sidebar'}`}>
                 <div className="sideBarInner">
                     <div className='aSideCloseButton'>
                         <button onClick={closeButton}><RxCross2 /></button>
                     </div>
                     <ul className="sidebar-nav" id="sidebar-nav">
                         <li className="nav-item">
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.DASHBOARD} onClick={closeMobileButton}>
+                            <NavLink className={`nav-link ${darkMode ? 'sideBarDark' : 'collapsed'}`} activeclassname={`${darkMode ? "darkActive" : "active"}`} to={ROUTES.DASHBOARD} onClick={closeMobileButton}>
                                 <GoHome className='sideIcon' /><span>Dashboard</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
 
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.COMMUNICATION} onClick={closeMobileButton}>
+                            <NavLink className={`nav-link ${darkMode ? 'sideBarDark' : 'collapsed'}`} activeclassname="active" to={ROUTES.COMMUNICATION} onClick={closeMobileButton}>
                                 <PiArrowSquareDown className='sideIcon' /><span>Communication</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
 
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.PREFERENCE} onClick={closeMobileButton}>
+                            <NavLink className={`nav-link ${darkMode ? 'sideBarDark' : 'collapsed'}`} activeclassname="active" to={ROUTES.PREFERENCE} onClick={closeMobileButton}>
                                 <LiaEdit className='sideIcon' /><span>Preference</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
 
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.BILLING} onClick={closeMobileButton}>
+                            <NavLink className={`nav-link ${darkMode ? 'sideBarDark' : 'collapsed'}`} activeclassname="active" to={ROUTES.BILLING} onClick={closeMobileButton}>
                                 <LiaListAltSolid className='sideIcon' /><span>Billing</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
 
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.PRIVACY} onClick={closeMobileButton}>
+                            <NavLink className={`nav-link ${darkMode ? 'sideBarDark' : 'collapsed'}`} activeclassname="active" to={ROUTES.PRIVACY} onClick={closeMobileButton}>
                                 <PiTruckLight className='sideIcon' /><span>Data Privacy</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
 
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.PROFILE} onClick={closeMobileButton}>
+                            <NavLink className={`nav-link ${darkMode ? 'sideBarDark' : 'collapsed'}`} activeclassname="active" to={ROUTES.PROFILE} onClick={closeMobileButton}>
                                 <AiOutlineUser className='sideIcon' /><span>Profile</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
 
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.NOTIFICATION} onClick={closeMobileButton}>
+                            <NavLink className={`nav-link ${darkMode ? 'sideBarDark' : 'collapsed'}`} activeclassname="active" to={ROUTES.NOTIFICATION} onClick={closeMobileButton}>
                                 <IoNotificationsOutline className='sideIcon' /><span>Notification</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
 
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.SETTINGS} onClick={closeMobileButton}>
+                            <NavLink className={`nav-link ${darkMode ? 'sideBarDark' : 'collapsed'}`} activeclassname="active" to={ROUTES.SETTINGS} onClick={closeMobileButton}>
                                 <IoSettingsOutline className='sideIcon' /><span>Settings</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
 
-                            <NavLink className="nav-link  collapsed" activeclassname="active" to={ROUTES.FAQ}  onClick={closeMobileButton}>
+                            <NavLink className={`nav-link ${darkMode ? 'sideBarDark' : 'collapsed'}`} activeclassname="active" to={ROUTES.FAQ}  onClick={closeMobileButton}>
                                 <BsQuestionCircle className='sideIcon' /><span>FAQ</span>
                             </NavLink>
                         </li>
                         <li className="nav-item">
 
-                            <button className="nav-link  collapsed" activeclassname="active" onClick={()=>setLogoutModalOpen(true)} style={{ backgroundColor: 'transparent', cursor: 'pointer', width: '100%' }}>
+                            <button className={`nav-link ${darkMode ? 'sideBarDark' : 'collapsed'}`} activeclassname="active" onClick={()=>setLogoutModalOpen(true)} style={{ backgroundColor: 'transparent', cursor: 'pointer', width: '100%' }}>
                                 <LuLogOut className='sideIcon' style={{ color: '#aa97b0' }} /><span style={{ color: '#aa97b0' }}>Logout</span>
                             </button>
                         </li>

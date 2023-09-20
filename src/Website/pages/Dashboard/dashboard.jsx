@@ -8,6 +8,8 @@ import { BiBarChartSquare } from 'react-icons/bi'
 import { FaDollarSign } from 'react-icons/fa'
 import BodyComponent from '../../components/bodyComponent';
 import StatsBar from '../../components/stats';
+import { useContext } from 'react';
+import { ThemeContext } from '../../../services/contextFile';
 
 export const Dashboard = () => {
 
@@ -130,13 +132,15 @@ export const Dashboard = () => {
     ],
   };
 
+  const darkMode = useContext(ThemeContext)
+
   return (
     <React.Fragment>
       <BodyComponent>
         <div className="row g-3">
           <StatsBar />
           <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
-            <div className="card cardMargin">
+            <div className="card cardMargin darkModeCard">
               <div className="card-body">
                 <div className="chart">
                   <div className="chartHeading1">

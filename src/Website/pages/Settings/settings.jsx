@@ -1,7 +1,10 @@
 import React from 'react'
 import BodyComponent from '../../components/bodyComponent'
 
-export const Settings = () => {
+export const Settings = ({getThemeColor}) => {
+
+ 
+
     return (
         <React.Fragment>
             <BodyComponent>
@@ -61,6 +64,7 @@ export const Settings = () => {
                         </div>
                         <div className="mainHeadingWrapper">
                             <label className="switch">
+                                {/* <input type="checkbox" onChange={(e)=>{getThemeColor(e.target.checked ? true : false)}}/> */}
                                 <input type="checkbox" />
                                 <span className="slider round"></span>
                             </label>

@@ -12,12 +12,12 @@ import { CgMenuLeft } from 'react-icons/cg';
 import { ROUTES } from '../../../utils/routes';
 import logoImg from '../../assets/images/logo/logo.png'
 import SearchBar from './searchBar';
-import { UserNameContext } from '../../services/contextFile';
+import { ThemeContext, UserNameContext } from '../../services/contextFile';
 // import AuthService from '../../----services/auth.service';
 
 
 export const Header = (props) => {
-  
+
   const navigate = useNavigate();
 
   const { sideBar, setSideBar } = useContext(SidebarContext)
@@ -30,10 +30,10 @@ export const Header = (props) => {
   }, [userNameTrash])
 
 
-
+  const isDarkMode = useContext(ThemeContext)
   return (
     <React.Fragment>
-      <header>
+      <header className={isDarkMode ? 'headerDark' : ''}>
         <div className="headerInner">
           <button className="menuButton" onClick={() => { setSideBar(!sideBar) }}>
             <CgMenuLeft />
@@ -49,15 +49,15 @@ export const Header = (props) => {
             <RxCross1 className='crossIcon'/>
           </div> */}
 
-<div className='desktopSearch'>
+          <div className='desktopSearch'>
 
-          <SearchBar/>
-</div>
+            <SearchBar />
+          </div>
 
           <div className="navRight">
             <div className="dropdown profileDropDown">
               <button
-                onClick={()=>navigate(ROUTES.PROFILE)}
+                onClick={() => navigate(ROUTES.PROFILE)}
                 className="btn btn-secondary dropdown-toggle"
                 type="button"
                 data-bs-toggle="dropdown"
