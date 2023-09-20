@@ -60,7 +60,14 @@ const Prefernce = () => {
     ])
 
     const sortByChannel = () => {
-        const sortedData = [...data].sort((a, b) => a.channel.localeCompare(b.channel));
+        const sortedData = [...data].sort((a, b) => {
+          // Extract the numeric part from the channel names
+          const channelA = parseInt(a.channel.split(" ")[1]);
+          const channelB = parseInt(b.channel.split(" ")[1]);
+          
+          // Compare the numeric parts
+          return channelA - channelB;
+        });
         setData(sortedData);
       };
     
