@@ -241,23 +241,27 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                     </div>
                                 </div> */}
                                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
-                                    <div className="formField formFieldSelect">
-                                        {/* <label htmlFor="">City</label> */}
-                                        <select name="" id="">
+                                    <div className="formField ">
+                                        <label htmlFor="">City</label>
+                                        <input type="text" placeholder='City Here' />
+
+                                        {/* <select name="" id="">
                                             <option value="">Select your City</option>
                                             <option value="">Seattle</option>
                                             <option value="">Olympia</option>
-                                        </select>
+                                        </select> */}
                                     </div>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
-                                    <div className="formField formFieldSelect">
-                                        {/* <label htmlFor="">State</label> */}
-                                        <select name="" id="">
+                                    <div className="formField ">
+                                        <label htmlFor="">State</label>
+                                        <input type="text" placeholder='City Here' />
+
+                                        {/* <select name="" id="">
                                             <option value="">Select your State</option>
                                             <option value="">New York</option>
                                             <option value="">Washington</option>
-                                        </select>
+                                        </select> */}
                                     </div>
                                 </div>
                                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
