@@ -73,12 +73,12 @@ const Billing = () => {
                                     </p>
                                     <div className="billingBtnGroup">
                                         <div className="billBtnGr">
-                                            <input type="radio" id="monthlySubscribe" name="subscriptionPlan" />
-                                            <label htmlFor="monthlySubscribe">Today</label>
+                                            <input type="radio" defaultChecked id="todayFilter" name="tableDaysFilter" />
+                                            <label htmlFor="todayFilter">Today</label>
                                         </div>
                                         <div className="billBtnGr">
-                                            <input type="radio" id="ServiceSubscribe" name="subscriptionPlan" />
-                                            <label htmlFor="ServiceSubscribe">Yesterday</label>
+                                            <input type="radio" id="yesterdayFilter" name="tableDaysFilter" />
+                                            <label htmlFor="yesterdayFilter">Yesterday</label>
                                         </div>
                                         {/* <button className='whiteButton'>Today</button>
                                         <button className='whiteButton'>Yesterday</button> */}
@@ -268,36 +268,36 @@ const Billing = () => {
 
                                                 <input className='billingMainSearch' type="text" placeholder='Search' name="" id="" />
                                                 <div className="checkBoxesBilling">
-                                                    <div className="checkboxBill">
-                                                        <input type="checkbox" />
-                                                        <label htmlFor="">Live Chat</label>
+                                                <div className="checkboxBill">
+                                                        <input type="checkbox" id='liveChatIdBilling'/>
+                                                        <label htmlFor="liveChatIdBilling">Live Chat</label>
                                                     </div>
                                                     <div className="checkboxBill">
-                                                        <input type="checkbox" />
-                                                        <label htmlFor="">Video Call</label>
+                                                        <input type="checkbox" id='videoCallIdBilling'/>
+                                                        <label htmlFor="videoCallIdBilling">Video Call</label>
                                                     </div>
                                                     <div className="checkboxBill">
-                                                        <input type="checkbox" />
-                                                        <label htmlFor="">Voice Call</label>
+                                                        <input type="checkbox" id='voiceCallIdBilling'/>
+                                                        <label htmlFor="voiceCallIdBilling">Voice Call</label>
                                                     </div>
                                                     <div className="checkboxBill">
-                                                        <input type="checkbox" />
-                                                        <label htmlFor="">Facebook</label>
+                                                        <input type="checkbox" id='facebookIdBilling' />
+                                                        <label htmlFor="facebookIdBilling">Facebook</label>
                                                     </div>
                                                     <div className="checkboxBill">
-                                                        <input type="checkbox" />
-                                                        <label htmlFor="">Whatsapp</label>
+                                                        <input type="checkbox" id='whatsappIdBilling'/>
+                                                        <label htmlFor="whatsappIdBilling">Whatsapp</label>
                                                     </div>
-                                                    <div className="checkboxBill">
-                                                        <input type="checkbox" />
-                                                        <label htmlFor="">Twitter</label>
+                                                    <div className="checkboxBill" >
+                                                        <input type="checkbox" id='twitterIdBilling'/>
+                                                        <label htmlFor="twitterIdBilling">Twitter</label>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="billinBtnGroupOtr">
                                                 <div className="billinBtnGroup">
                                                     <div className="billBtnGr">
-                                                        <input type="radio" id="monthlySubscribe" name="subscriptionPlan" />
+                                                        <input type="radio" id="monthlySubscribe" defaultChecked name="subscriptionPlan" />
                                                         <label htmlFor="monthlySubscribe">Monthly</label>
                                                     </div>
                                                     <div className="billBtnGr">

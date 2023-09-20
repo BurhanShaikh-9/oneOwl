@@ -62,7 +62,10 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
 
 
 
-
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isEmailValid = (email) => {
+        return emailRegex.test(email);
+    };
     const [addEmailVal, setAddEmailVal] = useState({
         email1: '',
         email2: '',
@@ -78,16 +81,53 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
     const [addedEmail3, setAddedEmail3] = useState(false)
     const [addEmail4, setAddEmail4] = useState(false)
     const [addedEmail4, setAddedEmail4] = useState(false)
+    const [email1Valid, setEmail1Valid] = useState(true);
+    const [email2Valid, setEmail2Valid] = useState(true);
+    const [email3Valid, setEmail3Valid] = useState(true);
+    const [email4Valid, setEmail4Valid] = useState(true);
     const getEmailVal = (e) => {
         setAddEmailVal({ ...addEmailVal, [e.target.name]: e.target.value })
     }
+    const onClickEmail1 = () => {
+        if(emailRegex.test(addEmailVal.email1)){
+            setAddedEmail1(true);
+            setremoveEmail(1)
+        }else{
+            setEmail1Valid(false)
+        }
+    }
+    const onClickEmail2 = () => {
+        if(emailRegex.test(addEmailVal.email2)){
+            setAddedEmail2(true);
+            setremoveEmail(2)
+        }else{
+            setEmail2Valid(false)
+        }
+    }
+    const onClickEmail3 = () => {
+        if(emailRegex.test(addEmailVal.email3)){
+            setAddedEmail3(true);
+            setremoveEmail(3)
+        }else{
+            setEmail3Valid(false)
+        }
+    }
+    const onClickEmail4 = () => {
+        if(emailRegex.test(addEmailVal.email4)){
+            setAddedEmail4(true);
+            setremoveEmail(4)
+        }else{
+            setEmail4Valid(false)
+        }
+    }
+
 
 
     const [addPhoneVal, setAddPhoneVal] = useState({
-        phone1:'',
-        phone2:'',
-        phone3:'',
-        phone4:'',
+        phone1: '',
+        phone2: '',
+        phone3: '',
+        phone4: '',
     })
     const [removePhone, setremovePhone] = useState(0)
     const [addPhone1, setAddPhone1] = useState(false)
@@ -103,10 +143,10 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
     }
 
     const [addSocialVal, setAddSocialVal] = useState({
-        social1:'',
-        social2:'',
-        social3:'',
-        social4:'',
+        social1: '',
+        social2: '',
+        social3: '',
+        social4: '',
     })
     const [removeSocial, setremoveSocial] = useState(0)
     const [addSocial1, setAddSocial1] = useState(false)
@@ -253,8 +293,8 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
 
                                     {addEmail1 ?
                                         <div className="AddInput">
-                                            <input type="email" name='email1' value={addEmailVal.email1} onChange={getEmailVal} />
-                                            <button onClick={() => { setAddedEmail1(true), setremoveEmail(1) }}>Add</button>
+                                            <input type="email" className={email1Valid ? '' : "invalid"} name='email1' value={addEmailVal.email1} onChange={getEmailVal} />
+                                            <button onClick={onClickEmail1}>Add</button>
                                         </div>
                                         :
                                         <button className="addfieldButton" onClick={() => setAddEmail1(true)}>
@@ -269,8 +309,8 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
 
                                     {addEmail2 ?
                                         <div className="AddInput">
-                                            <input type="email" name='email2' value={addEmailVal.email2} onChange={getEmailVal} />
-                                            <button onClick={() => { setAddedEmail2(true), setremoveEmail(2) }}>Add</button>
+                                            <input type="email" className={email1Valid ? '' : "invalid"} name='email2' value={addEmailVal.email2} onChange={getEmailVal} />
+                                            <button onClick={onClickEmail2}>Add</button>
                                         </div>
                                         :
                                         <button className="addfieldButton" onClick={() => setAddEmail2(true)}>
@@ -285,8 +325,8 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
 
                                     {addEmail3 ?
                                         <div className="AddInput">
-                                            <input type="email" name='email3' value={addEmailVal.email3} onChange={getEmailVal} />
-                                            <button onClick={() => { setAddedEmail3(true), setremoveEmail(3) }}>Add</button>
+                                            <input className={email1Valid ? '' : "invalid"} type="email" name='email3' value={addEmailVal.email3} onChange={getEmailVal} />
+                                            <button onClick={onClickEmail3}>Add</button>
                                         </div>
                                         :
                                         <button className="addfieldButton" onClick={() => setAddEmail3(true)}>
@@ -301,8 +341,8 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
 
                                     {addEmail4 ?
                                         <div className="AddInput">
-                                            <input type="email" name='email4' value={addEmailVal.email4} onChange={getEmailVal} />
-                                            <button onClick={() => { setAddedEmail4(true), setremoveEmail(4) }}>Add</button>
+                                            <input className={email1Valid ? '' : "invalid"} type="email" name='email4' value={addEmailVal.email4} onChange={getEmailVal} />
+                                            <button onClick={onClickEmail4}>Add</button>
                                         </div>
                                         :
                                         <button className="addfieldButton" onClick={() => setAddEmail4(true)}>
@@ -313,7 +353,6 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                         </button>
                                     }
                                 </>}
-
                             </div>
                             <div className="addFields addFieldMargin">
                                 <p className='fieldHead'>Phone</p>

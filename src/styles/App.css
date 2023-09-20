@@ -649,6 +649,13 @@ header .headerInner .menuButton svg {
   display: block;
   cursor: pointer;
 }
+.mainSection .addFields .AddInput input {
+  border: 1px solid grey;
+  outline: none;
+}
+.mainSection .addFields .AddInput .invalid {
+  border: 1px solid red;
+}
 .mainSection .addFields .AddInput button {
   border: 1px solid grey;
   background-color: transparent;
@@ -1430,7 +1437,6 @@ header .headerInner .menuButton svg {
   position: relative;
 }
 .mainSection .mainSectionInner .CommunicationComponent .communicationChat {
-  padding-left: 10px;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -1438,6 +1444,7 @@ header .headerInner .menuButton svg {
   background-color: #F8F8F8;
 }
 .mainSection .mainSectionInner .CommunicationComponent .communicationChat input {
+  padding-left: 15px;
   background-color: #F8F8F8;
   width: 100%;
   outline: none;
@@ -1591,6 +1598,20 @@ header .headerInner .menuButton svg {
 .headerDark .navRight p {
   color: white !important;
 }
+.headerDark .searchBarHeader svg {
+  color: white !important;
+}
+.headerDark .searchBarHeader input {
+  background-color: #464255;
+  color: white;
+  outline: none;
+}
+.headerDark .searchBarHeader input::-moz-placeholder {
+  color: rgb(190, 190, 190);
+}
+.headerDark .searchBarHeader input::placeholder {
+  color: rgb(190, 190, 190);
+}
 
 .darkMain {
   background-color: #222222;
@@ -1609,8 +1630,105 @@ header .headerInner .menuButton svg {
 .mainSectionWrapperDark .apexcharts-legend-text {
   color: white !important;
 }
+.mainSectionWrapperDark .headingMainCon h3 {
+  color: white !important;
+}
+.mainSectionWrapperDark .mainListHeading {
+  color: white !important;
+}
+.mainSectionWrapperDark .mainListPara {
+  color: rgb(177, 177, 177) !important;
+}
+.mainSectionWrapperDark .accordion-button {
+  background-color: #464255 !important;
+  color: white !important;
+}
+.mainSectionWrapperDark .accordion-body {
+  background-color: #464255 !important;
+  color: white !important;
+}
+.mainSectionWrapperDark .checkboxBill label {
+  color: white;
+}
+.mainSectionWrapperDark .faqItem .headerInnerLeft p {
+  color: white !important;
+}
+.mainSectionWrapperDark table {
+  --bs-table-bg: #464255 !important;
+  --bs-table-color: $base-color2 !important;
+}
+.mainSectionWrapperDark table tbody tr td {
+  color: white !important;
+}
+.mainSectionWrapperDark table tbody tr td P {
+  color: white !important;
+}
+.mainSectionWrapperDark table tbody tr td .iconsChannel button svg {
+  color: white !important;
+}
+.mainSectionWrapperDark .pagination li {
+  color: white !important;
+}
+.mainSectionWrapperDark .privacySummary h6 {
+  color: white !important;
+}
+.mainSectionWrapperDark .privacySummary label {
+  color: white !important;
+}
+.mainSectionWrapperDark .profileCustomer {
+  color: white !important;
+}
+.mainSectionWrapperDark .formHeading5 {
+  color: white !important;
+}
+.mainSectionWrapperDark .addFields .AddInput button {
+  color: white;
+}
+.mainSectionWrapperDark .formField {
+  color: white !important;
+}
+.mainSectionWrapperDark .formField input {
+  background-color: #464255;
+  color: white !important;
+}
+.mainSectionWrapperDark .formField input::-moz-placeholder {
+  color: rgb(187, 187, 187) !important;
+}
+.mainSectionWrapperDark .formField input::placeholder {
+  color: rgb(187, 187, 187) !important;
+}
+.mainSectionWrapperDark .formField select {
+  background-color: #464255;
+  color: rgb(187, 187, 187) !important;
+}
+.mainSectionWrapperDark .formField select::-moz-placeholder {
+  color: rgb(187, 187, 187) !important;
+}
+.mainSectionWrapperDark .formField select::placeholder {
+  color: rgb(187, 187, 187) !important;
+}
+.mainSectionWrapperDark .addfieldButton {
+  background-color: #222222;
+  color: white;
+}
+.mainSectionWrapperDark .fieldHead {
+  color: white !important;
+}
 .mainSectionWrapperDark .card {
   background-color: #464255 !important;
+}
+.mainSectionWrapperDark .card .searchBar2 input {
+  background-color: #464255;
+  border: 1px solid white;
+  color: white;
+}
+.mainSectionWrapperDark .card .searchBar2 svg {
+  color: white !important;
+}
+.mainSectionWrapperDark .card .communicationChat input {
+  background-color: #464255 !important;
+  border: 1px solid white !important;
+  color: white !important;
 }
 .mainSectionWrapperDark .card p {
   color: white !important;
@@ -1618,10 +1736,36 @@ header .headerInner .menuButton svg {
 .mainSectionWrapperDark .card h6 {
   color: white !important;
 }
+.mainSectionWrapperDark .card small {
+  color: white !important;
+}
 .mainSectionWrapperDark .card .statsColumn.statCol span {
   color: white !important;
 }
-.mainSectionWrapperDark .card table {
-  --bs-table-bg: #464255 !important;
-  --bs-table-color: $base-color2 !important ;
+.mainSectionWrapperDark .card .preferenceRight button {
+  color: white !important;
+}
+.mainSectionWrapperDark .card .billinBtnGroup {
+  background-color: #464255 !important;
+}
+.mainSectionWrapperDark .card .billingMainSearch {
+  background-color: #464255 !important;
+  border: 1px solid white !important;
+  color: white;
+  outline: none;
+}
+.mainSectionWrapperDark .card .billBtnGr {
+  color: white !important;
+}
+.mainSectionWrapperDark .card .headingNotification {
+  color: white;
+}
+.mainSectionWrapperDark .card .headingNotification .btnDropDown {
+  color: white;
+}
+.mainSectionWrapperDark .card .headingNotification .dropdownMenu li a {
+  color: black;
+}
+.mainSectionWrapperDark .card .headingNotification .dropdownMenu li a:hover {
+  color: white;
 }/*# sourceMappingURL=App.css.map */

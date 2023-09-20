@@ -17,12 +17,14 @@ import { Profile } from './Website/pages/profile/profile';
 import { Faq } from './Website/pages/faq/faq';
 import { Privacy } from './Website/pages/Privacy/privacy';
 import { UserNameContext, ThemeContext } from './services/contextFile';
+import { DarkMode } from './services/darkMode';
 
 
 
 
 function App() {
 
+  const {getDarkMode} = DarkMode();
   const [userState, setUserState] = useState('');
   const [userStateLast, setUserStateLast] = useState('');
   const getUserNameVal = (data) => {
@@ -32,11 +34,23 @@ function App() {
     setUserStateLast(data)
   }
 
-
   const [isDarkMode, setIsDarkMode] = useState(false);
   const getThemeColor = (data) => {
     setIsDarkMode(data)
   }
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.style.backgroundColor = '#222222';
+    } 
+    return () => {
+      document.documentElement.style.backgroundColor = ''; 
+    };
+  }, [isDarkMode]);
+
+  useEffect(()=>{
+    setIsDarkMode(getDarkMode())
+  },[])
 
 
   return (
