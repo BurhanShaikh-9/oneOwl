@@ -18,8 +18,11 @@ import { Faq } from './Website/pages/faq/faq';
 import { Privacy } from './Website/pages/Privacy/privacy';
 import { UserNameContext, ThemeContext } from './services/contextFile';
 import { DarkMode } from './services/darkMode';
+import ReactGA from 'react-ga';
 
 
+const TRACKING_ID = "G-3L133H7SGZ"
+ReactGA.initialize(TRACKING_ID);
 
 
 function App() {
@@ -53,6 +56,12 @@ function App() {
   },[])
 
 
+
+  useEffect(() => {
+    const currentPath = window.location.pathname + window.location.search;
+    ReactGA.pageview(currentPath);
+  }, []);
+  
   return (
     <React.Fragment>
       <UserNameContext.Provider value={[userState, userStateLast]}>
