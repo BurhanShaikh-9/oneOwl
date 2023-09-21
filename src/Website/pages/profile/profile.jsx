@@ -255,7 +255,7 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
                                     <div className="formField ">
                                         <label htmlFor="">State</label>
-                                        <input type="text" placeholder='City Here' />
+                                        <input type="text" placeholder='State Here' />
 
                                         {/* <select name="" id="">
                                             <option value="">Select your State</option>
