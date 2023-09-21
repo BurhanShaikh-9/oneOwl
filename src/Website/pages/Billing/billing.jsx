@@ -1,22 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import BodyComponent from '../../components/bodyComponent';
 import billing1 from '../../../assets/images/billing4.png'
 import billing2 from '../../../assets/images/billing2.png'
 import billing3 from '../../../assets/images/billing3.png'
 import billing4 from '../../../assets/images/billing1.png'
 import { BsFillChatDotsFill, BsFillCameraVideoFill, BsFillMicFill, BsWhatsapp, BsFacebook, BsTwitter } from 'react-icons/bs'
-import { useState } from 'react';
+import { AiOutlineClose } from 'react-icons/ai';
 
 const Billing = () => {
-    const [confirmModal, setConfirmModal] = useState(false);
+    const [confirmModalState, setConfirmModalState] = useState(false);
 
     const closeConfirmModal = () => {
-        setConfirmModal(false)
+        setConfirmModalState(false)
     }
     const openConfirmModal = () => {
-        console.log(confirmModal, '');
-        setConfirmModal(true)
+        setConfirmModalState(true)
     }
+
     return (
         <React.Fragment>
             <BodyComponent>
@@ -269,7 +269,6 @@ const Billing = () => {
                                 <div className="billingMain">
                                     <h6>Place Your Order</h6>
                                     <div className="row g-4">
-
                                         <div className="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 ">
                                             <h6>
                                                 Select your Agent you want to talk with
@@ -327,7 +326,7 @@ const Billing = () => {
                                                     <h5>$45</h5>
                                                 </div>
                                                 <div className="bottomBilling">
-                                                    <button onClick={() => openConfirmModal}>
+                                                    <button onClick={openConfirmModal}>
                                                         Place Your Order
                                                     </button>
                                                 </div>
@@ -341,16 +340,17 @@ const Billing = () => {
                     </div>
                 </div>
                 {
-                    confirmModal &&
+                    confirmModalState &&
+
                     <dialog id='modalConfirm' className='modalLogout' open>
                         <div className="modalLogoutMain">
-                            <button className='modalLogoutButton' onClick={() => closeConfirmModal}>
+                            <button className='modalLogoutButton' onClick={closeConfirmModal}>
                                 <AiOutlineClose />
                             </button>
                             <p>Confirm Order?</p>
                             <div className="logoutButtons">
-                                <button className='yesButton' onClick={() => closeConfirmModal}>Yes</button>
-                                <button className='NoButton' onClick={() => closeConfirmModal}>No</button>
+                                <button className='yesButton' onClick={ closeConfirmModal}>Yes</button>
+                                <button className='NoButton' onClick={closeConfirmModal}>No</button>
                             </div>
                         </div>
 

@@ -574,9 +574,15 @@ header .headerInner .menuButton svg {
 .mainSection .faqItem .accordion {
   margin: 12px 0 33px 0;
 }
+.mainSection .faqItem .accordion .accordion-item .accordion-header {
+  background-color: #F1F1F7;
+}
 .mainSection .faqItem .accordion .accordion-item .accordion-header .accordion-button {
   box-shadow: none;
   background-color: transparent;
+}
+.mainSection .faqItem .accordion .accordion-item .accordion-body {
+  background-color: #F1F1F7;
 }
 .mainSection .formField label {
   display: block;

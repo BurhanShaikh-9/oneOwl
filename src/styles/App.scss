@@ -696,10 +696,14 @@ header {
 
       .accordion-item {
         .accordion-header {
+          background-color: #F1F1F7;
           .accordion-button {
             box-shadow: none;
             background-color: transparent;
           }
+        }
+        .accordion-body {
+          background-color: #F1F1F7;
         }
       }
     }

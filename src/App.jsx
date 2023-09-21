@@ -41,6 +41,20 @@ function App() {
     setIsDarkMode(data)
   }
 
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.style.backgroundColor = '#222222';
+    } 
+    return () => {
+      document.documentElement.style.backgroundColor = ''; 
+    };
+  }, [isDarkMode]);
+
+  useEffect(()=>{
+    setIsDarkMode(getDarkMode())
+  },[])
+  
+
   const location = useLocation();
   useEffect(() => {
     const locations = location.pathname + location.search
