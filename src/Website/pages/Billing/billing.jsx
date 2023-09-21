@@ -5,8 +5,18 @@ import billing2 from '../../../assets/images/billing2.png'
 import billing3 from '../../../assets/images/billing3.png'
 import billing4 from '../../../assets/images/billing1.png'
 import { BsFillChatDotsFill, BsFillCameraVideoFill, BsFillMicFill, BsWhatsapp, BsFacebook, BsTwitter } from 'react-icons/bs'
+import { useState } from 'react';
 
 const Billing = () => {
+    const [confirmModal, setConfirmModal] = useState(false);
+
+    const closeConfirmModal = () => {
+        setConfirmModal(false)
+    }
+    const openConfirmModal = () => {
+        console.log(confirmModal, '');
+        setConfirmModal(true)
+    }
     return (
         <React.Fragment>
             <BodyComponent>
@@ -268,16 +278,16 @@ const Billing = () => {
 
                                                 <input className='billingMainSearch' type="text" placeholder='Search' name="" id="" />
                                                 <div className="checkBoxesBilling">
-                                                <div className="checkboxBill">
-                                                        <input type="checkbox" id='liveChatIdBilling'/>
+                                                    <div className="checkboxBill">
+                                                        <input type="checkbox" id='liveChatIdBilling' />
                                                         <label htmlFor="liveChatIdBilling">Live Chat</label>
                                                     </div>
                                                     <div className="checkboxBill">
-                                                        <input type="checkbox" id='videoCallIdBilling'/>
+                                                        <input type="checkbox" id='videoCallIdBilling' />
                                                         <label htmlFor="videoCallIdBilling">Video Call</label>
                                                     </div>
                                                     <div className="checkboxBill">
-                                                        <input type="checkbox" id='voiceCallIdBilling'/>
+                                                        <input type="checkbox" id='voiceCallIdBilling' />
                                                         <label htmlFor="voiceCallIdBilling">Voice Call</label>
                                                     </div>
                                                     <div className="checkboxBill">
@@ -285,11 +295,11 @@ const Billing = () => {
                                                         <label htmlFor="facebookIdBilling">Facebook</label>
                                                     </div>
                                                     <div className="checkboxBill">
-                                                        <input type="checkbox" id='whatsappIdBilling'/>
+                                                        <input type="checkbox" id='whatsappIdBilling' />
                                                         <label htmlFor="whatsappIdBilling">Whatsapp</label>
                                                     </div>
                                                     <div className="checkboxBill" >
-                                                        <input type="checkbox" id='twitterIdBilling'/>
+                                                        <input type="checkbox" id='twitterIdBilling' />
                                                         <label htmlFor="twitterIdBilling">Twitter</label>
                                                     </div>
                                                 </div>
@@ -317,7 +327,7 @@ const Billing = () => {
                                                     <h5>$45</h5>
                                                 </div>
                                                 <div className="bottomBilling">
-                                                    <button>
+                                                    <button onClick={() => openConfirmModal}>
                                                         Place Your Order
                                                     </button>
                                                 </div>
@@ -330,7 +340,24 @@ const Billing = () => {
                         </div>
                     </div>
                 </div>
+                {
+                    confirmModal &&
+                    <dialog id='modalConfirm' className='modalLogout' open>
+                        <div className="modalLogoutMain">
+                            <button className='modalLogoutButton' onClick={() => closeConfirmModal}>
+                                <AiOutlineClose />
+                            </button>
+                            <p>Confirm Order?</p>
+                            <div className="logoutButtons">
+                                <button className='yesButton' onClick={() => closeConfirmModal}>Yes</button>
+                                <button className='NoButton' onClick={() => closeConfirmModal}>No</button>
+                            </div>
+                        </div>
+
+                    </dialog>
+                }
             </BodyComponent>
+
         </React.Fragment>
     )
 }

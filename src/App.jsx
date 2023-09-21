@@ -18,7 +18,7 @@ import { Faq } from './Website/pages/faq/faq';
 import { Privacy } from './Website/pages/Privacy/privacy';
 import { UserNameContext, ThemeContext } from './services/contextFile';
 import { DarkMode } from './services/darkMode';
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga4";
 
 
 const TRACKING_ID = "G-3L133H7SGZ"
@@ -42,7 +42,6 @@ function App() {
   }
 
   const location = useLocation();
-
   useEffect(() => {
     ReactGA.pageview(location.pathname + location.search);
   }, [location.pathname, location.search]);
