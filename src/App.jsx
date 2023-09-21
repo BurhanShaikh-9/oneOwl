@@ -21,12 +21,16 @@ import { DarkMode } from './services/darkMode';
 import ReactGA from "react-ga4";
 
 
-const TRACKING_ID = "G-3L133H7SGZ"
-ReactGA.initialize(TRACKING_ID);
 
+const TRACKING_ID = "G-3L133H7SGZ"
+ReactGA.initialize([
+  {
+    trackingId: TRACKING_ID,
+  }
+]);
 function App() {
 
-  const { getDarkMode } = DarkMode();
+  // const { getDarkMode } = DarkMode();
   const [userState, setUserState] = useState('');
   const [userStateLast, setUserStateLast] = useState('');
   const getUserNameVal = (data) => {
@@ -43,18 +47,12 @@ function App() {
 
   const location = useLocation();
   useEffect(() => {
-    const location = location.pathname + location.search
-    ReactGA.send({ hitType: "pageview", page: location, title: location });
+    const locationss = location.pathname + location.search
+    ReactGA.send({ hitType: "pageview", page: locationss, title: locationss });
 
   }, [location.pathname, location.search]);
 
-  // const trackEvent = (category, action, label) => {
-  //   ReactGA.event({
-  //     category,
-  //     action,
-  //     label,
-  //   });
-  // };
+
 
   return (
     <React.Fragment>
@@ -62,13 +60,13 @@ function App() {
         <ThemeContext.Provider value={isDarkMode}>
           <Routes>
             <Route element={<Layout />}>
-              <Route path={ROUTES.DASHBOARD} element={<Dashboard />}   />
-              <Route path={ROUTES.COMMUNICATION} element={<Communication/>} />
-              <Route path={ROUTES.FAQ} element={<Faq />}   />
-              <Route path={ROUTES.PREFERENCE} element={<Prefernce />}  />
-              <Route path={ROUTES.BILLING} element={<Billing />}/>
+              <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
+              <Route path={ROUTES.COMMUNICATION} element={<Communication />} />
+              <Route path={ROUTES.FAQ} element={<Faq />} />
+              <Route path={ROUTES.PREFERENCE} element={<Prefernce />} />
+              <Route path={ROUTES.BILLING} element={<Billing />} />
               <Route path={ROUTES.NOTIFICATION} element={<Notification />} />
-              <Route path={ROUTES.SETTINGS} element={<Settings getThemeColor={getThemeColor} />}/>
+              <Route path={ROUTES.SETTINGS} element={<Settings getThemeColor={getThemeColor} />} />
               <Route path={ROUTES.PROFILE} element={<Profile getUserNameVal={getUserNameVal} getUserLastVal={getUserLastVal} />} />
               <Route path={ROUTES.PRIVACY} element={<Privacy />} />
             </Route>
