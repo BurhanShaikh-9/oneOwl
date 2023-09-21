@@ -43,16 +43,18 @@ function App() {
 
   const location = useLocation();
   useEffect(() => {
-    ReactGA.pageview(location.pathname + location.search);
+    const location = location.pathname + location.search
+    ReactGA.send({ hitType: "pageview", page: location, title: location });
+
   }, [location.pathname, location.search]);
 
-  const trackEvent = (category, action, label) => {
-    ReactGA.event({
-      category,
-      action,
-      label,
-    });
-  };
+  // const trackEvent = (category, action, label) => {
+  //   ReactGA.event({
+  //     category,
+  //     action,
+  //     label,
+  //   });
+  // };
 
   return (
     <React.Fragment>
@@ -60,15 +62,15 @@ function App() {
         <ThemeContext.Provider value={isDarkMode}>
           <Routes>
             <Route element={<Layout />}>
-              <Route path={ROUTES.DASHBOARD} element={<Dashboard />}    onEnter={() => trackEvent('Page View', 'Dashboard View', 'Dashboard')}/>
-              <Route path={ROUTES.COMMUNICATION} element={<Communication/>}  onEnter={() => trackEvent('Page View', 'Communication View', 'Communication')}/>
-              <Route path={ROUTES.FAQ} element={<Faq />}   onEnter={() => trackEvent('Page View', 'FAQ View', 'FAQ')}/>
-              <Route path={ROUTES.PREFERENCE} element={<Prefernce />}   onEnter={() => trackEvent('Page View', 'Preference View', 'Preference')}/>
-              <Route path={ROUTES.BILLING} element={<Billing />} onEnter={() => trackEvent('Page View', 'Billing View', 'Billing')}/>
-              <Route path={ROUTES.NOTIFICATION} element={<Notification />} onEnter={() => trackEvent('Page View', 'Notification View', 'Notification')}/>
-              <Route path={ROUTES.SETTINGS} element={<Settings getThemeColor={getThemeColor} />} onEnter={() => trackEvent('Page View', 'Settings View', 'Settings')}/>
-              <Route path={ROUTES.PROFILE} element={<Profile getUserNameVal={getUserNameVal} getUserLastVal={getUserLastVal} />} onEnter={() => trackEvent('Page View', 'Profile View', 'Profile')}/>
-              <Route path={ROUTES.PRIVACY} element={<Privacy />} onEnter={() => trackEvent('Page View', 'Privacy View', 'Privacy')}/>
+              <Route path={ROUTES.DASHBOARD} element={<Dashboard />}   />
+              <Route path={ROUTES.COMMUNICATION} element={<Communication/>} />
+              <Route path={ROUTES.FAQ} element={<Faq />}   />
+              <Route path={ROUTES.PREFERENCE} element={<Prefernce />}  />
+              <Route path={ROUTES.BILLING} element={<Billing />}/>
+              <Route path={ROUTES.NOTIFICATION} element={<Notification />} />
+              <Route path={ROUTES.SETTINGS} element={<Settings getThemeColor={getThemeColor} />}/>
+              <Route path={ROUTES.PROFILE} element={<Profile getUserNameVal={getUserNameVal} getUserLastVal={getUserLastVal} />} />
+              <Route path={ROUTES.PRIVACY} element={<Privacy />} />
             </Route>
           </Routes>
         </ThemeContext.Provider>
