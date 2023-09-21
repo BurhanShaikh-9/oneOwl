@@ -61,15 +61,15 @@ function App() {
         <ThemeContext.Provider value={isDarkMode}>
           <Routes>
             <Route element={<Layout />}>
-              <Route path={ROUTES.DASHBOARD} element={<Dashboard />} onEnter={() => trackEvent('Page View', 'Dashboard View', 'Dashboard')} />
-              <Route path={ROUTES.COMMUNICATION} element={<Communication />} onEnter={() => trackEvent('Page View', 'Communication View', 'Communication')} />
-              <Route path={ROUTES.FAQ} element={<Faq />} onEnter={() => trackEvent('Page View', 'FAQ View', 'FAQ')} />
-              <Route path={ROUTES.PREFERENCE} element={<Prefernce />} onEnter={() => trackEvent('Page View', 'Preference View', 'Preference')} />
-              <Route path={ROUTES.BILLING} element={<Billing />} onEnter={() => trackEvent('Page View', 'Billing View', 'Billing')} />
-              <Route path={ROUTES.NOTIFICATION} element={<Notification />} onEnter={() => trackEvent('Page View', 'Notification View', 'Notification')} />
-              <Route path={ROUTES.SETTINGS} element={<Settings getThemeColor={getThemeColor} />} onEnter={() => trackEvent('Page View', 'Settings View', 'Settings')} />
-              <Route path={ROUTES.PROFILE} element={<Profile getUserNameVal={getUserNameVal} getUserLastVal={getUserLastVal} />} onEnter={() => trackEvent('Page View', 'Profile View', 'Profile')} />
-              <Route path={ROUTES.PRIVACY} element={<Privacy />} onEnter={() => trackEvent('Page View', 'Privacy View', 'Privacy')} />
+              <Route path={ROUTES.DASHBOARD} element={<Dashboard />} onEnter={() => trackEvent('pageview', 'Dashboard View', 'Dashboard')} />
+              <Route path={ROUTES.COMMUNICATION} element={<Communication />} onEnter={() => trackEvent('pageview', 'Communication View', 'Communication')} />
+              <Route path={ROUTES.FAQ} element={<Faq />} onEnter={() => trackEvent('pageview', 'FAQ View', 'FAQ')} />
+              <Route path={ROUTES.PREFERENCE} element={<Prefernce />} onEnter={() => trackEvent('pageview', 'Preference View', 'Preference')} />
+              <Route path={ROUTES.BILLING} element={<Billing />} onEnter={() => trackEvent('pageview', 'Billing View', 'Billing')} />
+              <Route path={ROUTES.NOTIFICATION} element={<Notification />} onEnter={() => trackEvent('pageview', 'pageview', 'Notification')} />
+              <Route path={ROUTES.SETTINGS} element={<Settings getThemeColor={getThemeColor} />} onEnter={() => trackEvent('pageview', 'Settings View', 'Settings')} />
+              <Route path={ROUTES.PROFILE} element={<Profile getUserNameVal={getUserNameVal} getUserLastVal={getUserLastVal} />} onEnter={() => trackEvent('pageview', 'Profile View', 'Profile')} />
+              <Route path={ROUTES.PRIVACY} element={<Privacy />} onEnter={() => trackEvent('pageview', 'Privacy View', 'Privacy')} />
             </Route>
           </Routes>
         </ThemeContext.Provider>
