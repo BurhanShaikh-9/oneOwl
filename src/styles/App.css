@@ -261,6 +261,25 @@ a {
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
 }
+.sideBarInner .sidebar-nav .nav-itemRelative {
+  position: relative;
+}
+.sideBarInner .sidebar-nav .nav-itemRelative .navItemAbsolute {
+  position: absolute;
+  right: 10px;
+  background-color: white;
+  border: 1px solid #0B2360;
+  height: 20px;
+  width: 20px;
+  font-size: 12px;
+  top: 50%;
+  color: #0B2360;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+}
 .sideBarInner .sidebar-nav .nav-item {
   margin-bottom: 5px;
 }
@@ -424,6 +443,7 @@ header .headerInner .menuButton svg {
   border: none;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   z-index: 99999;
+  min-width: 290px;
 }
 .modalLogout .headerNotify {
   color: #0B2360;
@@ -540,6 +560,22 @@ header .headerInner .menuButton svg {
   scale: 0.98;
   opacity: 0.9;
 }
+.mainSection .faqItem .faqAnswer .replyButton {
+  font-size: 14px;
+  display: inline-block;
+  line-height: 18px;
+  color: white;
+  padding: 6px 16px;
+  background-color: #0B2360;
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: all 0.1 ease-in;
+  margin-bottom: 10px;
+}
+.mainSection .faqItem .faqAnswer .replyButton:active {
+  scale: 0.98;
+  opacity: 0.9;
+}
 .mainSection .faqItem .faqAnswer .question {
   margin: 20px 0;
 }
@@ -574,15 +610,9 @@ header .headerInner .menuButton svg {
 .mainSection .faqItem .accordion {
   margin: 12px 0 33px 0;
 }
-.mainSection .faqItem .accordion .accordion-item .accordion-header {
-  background-color: #F1F1F7;
-}
 .mainSection .faqItem .accordion .accordion-item .accordion-header .accordion-button {
   box-shadow: none;
   background-color: transparent;
-}
-.mainSection .faqItem .accordion .accordion-item .accordion-body {
-  background-color: #F1F1F7;
 }
 .mainSection .formField label {
   display: block;
@@ -655,6 +685,11 @@ header .headerInner .menuButton svg {
   display: block;
   cursor: pointer;
 }
+.mainSection .addFields .AddInput {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 .mainSection .addFields .AddInput input {
   border: 1px solid grey;
   outline: none;
@@ -665,12 +700,18 @@ header .headerInner .menuButton svg {
 .mainSection .addFields .AddInput button {
   border: 1px solid grey;
   background-color: transparent;
+  display: inline-flex;
+  height: 26px;
+  width: 26px;
+  align-items: center;
+  justify-content: center;
 }
 .mainSection .addFields .addfieldButton {
   font-size: 20px;
   line-height: 17px;
   cursor: pointer;
   border: none;
+  color: #0B2360;
 }
 .mainSection .addFields .addfieldButton svg {
   margin-bottom: 2px;
@@ -960,8 +1001,15 @@ header .headerInner .menuButton svg {
   display: flex;
 }
 .mainSection .billingTotal .topBilling h5 {
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bold;
+}
+.mainSection .billingTotal .topBilling .totalPara {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 70px;
 }
 .mainSection .billingTotal .topBilling .totalPara p {
   margin: 0;
@@ -1017,9 +1065,10 @@ header .headerInner .menuButton svg {
 }
 .mainSection .mainSectionInner .billingMain .checkBoxesBilling {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   -moz-column-gap: 20px;
-       column-gap: 20px;
+  row-gap: 10px;
+  column-gap: 20px;
   font-size: 12px;
   flex-wrap: wrap;
   max-width: 390px;
@@ -1081,7 +1130,7 @@ header .headerInner .menuButton svg {
   border-radius: 50px;
 }
 .mainSection .mainSectionInner .agentPreference {
-  height: 567px !important;
+  height: 540px !important;
 }
 .mainSection .mainSectionInner .billingChart {
   display: flex;
@@ -1148,6 +1197,26 @@ header .headerInner .menuButton svg {
   border: none;
   box-shadow: none;
   background-color: none;
+  position: relative;
+}
+.mainSection .mainSectionInner .preferenceHeading .preferenceRight .filterButton .filterMenu {
+  background-color: white;
+  bottom: -70px;
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  width: 77px;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+.mainSection .mainSectionInner .preferenceHeading .preferenceRight .filterButton .filterMenu button {
+  border: none;
+  box-shadow: none;
+}
+.mainSection .mainSectionInner .preferenceHeading .preferenceRight .filterButton .filterMenu button:hover {
+  background-color: #0B2360;
+  color: white;
 }
 .mainSection .mainSectionInner .preferenceHeading .preferenceRight button {
   border-radius: 5px;

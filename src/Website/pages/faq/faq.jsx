@@ -93,7 +93,7 @@ export const Faq = () => {
                                     <div className="faqAnswer">
                                         <div className="question">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus provident ex nesciunt magni delectus iure error voluptatum tempora incidunt quod, tempore, harum modi ipsam, iusto sunt! Natus mollitia velit illo.</div>
 
-
+                                        <button className='replyButton'>Write a Reply</button>
                                         <div className="answerBox">
                                             <input type="text" placeholder='Type Answer Here' />
                                             <button className='sendChatButton'>

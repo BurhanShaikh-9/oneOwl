@@ -5,6 +5,7 @@ import { BsFillCameraFill } from 'react-icons/bs'
 import { BiLinkAlt } from 'react-icons/bi'
 import { AiFillPlusCircle, AiFillTwitterCircle, AiFillLinkedin } from 'react-icons/ai'
 import { SiFacebook } from 'react-icons/si'
+import { RiAddLine } from 'react-icons/ri'
 import { useEffect } from 'react'
 
 
@@ -298,7 +299,7 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                     {addEmail1 ?
                                         <div className="AddInput">
                                             <input type="email" className={email1Valid ? '' : "invalid"} name='email1' value={addEmailVal.email1} onChange={getEmailVal} />
-                                            <button onClick={onClickEmail1}>Add</button>
+                                            <button onClick={onClickEmail1}> <RiAddLine /> </button>
                                         </div>
                                         :
                                         <button className="addfieldButton" onClick={() => setAddEmail1(true)}>
@@ -314,7 +315,7 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                     {addEmail2 ?
                                         <div className="AddInput">
                                             <input type="email" className={email1Valid ? '' : "invalid"} name='email2' value={addEmailVal.email2} onChange={getEmailVal} />
-                                            <button onClick={onClickEmail2}>Add</button>
+                                            <button onClick={onClickEmail2}><RiAddLine /></button>
                                         </div>
                                         :
                                         <button className="addfieldButton" onClick={() => setAddEmail2(true)}>
@@ -330,7 +331,7 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                     {addEmail3 ?
                                         <div className="AddInput">
                                             <input className={email1Valid ? '' : "invalid"} type="email" name='email3' value={addEmailVal.email3} onChange={getEmailVal} />
-                                            <button onClick={onClickEmail3}>Add</button>
+                                            <button onClick={onClickEmail3}><RiAddLine /></button>
                                         </div>
                                         :
                                         <button className="addfieldButton" onClick={() => setAddEmail3(true)}>
@@ -346,7 +347,7 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                     {addEmail4 ?
                                         <div className="AddInput">
                                             <input className={email1Valid ? '' : "invalid"} type="email" name='email4' value={addEmailVal.email4} onChange={getEmailVal} />
-                                            <button onClick={onClickEmail4}>Add</button>
+                                            <button onClick={onClickEmail4}><RiAddLine /></button>
                                         </div>
                                         :
                                         <button className="addfieldButton" onClick={() => setAddEmail4(true)}>
@@ -382,7 +383,7 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                     {addPhone1 ?
                                         <div className="AddInput">
                                             <input type="number" name='phone1' value={addPhoneVal.phone1} onChange={getPhoneVal} />
-                                            <button onClick={() => { setAddedPhone1(true), setremovePhone(1) }}>Add</button>
+                                            <button onClick={() => { setAddedPhone1(true), setremovePhone(1) }}><RiAddLine /></button>
                                         </div>
 
                                         :
@@ -400,7 +401,7 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                     {addPhone2 ?
                                         <div className="AddInput">
                                             <input type="number" name='phone2' value={addPhoneVal.phone2} onChange={getPhoneVal} />
-                                            <button onClick={() => { setAddedPhone2(true), setremovePhone(2) }}>Add</button>
+                                            <button onClick={() => { setAddedPhone2(true), setremovePhone(2) }}><RiAddLine /></button>
                                         </div>
 
                                         :
@@ -418,7 +419,7 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                     {addPhone3 ?
                                         <div className="AddInput">
                                             <input type="number" name='phone3' value={addPhoneVal.phone3} onChange={getPhoneVal} />
-                                            <button onClick={() => { setAddedPhone3(true), setremovePhone(3) }}>Add</button>
+                                            <button onClick={() => { setAddedPhone3(true), setremovePhone(3) }}><RiAddLine /></button>
                                         </div>
 
                                         :
@@ -436,7 +437,7 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                     {addPhone4 ?
                                         <div className="AddInput">
                                             <input type="number" name='phone4' value={addPhoneVal.phone4} onChange={getPhoneVal} />
-                                            <button onClick={() => { setAddedPhone4(true), setremovePhone(4) }}>Add</button>
+                                            <button onClick={() => { setAddedPhone4(true), setremovePhone(4) }}><RiAddLine /></button>
                                         </div>
 
                                         :
@@ -476,7 +477,7 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                     {addSocial1 ?
                                         <div className="AddInput">
                                             <input type="text" name='social1' value={addSocialVal.social1} onChange={getSocialVal} />
-                                            <button onClick={() => { setAddedSocial1(true), setremoveSocial(1) }}>Add</button>
+                                            <button onClick={() => { setAddedSocial1(true), setremoveSocial(1) }}><RiAddLine /></button>
                                         </div>
                                         :
                                         <button className="addfieldButton" onClick={() => setAddSocial1(true)}>
@@ -491,7 +492,7 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                     {addSocial2 ?
                                         <div className="AddInput">
                                             <input type="text" name='social2' value={addSocialVal.social2} onChange={getSocialVal} />
-                                            <button onClick={() => { setAddedSocial2(true), setremoveSocial(2) }}>Add</button>
+                                            <button onClick={() => { setAddedSocial2(true), setremoveSocial(2) }}><RiAddLine /></button>
                                         </div>
                                         :
                                         <button className="addfieldButton" onClick={() => setAddSocial2(true)}>
@@ -506,7 +507,7 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                     {addSocial3 ?
                                         <div className="AddInput">
                                             <input type="text" name='social3' value={addSocialVal.social3} onChange={getSocialVal} />
-                                            <button onClick={() => { setAddedSocial3(true), setremoveSocial(3) }}>Add</button>
+                                            <button onClick={() => { setAddedSocial3(true), setremoveSocial(3) }}><RiAddLine /></button>
                                         </div>
                                         :
                                         <button className="addfieldButton" onClick={() => setAddSocial3(true)}>
@@ -521,7 +522,7 @@ export const Profile = ({ getUserNameVal, getUserLastVal }) => {
                                     {addSocial4 ?
                                         <div className="AddInput">
                                             <input type="text" name='social4' value={addSocialVal.social4} onChange={getSocialVal} />
-                                            <button onClick={() => { setAddedSocial4(true), setremoveSocial(4) }}>Add</button>
+                                            <button onClick={() => { setAddedSocial4(true), setremoveSocial(4) }}><RiAddLine /></button>
                                         </div>
                                         :
                                         <button className="addfieldButton" onClick={() => setAddSocial4(true)}>

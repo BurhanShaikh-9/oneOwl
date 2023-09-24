@@ -74,7 +74,7 @@ const Billing = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                    <div className="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 ">
                         <div className="card cardMargin">
                             <div className="card-body">
                                 <div className="billingTableHeading">
@@ -263,7 +263,7 @@ const Billing = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                    <div className="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 ">
                         <div className="card cardMargin">
                             <div className="card-body">
                                 <div className="billingMain">

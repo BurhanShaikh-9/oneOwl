@@ -96,8 +96,10 @@ export const Sidebar = () => {
                                 <AiOutlineUser className='sideIcon' /><span>Profile</span>
                             </NavLink>
                         </li>
-                        <li className="nav-item">
-
+                        <li className="nav-item nav-itemRelative">
+                            <div className='navItemAbsolute'>
+                                <span>3</span>
+                            </div>
                             <NavLink className={`nav-link ${darkMode ? 'sideBarDark' : 'collapsed'}`} activeclassname="active" to={ROUTES.NOTIFICATION} onClick={closeMobileButton}>
                                 <IoNotificationsOutline className='sideIcon' /><span>Notification</span>
                             </NavLink>

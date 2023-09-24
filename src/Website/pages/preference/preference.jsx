@@ -61,28 +61,41 @@ const Prefernce = () => {
 
     const sortByChannel = () => {
         const sortedData = [...data].sort((a, b) => {
-          // Extract the numeric part from the channel names
-          const channelA = parseInt(a.channel.split(" ")[1]);
-          const channelB = parseInt(b.channel.split(" ")[1]);
-          
-          // Compare the numeric parts
-          return channelA - channelB;
+            // Extract the numeric part from the channel names
+            const channelA = parseInt(a.channel.split(" ")[1]);
+            const channelB = parseInt(b.channel.split(" ")[1]);
+
+            // Compare the numeric parts
+            return channelA - channelB;
         });
         setData(sortedData);
-      };
-    
-      const sortByDate = () => {
+    };
+
+    const sortByDate = () => {
         const sortedData = [...data].sort((a, b) => {
-          const dateA = new Date(a.date);
-          const dateB = new Date(b.date);
-          return dateB - dateA;
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
+    
+            // Compare the dates
+            if (dateA < dateB) return -1;
+            if (dateA > dateB) return 1;
+            return 0;
         });
+    
         setData(sortedData);
-      };
-      const sortByAgentName = () => {
-        const sortedData = [...data].sort((a, b) => a.username.localeCompare(b.username));
+    };
+    const sortByAgentName = () => {
+        const sortedData = [...data].sort((a, b) => {
+            // Extract numeric part of agent names
+            const agentNumberA = parseInt(a.username.match(/\d+/)[0]);
+            const agentNumberB = parseInt(b.username.match(/\d+/)[0]);
+    
+            // Compare numeric parts
+            return agentNumberA - agentNumberB;
+        });
+    
         setData(sortedData);
-      };
+    };
 
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -90,6 +103,48 @@ const Prefernce = () => {
     const filteredAgents = agentList.filter((agent) =>
         agent.agentName.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+    const [isFilters, setIsFilters] = useState(false)
+
+
+
+
+    const sortByTime = () => {
+        const sortedData = [...data].sort((a, b) => {
+            const timeA = a.time;
+            const timeB = b.time;
+    
+            // Convert time strings to 24-hour format for comparison
+            const timeA24 = convertTo24HourFormat(timeA);
+            const timeB24 = convertTo24HourFormat(timeB);
+    
+            // Compare the times
+            if (timeA24 < timeB24) return -1;
+            if (timeA24 > timeB24) return 1;
+            return 0;
+        });
+    
+        setData(sortedData);
+    };
+    
+    // Function to convert time to 24-hour format
+    const convertTo24HourFormat = (time) => {
+        const [timePart, amPm] = time.split(' ');
+        const [hour, minute] = timePart.split(':');
+        let hour24 = parseInt(hour);
+    
+        if (amPm.toLowerCase() === 'pm') {
+            if (hour24 !== 12) {
+                hour24 += 12;
+            }
+        } else {
+            if (hour24 === 12) {
+                hour24 = 0;
+            }
+        }
+    
+        return `${hour24.toString().padStart(2, '0')}:${minute}`;
+    };
 
     return (
         <React.Fragment>
@@ -224,9 +279,16 @@ const Prefernce = () => {
                                             <div className="preferenceHeading">
                                                 <p className='mainHeadingPreferenceTable'>Conversation Summary Details</p>
                                                 <div className='preferenceRight'>
-                                                    <button className='filterButton'>
+                                                    <button className='filterButton' onClick={() => setIsFilters(!isFilters)}>
                                                         <img src={filterSvg} alt="" />
                                                         <span>Filters</span>
+                                                        {
+                                                            isFilters &&
+                                                            <div className="filterMenu">
+                                                                <button onClick={sortByAgentName}>Agents</button>
+                                                                <button onClick={sortByTime}>Time</button>
+                                                            </div>
+                                                        }
                                                     </button>
                                                     <button onClick={sortByChannel}>
                                                         Channels
